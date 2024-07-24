@@ -261,7 +261,7 @@
           <div class="popup-content">
               <span class="close" onclick="closePopup('popupchemical')">&times;</span>
               <div class="popup-header">
-                  <h2 class="judul-popup"></h2>
+                  <h2 class="judul-popup">Chemical Absorbent</h2>
               </div>
               <div class="popup-body">
                   <img src="{{ asset('frontend/images/chemicalabsorbentpad.png') }}" alt="Chemical Absorbent Solutions">
