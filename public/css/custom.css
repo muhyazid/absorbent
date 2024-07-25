@@ -1,0 +1,67 @@
+/* public/css/custom.css */
+.custom-form-control {
+    border: 2px solid #007bff;
+    border-radius: 4px;
+}
+
+.custom-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.custom-label {
+    font-weight: bold;
+    color: #343a40;
+}
+
+/* public/css/custom.css */
+.custom-file-input {
+    width: 100%; /* Lebar penuh kontainer */
+    height: 40px; /* Tinggi yang ditentukan */
+    padding: 5px; /* Padding */
+    border-radius: 5px; /* Radius border */
+    border: 1px solid #ccc; /* Border */
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Memastikan gambar terpotong agar sesuai dengan ukuran */
+    border-radius: 5px; /* Menambahkan sedikit radius untuk tampilan lebih baik */
+}
+
+.product-description {
+    max-width: 300px; /* Menentukan lebar maksimal */
+    height: 100px; /* Menentukan tinggi tetap */
+    overflow: hidden; /* Menyembunyikan teks yang melebihi batas */
+    text-overflow: ellipsis; /* Menambahkan ellipsis (...) di akhir teks yang terpotong */
+    white-space: nowrap; /* Menghindari teks melompat ke baris baru */
+    border: 1px solid #ddd; /* Menambahkan border opsional untuk membedakan kolom */
+    padding: 10px; /* Menambahkan padding untuk kenyamanan visual */
+    display: inline-block; /* Memastikan elemen mengikuti aturan blok inline */
+}
+
+/* Mengatur ukuran gambar produk */
+.product-image {
+    width: 80px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Membatasi tinggi kolom deskripsi */
+td:nth-child(4) {
+    max-width: 200px; /* Sesuaikan dengan lebar yang diinginkan */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pagination .page-link {
+    font-size: 14px; /* Sesuaikan dengan ukuran yang diinginkan */
+    padding: 8px 12px;
+}
+
+.pagination .page-item .page-link {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
