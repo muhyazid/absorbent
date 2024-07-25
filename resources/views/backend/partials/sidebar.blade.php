@@ -41,24 +41,24 @@
                 </li>
 
                 <!-- Testimoni -->
-                <li class="nav-item {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
-                    {{-- <a href="{{ route('testimonials.index') }}" --}}
-                    class="nav-link {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>
-                        Testimoni
-                    </p>
+                <li class="nav-item {{ Request::routeIs('backend.testimonials') ? 'active' : '' }}">
+                    <a href="{{ route('backend.testimonials.index') }}"
+                        class="nav-link {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            Testimoni
+                        </p>
                     </a>
                 </li>
 
                 <!-- Charts -->
                 <li class="nav-item {{ Request::routeIs('about.index') ? 'active' : '' }}">
-                    {{-- <a href="{{ route('about.index') }}" --}}
-                    class="nav-link {{ Request::routeIs('about.index') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-chart-pie"></i>
-                    <p>
-                        About
-                    </p>
+                    <a href="{{ route('backend.testimonials.index') }}"
+                        class="nav-link {{ Request::routeIs('about.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            About
+                        </p>
                     </a>
                 </li>
                 <!-- Forms -->
