@@ -67,7 +67,7 @@
             @endif
             <!-- /.content-header -->
 
-            <!-- Main content -->
+            <!-- Main contenttt -->
             <section class="content">
                 <div class="container-fluid">
                     <!-- Main content goes here -->
