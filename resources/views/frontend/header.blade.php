@@ -43,6 +43,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">About us</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">
+                  <i class="fa fa-user" style="margin-right: 8px;"></i> Login
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
