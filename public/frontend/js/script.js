@@ -1,4 +1,4 @@
-// scripts.js
+// POP UP UNTUK BENEIFT
 
 // Get the modal
 var modal = document.getElementById("benefitModal");
@@ -12,20 +12,29 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function(event) {
     event.preventDefault(); // Prevent the default action of the link
-    modal.style.display = "block";
+    modal.style.display = "flex";
+    document.body.classList.add("modal-open"); // Disable scrolling of the main content
+    document.documentElement.classList.add("modal-open"); // Disable scrolling of the main content
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
+    document.body.classList.remove("modal-open"); // Restore scrolling of the main content
+    document.documentElement.classList.remove("modal-open"); // Restore scrolling of the main content
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+document.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        document.body.classList.remove("modal-open"); // Restore scrolling of the main content
+        document.documentElement.classList.remove("modal-open"); // Restore scrolling of the main content
     }
 }
+
+
+
 
 
 // pop up barang

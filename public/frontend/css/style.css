@@ -34,14 +34,9 @@ body {
   font-weight: bold;
 }
 
-
-
-
-
-
-
-
-
+/* ------ */
+/* pop up barang */
+/* ------ */
 body.no-scroll {
   overflow: hidden;
 }
@@ -122,55 +117,70 @@ body.no-scroll {
   margin-bottom: 50px; /* Add margin at the bottom to ensure spacing with the popup border */
 }
 
-
-/* selesai pop up barrang awal dashboard */
-
-
+/* ------ */
+/* pop up barang */
+/* ------ */
 
 
 /* popup */
 /* Modal Background */
 /* Modal Background */
 /* Modal Background */
+/* Tambahkan ini ke file CSS Anda */
+
+/* ------- */
+/* pop up untuk benerfit */
+/* ------- */
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1000; /* Ensure modal is above other content */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  margin-top: 80px;
+  margin-bottom: 25px;
 }
 
-/* Modal Content */
 .modal-content {
   background-color: #fefefe;
-  margin: 10% auto; /* Adjust margin as needed to ensure it's not covered by header */
+  margin: 5% auto; /* 5% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Adjust width as needed */
-  max-width: 600px; /* Optional: Limit max-width */
-  position: relative; /* Ensure close button is positioned correctly */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: Add shadow for better visibility */
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-height: 80vh; /* Make sure it doesn't overflow vertically */
+  overflow-y: auto; /* Enable vertical scroll */
 }
 
-/* Close Button */
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
-  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
+  cursor: pointer;
 }
+
+/* Style to disable scrolling */
+body.modal-open,
+html.modal-open {
+  overflow: hidden;
+}
+
+/* ------- */
+/* END pop up untuk benerfit */
+/* ------- */
+
+
 
 /* Ensure button styling doesn't interfere */
 .btn-box a {

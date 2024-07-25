@@ -145,61 +145,48 @@
             </div>
           </div>
         </div>
-
-
         <div class="col-md-6 px-0">
-    <div class="detail-box">
-        <div class="heading_container ">
-            <h2>
-                BENEFIT
-            </h2>
-        </div>
-        <p>
-            One of the significant benefits of purchasing an absorbent is environmental protection and risk mitigation. 
-            Absorbent products play an important role in containing and managing spills, whether they involve oil, chemicals or other liquids. 
-            By investing in absorbers, individuals and businesses contribute to several sectors.
-        </p>
-        <h6 style="font-weight: bold;">- Environmental Conservation</h6>
-        <h6 style="font-weight: bold;">- Compliance with Regulations</h6>
-        <h6 style="font-weight: bold;">- Workplace Safety</h6>
-        <h6 style="font-weight: bold;">- Cost Savings in Cleanup</h6>
-        <h6 style="font-weight: bold;">- Reputation Management</h6>
-
-        <p>In summary, investing in absorbents is not just a practical necessity for spill response. 
-          It is a proactive step toward environmental responsibility, regulatory compliance, workplace safety, cost-effectiveness, and maintaining a positive reputation.</p>
-        <div class="btn-box">
-            <!-- Updated Read More Button -->
-            <a id="readMoreBtn" href="#">Read More</a>
-        </div>
-    </div>
-</div>
-
-<!-- POP UP -->
-<div id="benefitModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Benefits of Using Absorbents</h2>
-        <ul>
-          <p></p>
-            <p style="font-weight: bold;">Environmental Conservation:</p>
-            <li>Absorbents help prevent spilled liquids from contaminating soil, water sources, and the air. This proactive approach to spill management safeguards ecosystems, reduces the impact on wildlife, and preserves the overall environmental balance.</li>
-           <p></p>
-            <p style="font-weight: bold;">Compliance with Regulations:</p>
-            <li>Using absorbents ensures compliance with environmental regulations and safety standards. Many industries are subject to strict guidelines regarding spill response, and having appropriate absorbent materials on hand helps organizations adhere to these regulations, avoiding potential fines or legal consequences.</li>
-       <p></p>
-            <p style="font-weight: bold;">Workplace Safety:</p>
-            <li>Absorbents contribute to creating a safer work environment by swiftly containing spills and minimizing slip and fall hazards. Whether in industrial settings, laboratories, or commercial spaces, the quick response enabled by absorbents helps prevent accidents and injuries.</li>
-        <p></p>
-            <p style="font-weight: bold;">Cost Savings in Cleanup:</p>
-            <li>Timely and effective spill containment with absorbents reduces the extent of cleanup required. This can result in cost savings by minimizing the amount of contaminated material, reducing disposal costs, and lowering the overall expenses associated with spill response and remediation.</li>
-        <p></p>
-            <p style="font-weight: bold;">Reputation Management:</p>
-            <li>Demonstrating a commitment to responsible environmental practices enhances an individual or organization’s reputation. Customers, clients, and the community appreciate businesses that prioritize environmental stewardship and take proactive measures to prevent and address spills.</li>
-        
-          </ul>
-    </div>
-</div>
-{{-- END POP UP --}}
+          <div class="detail-box">
+              <div class="heading_container">
+                  <h2>BENEFIT</h2>
+              </div>
+              <p>
+                  One of the significant benefits of purchasing an absorbent is environmental protection and risk mitigation. 
+                  Absorbent products play an important role in containing and managing spills, whether they involve oil, chemicals or other liquids. 
+                  By investing in absorbers, individuals and businesses contribute to several sectors.
+              </p>
+              <h6 style="font-weight: bold;">- Environmental Conservation</h6>
+              <h6 style="font-weight: bold;">- Compliance with Regulations</h6>
+              <h6 style="font-weight: bold;">- Workplace Safety</h6>
+              <h6 style="font-weight: bold;">- Cost Savings in Cleanup</h6>
+              <h6 style="font-weight: bold;">- Reputation Management</h6>
+              <p>In summary, investing in absorbents is not just a practical necessity for spill response. 
+                 It is a proactive step toward environmental responsibility, regulatory compliance, workplace safety, cost-effectiveness, and maintaining a positive reputation.
+              </p>
+              <div class="btn-box">
+                  <!-- Updated Read More Button -->
+                  <a id="readMoreBtn" href="#">Read More</a>
+              </div>
+          </div>
+      </div>
+      
+      <!-- POP UP -->
+      <div id="benefitModal" class="modal">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Benefits of Using Absorbents</h2>
+              <ul>
+                  <li><p style="font-weight: bold;">Environmental Conservation:</p>Absorbents help prevent spilled liquids from contaminating soil, water sources, and the air. This proactive approach to spill management safeguards ecosystems, reduces the impact on wildlife, and preserves the overall environmental balance.</li>
+                  <li><p style="font-weight: bold;">Compliance with Regulations:</p>Using absorbents ensures compliance with environmental regulations and safety standards. Many industries are subject to strict guidelines regarding spill response, and having appropriate absorbent materials on hand helps organizations adhere to these regulations, avoiding potential fines or legal consequences.</li>
+                  <li><p style="font-weight: bold;">Workplace Safety:</p>Absorbents contribute to creating a safer work environment by swiftly containing spills and minimizing slip and fall hazards. Whether in industrial settings, laboratories, or commercial spaces, the quick response enabled by absorbents helps prevent accidents and injuries.</li>
+                  <li><p style="font-weight: bold;">Cost Savings in Cleanup:</p>Timely and effective spill containment with absorbents reduces the extent of cleanup required. This can result in cost savings by minimizing the amount of contaminated material, reducing disposal costs, and lowering the overall expenses associated with spill response and remediation.</li>
+                  <li><p style="font-weight: bold;">Reputation Management:</p>Demonstrating a commitment to responsible environmental practices enhances an individual or organization’s reputation. Customers, clients, and the community appreciate businesses that prioritize environmental stewardship and take proactive measures to prevent and address spills.</li>
+              </ul>
+              <!-- Close Button -->
+          </div>
+      </div>
+      <!-- END POP UP -->
+               
       </div>
     </div>
   </section>
