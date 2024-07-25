@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <!-- Forms -->
-                <li class="nav-item {{ Request::routeIs('forms') ? 'active' : '' }}">
+                {{-- <li class="nav-item {{ Request::routeIs('forms') ? 'active' : '' }}">
                     <a href="#" class="nav-link {{ Request::routeIs('forms') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -84,9 +84,9 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <!-- Tables -->
-                <li class="nav-item {{ Request::routeIs('tables') ? 'active' : '' }}">
+                {{-- <li class="nav-item {{ Request::routeIs('tables') ? 'active' : '' }}">
                     <a href="#" class="nav-link {{ Request::routeIs('tables') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
@@ -114,14 +114,14 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <!-- Documentation -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="https://adminlte.io/docs/3.1/" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>Documentation</p>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

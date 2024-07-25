@@ -43,7 +43,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('backend.products.index')
+        return redirect()->route('products.index')
                          ->with('success', 'Product created successfully.');
     }
 
@@ -78,7 +78,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('backend.products.index')
+        return redirect()->route('products.index')
                          ->with('success', 'Product updated successfully.');
     }
 
@@ -90,7 +90,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect()->route('backend.products.index')
+        return redirect()->route('products.index')
                          ->with('success', 'Product deleted successfully.');
     }
 }
