@@ -38,31 +38,40 @@ document.onclick = function(event) {
 
 
 // pop up barang
+// Function to open popup
 function openPopup(popupId) {
-    document.getElementById(popupId).style.display = "block";
+    var popup = document.getElementById(popupId);
+    popup.style.display = "flex";
     document.body.classList.add("no-scroll");
-}
-
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = "none";
+  }
+  
+  // Function to close popup
+  function closePopup(popupId) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = "none";
     document.body.classList.remove("no-scroll");
-}
-
-window.onclick = function(event) {
+  }
+  
+  // Close popup when clicking outside
+  window.onclick = function(event) {
     var popups = document.getElementsByClassName('popup');
     for (var i = 0; i < popups.length; i++) {
-        if (event.target == popups[i]) {
-            popups[i].style.display = "none";
-            document.body.classList.remove("no-scroll");
-        }
+      if (event.target === popups[i]) {
+        popups[i].style.display = "none";
+        document.body.classList.remove("no-scroll");
+      }
     }
-}
-
-
-    $(document).ready(function() {
-        $('#brandCarousel').carousel({
-            interval: 3000,
-            pause: false
-        });
+  }
+  
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const items = Array.from(carouselTrack.children);
+    
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      carouselTrack.appendChild(clone);
     });
-
+  });
+  
+  

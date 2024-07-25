@@ -21,12 +21,17 @@ use App\Http\Controllers\AboutController;
 Route::get('/', function () {
     return view('frontend.master');
 });
+Route::get('/product', function () {
+    return view('frontend.product');
+});
+
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
-Route::resource('products', ProductController::class);
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/testimonials', [TestimonialController::class, 'index'])->name('backend.testimonials.index');
+
+Route::resource('products', ProductController::class);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

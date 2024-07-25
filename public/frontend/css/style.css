@@ -7,32 +7,47 @@ body {
 }
 
 
-.client_section .carousel-inner .carousel-item .box {
-  width: 100%;
+/* icon */
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff; /* Warna ikon menjadi putih */
+  margin: 0 10px; /* Jarak antar ikon */
+}
+
+/* end of icon */
+
+
+
+/* brand start */
+.client_section {
+  padding: 40px 0;
   text-align: center;
 }
 
-.client_section .carousel-inner .carousel-item .img-box {
-  margin: 0 auto;
-  max-width: 80%; /* Adjust as needed */
+.carousel-inner .carousel-item {
+  transition: transform 2s ease;
 }
 
-.client_section .carousel-inner .carousel-item img {
-  width: 100%; /* Make image take full width of the box */
-  max-width: 300px; /* Ensure image doesn't get too large */
+.carousel-item .box {
+  text-align: center;
+  padding: 10px;
+}
+
+.carousel-item .img-box img {
+  max-width: 100px; /* Atur ukuran gambar sesuai kebutuhan */
   height: auto;
-  display: block;
   margin: 0 auto;
 }
 
-.client_section .carousel-inner .carousel-item .detail-box {
-  margin-top: 15px;
+.detail-box h4 {
+  margin-top: 10px;
 }
 
-.client_section .carousel-inner .carousel-item .detail-box h4 {
-  font-size: 1.2em;
-  font-weight: bold;
-}
+
+
+
+/* stop brand  */
 
 /* ------ */
 /* pop up barang */
@@ -40,6 +55,7 @@ body {
 body.no-scroll {
   overflow: hidden;
 }
+
 /* Style for the popup overlay */
 .popup {
   display: none;
@@ -51,7 +67,6 @@ body.no-scroll {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   padding-top: 60px;
-  
 }
 
 /* Style for the popup content */
@@ -61,35 +76,12 @@ body.no-scroll {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-height: 80vh; /* Max height 80% of viewport height */
+  max-height: 70vh; /* Max height 80% of viewport height */
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden; /* Hide overflow to ensure proper content layout */
   border-radius: 20px;
-}
-
-/* Style for the close button */
-.close {
-  color: #aaa;
-  font-size: 32px;
-  font-weight: bold;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 25px;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-}
-
-/* Style for the popup header */
-.popup-header {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 /* Style for the popup body */
@@ -99,34 +91,45 @@ body.no-scroll {
   overflow: hidden; /* Ensure proper layout and scrolling */
 }
 
-/* Style for the image in the popup */
-.popup-body img {
-  width: 450px; /* Adjust image width */
-  height: 450px; /* Adjust image height */
-  margin-right: 20px; /* Space between image and text */
-  flex-shrink: 0; /* Prevent image from shrinking */
+/* Style for the left column */
+.left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50%;
+  padding-right: 20px; /* Space between image and text */
 }
 
-/* Style for the text container */
-.text-container {
-  flex: 1;
-  max-height: 60vh; /* Max height of text container for scrolling */
+.left-column img {
+  width: 150px; /* Adjust image width */
+  height: 300px; /* Maintain aspect ratio */
+  margin-bottom: 50px; /* Space between image and title */
+}
+
+.left-column .judul-popup {
+  margin-top: 15px;
+  margin-bottom: 10px; /* Space around the title */
+}
+
+.left-column .motto-popup {
+  text-align: center;
+  margin-bottom: 20px; /* Space around the motto */
+}
+
+/* Style for the right column */
+.right-column {
+  flex: 2;
+  max-height: 62vh; /* Max height of text container for scrolling */
   overflow-y: auto; /* Enable vertical scrolling if content overflows */
   padding-right: 20px; /* Add padding to avoid text sticking to the scrollbar */
-  padding-bottom: 20px; /* Add padding at the bottom for spacing */
-  margin-bottom: 50px; /* Add margin at the bottom to ensure spacing with the popup border */
 }
 
+
 /* ------ */
-/* pop up barang */
+/* endpop up barang */
 /* ------ */
 
-
-/* popup */
-/* Modal Background */
-/* Modal Background */
-/* Modal Background */
-/* Tambahkan ini ke file CSS Anda */
 
 /* ------- */
 /* pop up untuk benerfit */
@@ -152,7 +155,7 @@ body.no-scroll {
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
-  max-height: 80vh; /* Make sure it doesn't overflow vertically */
+  max-height: 70vh; /* Make sure it doesn't overflow vertically */
   overflow-y: auto; /* Enable vertical scroll */
 }
 
@@ -797,101 +800,7 @@ a:focus {
   color: #e8af30;
 }
 
-.client_section {
-  text-align: center;
-}
 
-.client_section #carouselExampleControls {
-  padding: 0 10%;
-}
-
-
-.client_section .box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 45px;
-}
-
-.client_section .box .img-box {
-  width: 145px;
-}
-
-.client_section .box .img-box img {
-  width: 100%;
-  border-radius: 30px;
-}
-
-.client_section .box .detail-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 20px;
-}
-
-.client_section .box .detail-box h4 {
-  font-weight: bold;
-  font-size: 18px;
-  padding: 0 10px;
-  border-bottom: 1px solid #ffffff;
-}
-
-.client_section .box .detail-box p {
-  margin-top: 10px;
-}
-
-.client_section .carousel_btn-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.client_section .carousel-control-prev,
-.client_section .carousel-control-next {
-  position: absolute;
-  top: 50%;
-  width: 45px;
-  height: 45px;
-  border: none;
-  opacity: 1;
-  background-color: #1c1c1c;
-  color: #ffffff;
-  border-radius: 100%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 18px;
-}
-
-.client_section .carousel-control-prev:hover,
-.client_section .carousel-control-next:hover {
-  background-color: #e8af30;
-}
-
-.client_section .carousel-control-prev {
-  left: 0;
-}
-
-.client_section .carousel-control-next {
-  left: initial;
-  right: 0;
-}
 
 /* contact section */
 .contact_section {
