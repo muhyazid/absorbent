@@ -19,7 +19,7 @@
               </h5>
               <ul>
                 <li>
-                  <a href="">
+                  <a href="https://srasafety.id/">
                     SRA Safety
                   </a>
                 </li>
@@ -46,8 +46,8 @@
             <a href="https://www.google.com/maps/place/PT+SUMBER+REJEKI+AGUNG/@-7.3108946,112.7675416,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fb7e2d9196c7:0x51f8d55a31cae10c!8m2!3d-7.3108946!4d112.7701219!16s%2Fg%2F11gjm8_g7h?entry=ttu" class="">
               <i class="fa fa-map-marker" aria-hidden="true"></i>
               <span>
-                Ruko Rungkut Megah Raya A-15, Jl. Kalirungkut
-Surabaya, Indonesa
+                Ruko Rungkut Megah Raya Blok A No 15, Jl. Kalirungkut
+Surabaya, Jawa Timur, Indonesia
 60293
               </span><p></p>
               <a href="https://www.google.com/maps/place/PT+SUMBER+REJEKI+AGUNG/@-7.3108946,112.7675416,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fb7e2d9196c7:0x51f8d55a31cae10c!8m2!3d-7.3108946!4d112.7701219!16s%2Fg%2F11gjm8_g7h?entry=ttu" class="">
@@ -77,7 +77,7 @@ Surabaya, Indonesa
               <span>
               <i class="fa fa-envelope" aria-hidden="true"></i> Email :
               <span>
-                <a href="mailto:debra.srasafety@gmail.com?subject=Subject%20Here&body=Body%20text%20here" class=""><p>adebra.srasafety@gmail.com</p></a>
+                <a href="mailto:debra.srasafety@gmail.com?subject=Subject%20Here&body=Body%20text%20here" class=""><p>debra.srasafety@gmail.com</p></a>
                 <a href="mailto:nugi.srasafety@gmail.com?subject=Subject%20Here&body=Body%20text%20here" class=""><p>nugi.srasafety@gmail.com</p></a>
               </span>
               </span>
