@@ -44,4 +44,16 @@
             </x-primary-button>
         </div>
     </form>
+
+    <!-- Registration Link -->
+    <div class="flex items-center justify-center mt-4">
+        @if (Route::has('register'))
+            <p class="text-sm text-gray-600">
+                {{ __("Don't have an account?") }}
+                <a class="text-yellow-600 hover:text-indigo-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                    {{ __('Register here') }}
+                </a>
+            </p>
+        @endif
+    </div>
 </x-guest-layout>
