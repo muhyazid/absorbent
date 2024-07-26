@@ -118,17 +118,17 @@
             <p></p>
             <div class="row">
                 <div class="col-md-3">
-                    <a href="#" class="career-box">
+                    <a href="https://glints.com/id/en/opportunities/jobs/staff-marketing/ccf49bc7-e8e4-496a-af45-d6e8f2bc6b37" class="career-box">
                         <h4>Marketing</h4>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#" class="career-box">
+                    <a href="https://glints.com/id/en/opportunities/jobs/staff-gudang-walk-in-interview/22a784f1-aa4b-468a-ad8d-76635fa7577d" class="career-box">
                         <h4>Warehouse</h4>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#" class="career-box">
+                    <a href="https://glints.com/id/en/opportunities/jobs/administration-staff/94c07cd1-3021-4b89-b3e6-dfd3b7f76f45" class="career-box">
                         <h4>Admin</h4>
                     </a>
                 </div>
