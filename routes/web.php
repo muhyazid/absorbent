@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/product', function () {
     return view('frontend.product');
 });
+Route::get('/aboutus', function () {
+    return view('frontend.aboutus');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

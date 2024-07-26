@@ -73,5 +73,27 @@ function openPopup(popupId) {
       carouselTrack.appendChild(clone);
     });
   });
+
   
+
+
+  // scrolling agar smooth
+  document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for navigation tabs
+    const navLinks = document.querySelectorAll('.nav-tabs .nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(link.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Load More functionality
+    document.querySelector('.load-more button').addEventListener('click', function() {
+        // Logic to load more products goes here
+    });
+});
+
   
