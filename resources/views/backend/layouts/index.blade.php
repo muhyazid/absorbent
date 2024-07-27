@@ -1,12 +1,18 @@
 <!-- resources/views/layouts/index.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Mengatur karakter encoding ke UTF-8 -->
     <meta charset="utf-8">
+    <!-- Mengatur viewport agar responsif terhadap ukuran layar perangkat -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Menambahkan CSRF token untuk keamanan -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Judul halaman -->
     <title>SRA | Dashboard</title>
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -29,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
-    {{-- css Form (custom.css) --}}
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
 
@@ -37,14 +43,17 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
-                height="60" width="60">
+            <!-- Logo animasi saat preloader -->
+            <img class="animation__shake" src="{{ asset('dist/img/sra-logo.png') }}" alt="SRA-Logo" height="100"
+                width="100">
         </div>
 
+        <!-- Menyertakan file partial navbar -->
         @include('backend.partials.navbar')
+        <!-- Menyertakan file partial sidebar -->
         @include('backend.partials.sidebar')
 
-        <!-- Content Wrapper. Contains page content -->
+        <!-- Content Wrapper. Menampung konten halaman -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             @hasSection('content-header')
@@ -52,9 +61,11 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
+                                <!-- Judul halaman yang diisi dari bagian 'content-header' -->
                                 <h1 class="m-0">@yield('content-header')</h1>
                             </div>
                             <div class="col-sm-6">
+                                <!-- Breadcrumb navigasi -->
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a
                                             href="{{ route('backend.dashboard') }}">Dashboard</a></li>
@@ -67,16 +78,18 @@
             @endif
             <!-- /.content-header -->
 
-            <!-- Main contenttt -->
+            <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- Main content goes here -->
+                    <!-- Konten utama halaman akan ditempatkan di sini -->
                     @yield('content')
                 </div>
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+
+        <!-- Footer -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2024 <a href="https://adminlte.io">PT Sumber Rejeki Agung</a>.</strong>
             All rights reserved.

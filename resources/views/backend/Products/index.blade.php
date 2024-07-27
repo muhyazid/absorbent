@@ -6,6 +6,7 @@
 
     <div class="container">
         <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add New Product</a>
+        <a href="{{ route('products.export-pdf') }}" class="btn btn-danger mb-3">Export PDF</a>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">{{ $message }}</div>
         @endif
@@ -15,6 +16,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama Produk</th>
+                    <th>Kategori</th>
                     <th>Gambar</th>
                     <th>Deskripsi</th>
                     <th>Ukuran</th>
@@ -26,8 +28,15 @@
                     <tr>
                         <td>{{ ($products->currentPage() - 1) * $products->perPage() + $index + 1 }}</td>
                         <td>{{ $product->name }}</td>
-                        <td><img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
-                                class="product-image"></td>
+                        <td>{{ $product->kategori ? $product->kategori->kategori : 'Tidak ada kategori' }}</td>
+
+                        </td>
+                        <!-- Menampilkan nama kategori --> <!-- Menampilkan nama kategori -->
+                        <td>
+                            @if ($product->image)
+                                <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" width="50">
+                            @endif
+                        </td>
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->size }}</td>
                         <td>
@@ -45,4 +54,6 @@
         </table>
         <div class="d-flex justify-content-center">
             {{ $products->links('pagination::bootstrap-5') }}
-        @endsection
+        </div>
+    </div>
+@endsection

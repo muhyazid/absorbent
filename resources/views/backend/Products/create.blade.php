@@ -23,6 +23,14 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label for="kategori_id">Kategori</label>
+                <select name="kategori_id" class="form-control" required>
+                    @foreach ($kategories as $item)
+                        <option value="{{ $item->id }}">{{ $item->kategori }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="image">Image</label>
                 <input type="file" class="form-control" id="image" name="image">
                 @error('image')

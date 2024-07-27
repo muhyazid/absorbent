@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
     //
     public function index(){
-        return view('backend.about');
+        return view('backend.About.index');
     }
 }

@@ -17,111 +17,42 @@
             </div>
         </div>
 
-        <!-- Sidebar Menuuuu -->
+        <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <!-- Dashboard -->
-                <li class="nav-item{{ Request::routeIs('backend.dashboard') ? 'active' : '' }}">
+                <li class="nav-item {{ Request::routeIs('backend.dashboard') ? 'menu-open' : '' }}">
                     <a href="{{ route('backend.dashboard') }}"
                         class="nav-link {{ Request::routeIs('backend.dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard
-                        </p>
+                        <p>Dashboard</p>
                     </a>
                 </li>
                 <!-- Produk -->
-                <li class="nav-item {{ Request::routeIs('backend.products.*') ? 'active' : '' }}">
+                <li class="nav-item {{ Request::routeIs('products.*') ? 'menu-open' : '' }}">
                     <a href="{{ route('products.index') }}"
-                        class="nav-link {{ Request::routeIs('backend.products.*') ? 'active' : '' }}">
+                        class="nav-link {{ Request::routeIs('products.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-box"></i>
                         <p>Products</p>
                     </a>
                 </li>
-
                 <!-- Testimoni -->
-                <li class="nav-item {{ Request::routeIs('backend.testimonials') ? 'active' : '' }}">
+                <li class="nav-item {{ Request::routeIs('backend.testimonials') ? 'menu-open' : '' }}">
                     <a href="{{ route('backend.testimonials.index') }}"
-                        class="nav-link {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
+                        class="nav-link {{ Request::routeIs('backend.testimonials') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Testimoni
-                        </p>
+                        <p>Testimoni</p>
                     </a>
                 </li>
-
-                <!-- Charts -->
-                <li class="nav-item {{ Request::routeIs('about.index') ? 'active' : '' }}">
-                    <a href="{{ route('backend.testimonials.index') }}"
-                        class="nav-link {{ Request::routeIs('about.index') ? 'active' : '' }}">
+                <!-- About -->
+                <li class="nav-item {{ Request::routeIs('backend.about.index') ? 'menu-open' : '' }}">
+                    <a href="{{ route('backend.about.index') }}"
+                        class="nav-link {{ Request::routeIs('backend.about.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-chart-pie"></i>
-                        <p>
-                            About
-                        </p>
+                        <p>About</p>
                     </a>
                 </li>
-                <!-- Forms -->
-                {{-- <li class="nav-item {{ Request::routeIs('forms') ? 'active' : '' }}">
-                    <a href="#" class="nav-link {{ Request::routeIs('forms') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Forms
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/forms/general.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>General Elements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/advanced.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Advanced Elements</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> --}}
-                <!-- Tables -->
-                {{-- <li class="nav-item {{ Request::routeIs('tables') ? 'active' : '' }}">
-                    <a href="#" class="nav-link {{ Request::routeIs('tables') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Tables
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Simple Tables</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>DataTables</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>jsGrid</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> --}}
-                <!-- Documentation -->
-                {{-- <li class="nav-item">
-                    <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Documentation</p>
-                    </a>
-                </li> --}}
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

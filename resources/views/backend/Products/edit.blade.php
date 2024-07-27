@@ -4,13 +4,23 @@
 
 @section('content')
     <div class="container">
-        <h1>Edit Product</h1>
         <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="kategori_id">Kategori</label>
+                <select name="kategori_id" class="form-control" required>
+                    @foreach ($kategori as $item)
+                        <option value="{{ $item->id }}" {{ $product->kategori_id == $item->id ? 'selected' : '' }}>
+                            {{ $item->kategori }}</option>
+                    @endforeach
+                </select>
+                {{-- <input type="text" class="form-control" id="name" name="kategori_id"
+                    value="{{ $product->kategori_id }}" required> --}}
             </div>
             <div class="form-group">
                 <label for="image">Image</label>
