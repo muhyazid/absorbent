@@ -8,7 +8,7 @@
 
 <!-- Bagian konten utama -->
 @section('content')
-    <!-- Container utama untuk konten 'Tentang Kami' -->
+    <!-- Container utama untuk konten 'Tentang Kamiiii' -->
     <div class="container">
         <!-- Judul halaman -->
         <h1>Tentang Kami</h1>
