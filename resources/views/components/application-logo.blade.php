@@ -1,2 +1,1 @@
-<!-- resources/views/components/logo.blade.php -->
-<img src="{{ asset('frontend/images/logo.png') }}" {{ $attributes }} alt="Logo" style="width: 200px; height: auto;"> <!-- Ganti nilai width sesuai kebutuhan Anda -->
+<img src="{{ asset('frontend/images/logo.png') }}" alt="Logo" class="custom-logo" width="250px" height="250px">

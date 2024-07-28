@@ -1,15 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\AboutController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
-| Webbb Route
+| Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -21,6 +23,13 @@ use App\Http\Controllers\Backend\AboutController;
 Route::get('/', function () {
     return view('frontend.master');
 });
+Route::get('/product', function () {
+    return view('frontend.product');
+});
+Route::get('/aboutus', function () {
+    return view('frontend.aboutus');
+});
+
 
 Route::get('/backend/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
 Route::get('/backend/products', [ProductController::class, 'index'])->name('products');
@@ -42,4 +51,14 @@ Route::get('backend/testimonials', [TestimonialController::class, 'index'])->nam
 
 // require __DIR__.'/auth.php';
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

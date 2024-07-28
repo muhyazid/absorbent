@@ -5,7 +5,7 @@
           <a href="https://www.google.com/maps/place/PT+SUMBER+REJEKI+AGUNG/@-7.3108946,112.7675416,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fb7e2d9196c7:0x51f8d55a31cae10c!8m2!3d-7.3108946!4d112.7701219!16s%2Fg%2F11gjm8_g7h?entry=ttu" class="contact_link1">
             <i class="fa fa-map-marker" aria-hidden="true"></i>
             <span>
-              Ruko Rungkut Megah Raya A-15, Jl. Kalirungkut Surabaya, Indonesia
+              Ruko Rungkut Megah Raya Blok A No 15, Jl. Kalirungkut Surabaya, Jawa Timur, Indonesia
             </span>
           </a>
           <a href="https://wa.me/6281330205567" class="contact_link2">
@@ -26,7 +26,7 @@
     <div class="header_bottom">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="/">
             <img src="{{ asset('frontend/images/logo.png') }}" alt="" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +38,10 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="product.html">Product</a>
+                <a class="nav-link" href="/product">Product</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">About us</a>
+                <a class="nav-link" href="/aboutus">About us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/login">

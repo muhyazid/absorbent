@@ -33,7 +33,7 @@
       <div class="hero_bg_box">
         <div class="img-box">
           {{-- background gambar --}}
-          <img src="{{ asset('frontend/images/bg.jpg') }}" alt="" style="width: 50%; height: auto;">
+          <img src="{{ asset('frontend/images/oil.jpeg') }}" alt="" style="width: 50%; height: auto;">
         </div>
       </div>
 
@@ -123,9 +123,9 @@
         </div>
         <div class="container idicator_container">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            {{-- <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> --}}
           </ol>
         </div>
       </div>
@@ -173,14 +173,15 @@
       <!-- POP UP -->
       <div id="benefitModal" class="modal">
           <div class="modal-content">
-              <span class="close">&times;</span>
-              <h2>Benefits of Using Absorbents</h2>
+              {{-- <span class="close">&times;</span> --}}
+              <h2 class="judul-popup">Benefits of Using Absorbents</h2>
               <ul>
-                  <li><p style="font-weight: bold;">Environmental Conservation:</p>Absorbents help prevent spilled liquids from contaminating soil, water sources, and the air. This proactive approach to spill management safeguards ecosystems, reduces the impact on wildlife, and preserves the overall environmental balance.</li>
-                  <li><p style="font-weight: bold;">Compliance with Regulations:</p>Using absorbents ensures compliance with environmental regulations and safety standards. Many industries are subject to strict guidelines regarding spill response, and having appropriate absorbent materials on hand helps organizations adhere to these regulations, avoiding potential fines or legal consequences.</li>
-                  <li><p style="font-weight: bold;">Workplace Safety:</p>Absorbents contribute to creating a safer work environment by swiftly containing spills and minimizing slip and fall hazards. Whether in industrial settings, laboratories, or commercial spaces, the quick response enabled by absorbents helps prevent accidents and injuries.</li>
-                  <li><p style="font-weight: bold;">Cost Savings in Cleanup:</p>Timely and effective spill containment with absorbents reduces the extent of cleanup required. This can result in cost savings by minimizing the amount of contaminated material, reducing disposal costs, and lowering the overall expenses associated with spill response and remediation.</li>
-                  <li><p style="font-weight: bold;">Reputation Management:</p>Demonstrating a commitment to responsible environmental practices enhances an individual or organization’s reputation. Customers, clients, and the community appreciate businesses that prioritize environmental stewardship and take proactive measures to prevent and address spills.</li>
+                  <li><p style="font-weight: bold;" class="tulisan-popup">Environmental Conservation:</p>
+                    Absorbents help prevent spilled liquids from contaminating soil, water sources, and the air. This proactive approach to spill management safeguards ecosystems, reduces the impact on wildlife, and preserves the overall environmental balance.</li>
+                  <li><p style="font-weight: bold;" class="tulisan-popup">Compliance with Regulations:</p>Using absorbents ensures compliance with environmental regulations and safety standards. Many industries are subject to strict guidelines regarding spill response, and having appropriate absorbent materials on hand helps organizations adhere to these regulations, avoiding potential fines or legal consequences.</li>
+                  <li><p style="font-weight: bold;" class="tulisan-popup">Workplace Safety:</p>Absorbents contribute to creating a safer work environment by swiftly containing spills and minimizing slip and fall hazards. Whether in industrial settings, laboratories, or commercial spaces, the quick response enabled by absorbents helps prevent accidents and injuries.</li>
+                  <li><p style="font-weight: bold;" class="tulisan-popup">Cost Savings in Cleanup:</p>Timely and effective spill containment with absorbents reduces the extent of cleanup required. This can result in cost savings by minimizing the amount of contaminated material, reducing disposal costs, and lowering the overall expenses associated with spill response and remediation.</li>
+                  <li><p style="font-weight: bold;" class="tulisan-popup">Reputation Management:</p>Demonstrating a commitment to responsible environmental practices enhances an individual or organization’s reputation. Customers, clients, and the community appreciate businesses that prioritize environmental stewardship and take proactive measures to prevent and address spills.</li>
               </ul>
               <!-- Close Button -->
           </div>
@@ -193,164 +194,152 @@
 
   <!-- end benefit section -->
 
-  <!-- Purpose section -->
+ <!-- Purpose section -->
 
-  <section class="service_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-          <h2>Purpose</h2>
-      </div>
-      
-      <div class="row">
-          {{-- <!-- Pop-Up Content --> oil --}}
-          <div id="popupoil" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popupoil')">&times;</span>
-                <div class="popup-header">
-                    <h2 class="judul-popup">Oil Absorbent</h2>
-                </div>
-                <div class="popup-body">
-                    <img src="{{ asset('frontend/images/oilabsorbentpad.png') }}" alt="Oil Absorbent Solutions">
-                    <div class="text-container">
-                        <h5 class="motto-popup"><strong> Effortlessly Combat Oil Spills with Our High-Performance Oil Absorbent Solutions</strong></h5>
-                        <p></p>
-                        <p></p>
-                        <p class="key-feature"><strong>Key Features:</strong></p>
-                        <p class="tulisan-popup"><strong>Effective Oil Absorption:</strong></p> 
-                        <p>Our products are engineered for optimal oil absorption, utilizing advanced absorbent technology to ensure maximum uptake of oil from various surfaces. 
-                          This makes them highly effective in situations where thorough and rapid cleaning is essential.</p>
-                        <p class="tulisan-popup"><strong>Water Repellent:</strong></p> 
-                        <p>In addition to absorbing oil, our products are designed to repel water. 
-                          This is crucial for ensuring that water does not mix with the oil being absorbed, thus improving cleaning efficiency and reducing the amount of absorbent material needed.</p>
-                        <p class="tulisan-popup"><strong>Water Repellent:</strong></p> 
-                        <p>In addition to absorbing oil, our products are designed to repel water. 
-                          This is crucial for ensuring that water does not mix with the oil being absorbed, thus improving cleaning efficiency and reducing the amount of absorbent material needed.</p>
-                        <p class="tulisan-popup"><strong>Marine and Industrial Performance:</strong></p> 
-                          <p>Our solutions are ideal for both marine and industrial environments. In marine settings, our products help manage oil spills in water bodies, while in industrial settings, they effectively address oil spills in production facilities, warehouses, and other work areas.</p>
-                        <p class="tulisan-popup"><strong>Environmental Compliance:</strong></p> 
-                        <p>Using our absorbents helps ensure compliance with stringent environmental regulations. We understand the importance of adhering to environmental laws and standards, and our products are designed to support responsible waste management practices.</p>
-                          <p class="tulisan-popup"><strong>Swift and Effective Response:</strong></p> 
-                        <p>Our oil absorbents allow for quick response to oil spills. They enable fast and effective cleanup, minimizing environmental impact and improving the safety of affected areas.</p>      
-                      <p></p>
-                      <p class="key-feature"><strong>Benefits of Using Our Solutions:</strong></p>
-                      <p class="tulisan-popup"><strong>Efficiency:</strong> </p>
-                      <p>Our products reduce the time and effort required for cleanup, providing a practical and effective solution for managing oil spills.</p>
-                      <p class="tulisan-popup"><strong>Safety:</strong> </p>
-                      <p>By ensuring compliance with environmental regulations and minimizing contamination risks, our products contribute to environmental protection.</p>
-                      <p class="tulisan-popup"><strong>Use:</strong> </p>
-                      <p>Suitable for various scenarios, whether on water or in industrial locations, our products offer flexibility and reliability.</p>
-                      </div>
-                </div>
+<section class="service_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+        <h2>Purpose</h2>
+    </div>
+    
+    <div class="row">
+        <!-- Pop-Up Content --> 
+        <!-- Pop-up Oil -->
+        <div id="popupoil" class="popup">
+          <div class="popup-content">
+            <div class="popup-body">
+              <span class="close" onclick="closePopup('popupoil')">&times;</span>
+              <div class="left-column">
+                <img src="{{ asset('frontend/images/oilabsorbentpad.png') }}" alt="Oil Absorbent Solutions">
+                <h2 class="judul-popup">Oil Absorbent</h2>
+                <h5 class="motto-popup"><strong>Effortlessly Combat Oil Spills with Our High Performance Oil Absorbent Solutions</strong></h5>
+              </div>
+              <div class="right-column text-container">
+                <p class="key-feature"><strong>Key Features:</strong></p>
+                <p class="tulisan-popup"><strong>Effective Oil Absorption:</strong></p>
+                <p>Our products are engineered for optimal oil absorption, utilizing advanced absorbent technology to ensure maximum uptake of oil from various surfaces. This makes them highly effective in situations where thorough and rapid cleaning is essential.</p>
+                <p class="tulisan-popup"><strong>Water Repellent:</strong></p>
+                <p>In addition to absorbing oil, our products are designed to repel water. This is crucial for ensuring that water does not mix with the oil being absorbed, thus improving cleaning efficiency and reducing the amount of absorbent material needed.</p>
+                <p class="tulisan-popup"><strong>Marine and Industrial Performance:</strong></p>
+                <p>Our solutions are ideal for both marine and industrial environments. In marine settings, our products help manage oil spills in water bodies, while in industrial settings, they effectively address oil spills in production facilities, warehouses, and other work areas.</p>
+                <p class="tulisan-popup"><strong>Environmental Compliance:</strong></p>
+                <p>Using our absorbents helps ensure compliance with stringent environmental regulations. We understand the importance of adhering to environmental laws and standards, and our products are designed to support responsible waste management practices.</p>
+                <p class="tulisan-popup"><strong>Swift and Effective Response:</strong></p>
+                <p>Our oil absorbents allow for quick response to oil spills. They enable fast and effective cleanup, minimizing environmental impact and improving the safety of affected areas.</p>
+                <p class="key-feature"><strong>Benefits of Using Our Solutions:</strong></p>
+                <p class="tulisan-popup"><strong>Efficiency:</strong></p>
+                <p>Our products reduce the time and effort required for cleanup, providing a practical and effective solution for managing oil spills.</p>
+                <p class="tulisan-popup"><strong>Safety:</strong></p>
+                <p>By ensuring compliance with environmental regulations and minimizing contamination risks, our products contribute to environmental protection.</p>
+                <p class="tulisan-popup"><strong>Use:</strong></p>
+                <p>Suitable for various scenarios, whether on water or in industrial locations, our products offer flexibility and reliability.</p>
+              </div>
             </div>
+          </div>
         </div>
-        {{-- popup chemical --}}
+        
         <div id="popupchemical" class="popup">
           <div class="popup-content">
-              <span class="close" onclick="closePopup('popupchemical')">&times;</span>
-              <div class="popup-header">
-                  <h2 class="judul-popup">Chemical Absorbent</h2>
-              </div>
-              <div class="popup-body">
-                  <img src="{{ asset('frontend/images/chemicalabsorbentpad.png') }}" alt="Chemical Absorbent Solutions">
-                  <div class="text-container">
-                      <h5 class="motto-popup"><strong>Effectively Manage Chemical Spills with Our Advanced Chemical Absorbent Solutions</strong></h5>
-                      <p></p>
-                      <p></p>
-                      <p class="key-feature"><strong>Key Features:</strong></p>
-                      <p class="tulisan-popup"><strong>Rapid Chemical Neutralization:</strong></p>
-                      <p>Our absorbent solutions are specially formulated to quickly neutralize and absorb a wide range of hazardous chemicals, including acids, bases, and aggressive substances. This ensures fast and effective cleanup in critical situations.</p>
-                      <p class="tulisan-popup"><strong>Versatile Application:</strong></p>
-                      <p>Designed for diverse environments, our products are suitable for both marine and industrial settings. They are effective in handling chemical spills on water, in production facilities, warehouses, and other work areas.</p>
-                      <p class="tulisan-popup"><strong>Environmental Compliance:</strong></p>
-                      <p>Our chemical absorbents help you adhere to strict environmental regulations by managing spills responsibly. They are crafted to support eco-friendly practices and ensure safe disposal of hazardous materials.</p>
-                      <p class="tulisan-popup"><strong>Enhanced Safety:</strong></p>
-                      <p>By minimizing risks and ensuring quick containment of chemical spills, our products contribute to a safer working environment and reduce potential hazards.</p>
-                      <p class="key-feature"><strong>Benefits of Using Our Solutions:</strong></p>
-                      <p class="tulisan-popup"><strong>Efficiency:</strong></p>
-                      <p>Our solutions streamline the cleanup process, saving time and effort while delivering reliable performance in managing chemical spills.</p>
-                      <p class="tulisan-popup"><strong>Flexibility:</strong></p>
-                      <p>Our chemical absorbents are versatile, providing effective spill management across various scenarios, from marine environments to industrial sites.</p>
-                      <p class="tulisan-popup"><strong>Regulatory Adherence:</strong></p>
-                      <p>Our products support compliance with environmental laws and safety standards, promoting responsible and effective waste management practices.</p>
-                    </div>
-              </div>
-          </div>
-      </div>
-      {{-- popup universall --}}
-      <div id="popupuniversall" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup('popupuniversall')">&times;</span>
-            <div class="popup-header">
-                <h2 class="judul-popup">Universall Absorbent</h2>
-            </div>
             <div class="popup-body">
-              <img src="{{ asset('frontend/images/universallabsorbentpad.png') }}" alt="Universal Absorbent Solutions">
-              <div class="text-container">
-                  <h5 class="motto-popup"><strong>Versatile Spill Management with Our High-Performance Universal Absorbent Solutions</strong></h5>
-                  <p></p>
-                  <p></p>
-                  <p class="key-feature"><strong>Key Features:</strong></p>
-                  <p class="tulisan-popup"><strong>Broad Absorption Capability:</strong></p>
-                  <p>Our universal absorbents are designed to handle a wide variety of spills, including water-based liquids, oils, and chemicals. This versatility ensures that they are effective in many different environments and situations.</p>
-                  <p class="tulisan-popup"><strong>Adaptable for Various Environments:</strong></p>
-                  <p>Our products are suitable for use in both industrial and marine settings. Whether dealing with spills in workshops, garages, production facilities, or on water surfaces, they provide reliable and efficient cleanup solutions.</p>
-                  <p class="tulisan-popup"><strong>Ease of Use:</strong></p>
-                  <p>Our universal absorbents are easy to deploy and manage, making them a practical choice for quick and effective spill response. Their user-friendly design ensures that cleanup is straightforward and efficient.</p>
-                  <p class="tulisan-popup"><strong>Environmental Safety:</strong></p>
-                  <p>Designed to adhere to environmental regulations, our absorbents support responsible waste management practices. They help minimize environmental impact by efficiently managing spills and facilitating safe disposal.</p>
-                  <p class="key-feature"><strong>Benefits of Using Our Solutions:</strong></p>
-                  <p class="tulisan-popup"><strong>Comprehensive Coverage:</strong></p>
-                  <p>Our universal absorbents offer broad coverage for various types of spills, ensuring that you are prepared for different spill scenarios with a single, versatile solution.</p>
-                  <p class="tulisan-popup"><strong>Efficiency:</strong></p>
-                  <p>Streamline your spill management process with our high-performance absorbents, which save time and effort while providing effective and reliable performance.</p>
-                  <p class="tulisan-popup"><strong>Flexibility:</strong></p>
-                  <p>Our universal absorbents adapt to diverse situations, from industrial environments to marine applications, offering a flexible solution for effective spill control.</p>
+              <span class="close" onclick="closePopup('popupoil')">&times;</span>
+              <div class="left-column">
+                <img src="{{ asset('frontend/images/chemicalabsorbentpad.png') }}" alt="Chemical Absorbent Solutions">
+                <h2 class="judul-popup">Chemical Absorbent</h2>
+                <h5 class="motto-popup"><strong>Effectively Manage Chemical Spills with Our Advanced Chemical Absorbent Solutions</strong></h5>
               </div>
+              <div class="right-column text-container">
+                <p class="key-feature"><strong>Key Features:</strong></p>
+                <p class="tulisan-popup"><strong>Rapid Chemical Neutralization:</strong></p>
+                <p>Our absorbent solutions are specially formulated to quickly neutralize and absorb a wide range of hazardous chemicals, including acids, bases, and aggressive substances. This ensures fast and effective cleanup in critical situations.</p>
+                <p class="tulisan-popup"><strong>Versatile Application:</strong></p>
+                <p>Designed for diverse environments, our products are suitable for both marine and industrial settings. They are effective in handling chemical spills on water, in production facilities, warehouses, and other work areas.</p>
+                <p class="tulisan-popup"><strong>Environmental Compliance:</strong></p>
+                <p>Our chemical absorbents help you adhere to strict environmental regulations by managing spills responsibly. They are crafted to support eco-friendly practices and ensure safe disposal of hazardous materials.</p>
+                <p class="tulisan-popup"><strong>Enhanced Safety:</strong></p>
+                <p>By minimizing risks and ensuring quick containment of chemical spills, our products contribute to a safer working environment and reduce potential hazards.</p>
+                <p class="key-feature"><strong>Benefits of Using Our Solutions:</strong></p>
+                <p class="tulisan-popup"><strong>Efficiency:</strong></p>
+                <p>Our solutions streamline the cleanup process, saving time and effort while delivering reliable performance in managing chemical spills.</p>
+                <p class="tulisan-popup"><strong>Flexibility:</strong></p>
+                <p>Our chemical absorbents are versatile, providing effective spill management across various scenarios, from marine environments to industrial sites.</p>
+                <p class="tulisan-popup"><strong>Regulatory Adherence:</strong></p>
+                <p>Our products support compliance with environmental laws and safety standards, promoting responsible and effective waste management practices.</p>
+              </div>
+            </div>
           </div>
-          
         </div>
-    </div>
-          
-          <!-- Product Boxes -->
-          <div class="col-md-4">
-              <div class="box">
-                  <div class="img-box">
-                      <img src="{{ asset('frontend/images/oilabsorbentpad.png') }}" alt="" width="200px" height="200px"/>
-                  </div>
-                  <div class="detail-box">
-                      <h6>Oil Absorbent</h6>
-                      <p>Quickly manage oil spills with our effective absorbent solutions. Designed to absorb oil and repel water, our products are perfect for marine and industrial settings, ensuring clean surfaces and regulatory compliance. Choose our absorbents for fast and efficient cleanup.</p>
-                      <a href="javascript:void(0);" onclick="openPopup('popupoil')">Read More</a>
-                  </div>
+        
+        <div id="popupuniversall" class="popup">
+          <div class="popup-content">
+            <div class="popup-body">
+              <span class="close" onclick="closePopup('popupoil')">&times;</span>
+              <div class="left-column">
+                <img src="{{ asset('frontend/images/universallabsorbentpad.png') }}" alt="Universal Absorbent Solutions">
+                <h2 class="judul-popup">Universal Absorbent</h2>
+                <h5 class="motto-popup"><strong>Versatile Spill Management with Our High-Performance Universal Absorbent Solutions</strong></h5>
               </div>
-          </div>
-          <div class="col-md-4">
-              <div class="box">
-                  <div class="img-box">
-                    <img src="{{ asset('frontend/images/chemicalabsorbentpad.png') }}" alt="" width="200px" height="200px"/>
-                  </div>
-                  <div class="detail-box">
-                      <h6>Chemical Absorbent</h6>
-                      <p>Efficiently manage chemical spills with our high-performance absorbent solutions. Engineered to neutralize and absorb a range of chemicals, our products are well-suited for marine and industrial environments, ensuring clean surfaces and adherence to regulations. Quick and effective cleanup.</p>
-                      <a href="javascript:void(0);" onclick="openPopup('popupchemical')">Read More</a>
-                  </div>
+              <div class="right-column text-container">
+                <p class="key-feature"><strong>Key Features:</strong></p>
+                <p class="tulisan-popup"><strong>Broad Absorption Capability:</strong></p>
+                <p>Our universal absorbents are designed to handle a wide variety of spills, including water-based liquids, oils, and chemicals. This versatility ensures that they are effective in many different environments and situations.</p>
+                <p class="tulisan-popup"><strong>Adaptable for Various Environments:</strong></p>
+                <p>Our products are suitable for use in both industrial and marine settings. Whether dealing with spills in workshops, garages, production facilities, or on water surfaces, they provide reliable and efficient cleanup solutions.</p>
+                <p class="tulisan-popup"><strong>Ease of Use:</strong></p>
+                <p>Our universal absorbents are easy to deploy and manage, making them a practical choice for quick and effective spill response. Their user-friendly design ensures that cleanup is straightforward and efficient.</p>
+                <p class="tulisan-popup"><strong>Environmental Safety:</strong></p>
+                <p>Designed to adhere to environmental regulations, our absorbents support responsible waste management practices. They help minimize environmental impact by efficiently managing spills and facilitating safe disposal.</p>
+                <p class="key-feature"><strong>Benefits of Using Our Solutions:</strong></p>
+                <p class="tulisan-popup"><strong>Comprehensive Coverage:</strong></p>
+                <p>Our universal absorbents offer broad coverage for various types of spills, ensuring that you are prepared for different spill scenarios with a single, versatile solution.</p>
+                <p class="tulisan-popup"><strong>Efficiency:</strong></p>
+                <p>Streamline your spill management process with our high-performance absorbents, which save time and effort while providing effective and reliable performance.</p>
+                <p class="tulisan-popup"><strong>Flexibility:</strong></p>
+                <p>Our universal absorbents adapt to diverse situations, from industrial environments to marine applications, offering a flexible solution for effective spill control.</p>
               </div>
+            </div>
           </div>
-          <div class="col-md-4">
+        </div>
+        
+        <!-- Product Boxes -->
+        <div class="col-md-4">
             <div class="box">
                 <div class="img-box">
-                  <img src="{{ asset('frontend/images/universallabsorbentpad.png') }}" alt="" width="200px" height="200px"/>
+                    <img src="{{ asset('frontend/images/oilabsorbentpad.png') }}" alt="" width="200px" height="200px"/>
                 </div>
                 <div class="detail-box">
-                    <h6>universall Absorbent</h6>
-                    <p>Effectively handle a wide range of spills with our versatile absorbent solutions. Designed to manage water-based liquids, oils, and chemicals, our products are ideal for various environments, including marine and industrial settings. They ensure thorough cleanup and support compliance with regulations.</p>
-                    <a href="javascript:void(0);" onclick="openPopup('popupuniversall')">Read More</a>
+                    <h6>Oil Absorbent</h6>
+                    <p>Quickly manage oil spills with our effective absorbent solutions. Designed to absorb oil and repel water, our products are perfect for marine and industrial settings, ensuring clean surfaces and regulatory compliance. Choose our absorbents for fast and efficient cleanup.</p>
+                    <a href="javascript:void(0);" onclick="openPopup('popupoil')">Read More</a>
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="img-box">
+                  <img src="{{ asset('frontend/images/chemicalabsorbentpad.png') }}" alt="" width="200px" height="200px"/>
+                </div>
+                <div class="detail-box">
+                    <h6>Chemical Absorbent</h6>
+                    <p>Efficiently manage chemical spills with our high-performance absorbent solutions. Engineered to neutralize and absorb a range of chemicals, our products are well-suited for marine and industrial environments, ensuring clean surfaces and adherence to regulations. Quick and effective cleanup.</p>
+                    <a href="javascript:void(0);" onclick="openPopup('popupchemical')">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box">
+              <div class="img-box">
+                <img src="{{ asset('frontend/images/universallabsorbentpad.png') }}" alt="" width="200px" height="200px"/>
+              </div>
+              <div class="detail-box">
+                  <h6>Universal Absorbent</h6>
+                  <p>Effectively handle a wide range of spills with our versatile absorbent solutions. Designed to manage water-based liquids, oils, and chemicals, our products are ideal for various environments, including marine and industrial settings. They ensure thorough cleanup and support compliance with regulations.</p>
+                  <a href="javascript:void(0);" onclick="openPopup('popupuniversall')">Read More</a>
+              </div>
+          </div>
       </div>
-  </div>
-  </section>
+    </div>
+</div>
+</section>
 
   <!-- end purpose section -->
 
@@ -365,114 +354,125 @@
         <div id="brandCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/wilmar.png') }}" alt="Wilmar">
+                    <div class="row justify-content-center">
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/wilmar.png') }}" alt="Wilmar">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Wilmar</h4>
+                                </div>
+                            </div>
                         </div>
-                        <div class="detail-box">
-                            <h4>Wilmar</h4>
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/adhimix.png') }}" alt="Adhimix">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Adhimix</h4>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/adhimix.png') }}" alt="Adhimix">
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/inti_karya_jaya.png') }}" alt="Inti Karya Jaya">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Inti Karya Jaya</h4>
+                                </div>
+                            </div>
                         </div>
-                        <div class="detail-box">
-                            <h4>Adhimix</h4>
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/kag.jpg') }}" alt="KAG">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>KAG</h4>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/inti_karya_jaya.png') }}" alt="Inti Karya Jaya">
-                        </div>
-                        <div class="detail-box">
-                            <h4>Inti Karya Jaya</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/kag.jpg') }}" alt="KAG">
-                        </div>
-                        <div class="detail-box">
-                            <h4>KAG</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/nestle.png') }}" alt="Nestle">
-                        </div>
-                        <div class="detail-box">
-                            <h4>Nestle</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/pelindo.png') }}" alt="Pelindo">
-                        </div>
-                        <div class="detail-box">
-                            <h4>Pelindo</h4>
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/nestle.png') }}" alt="Nestle">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Nestle</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/pertamina.png') }}" alt="Pertamina">
+                    <div class="row justify-content-center">
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/pelindo.png') }}" alt="Pelindo">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Pelindo</h4>
+                                </div>
+                            </div>
                         </div>
-                        <div class="detail-box">
-                            <h4>Pertamina</h4>
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/pertamina.png') }}" alt="Pertamina">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Pertamina</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/ricon_masistan.png') }}" alt="Ricon Masistan">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Ricon Masistan</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/sucofindo.png') }}" alt="Sucofindo">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Sucofindo</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ asset('frontend/images/surya_jaya_perkasa.png') }}" alt="Surya Jaya Perkasa">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>Surya Jaya Perkasa</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/ricon_masistan.png') }}" alt="Ricon Masistan">
-                        </div>
-                        <div class="detail-box">
-                            <h4>Ricon Masistan</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/sucofindo.png') }}" alt="Sucofindo">
-                        </div>
-                        <div class="detail-box">
-                            <h4>Sucofindo</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="{{ asset('frontend/images/surya_jaya_perkasa.png') }}" alt="Surya Jaya Perkasa">
-                        </div>
-                        <div class="detail-box">
-                            <h4>Surya Jaya Perkasa</h4>
-                        </div>
-                    </div>
-                </div>
+                <!-- Tambahkan item lainnya jika diperlukan -->
             </div>
         </div>
     </div>
 </section>
 
 
+
+
   <!-- end client section -->
 
-  <!-- contact section -->
+  {{-- <!-- contact section -->
 
   <section class="contact_section layout_padding">
     <div class="contact_bg_box">
@@ -514,123 +514,10 @@
     </div>
   </section>
 
-  <!-- end contact section -->
+  <!-- end contact section --> --}}
 
-  <!-- info section -->
-  <section class="info_section ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_logo">
-            <img src="{{ asset('frontend/images/logo/png') }}" alt="">
-              <span>
-                SRA Safety | Absorbent
-              </span>
-            </a>
-            <p>
-              dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt r
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_links">
-            <h5>
-              Useful Link
-            </h5>
-            <ul>
-              <li>
-                <a href="">
-                  dolor sit amet, consectetur
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  magna aliqua. Ut enim ad
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  minim veniam,
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  quisdotempor incididunt r
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_info">
-            <h5>
-              Contact Us
-            </h5>
-          </div>
-          <div class="info_contact">
-            <a href="" class="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Lorem ipsum dolor sit amet,
-              </span>
-            </a>
-            <a href="" class="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Call : +01 1234567890
-              </span>
-            </a>
-            <a href="" class="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                demo@gmail.com
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_form ">
-            <h5>
-              Newsletter
-            </h5>
-            <form action="#">
-              <input type="email" placeholder="Enter your email">
-              <button>
-                Subscribe
-              </button>
-            </form>
-            <div class="social_box">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-youtube" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info_section -->
-
-
-
-
-  <!-- footer section -->
-  <footer class="container-fluid footer_section">
-    <p>
-      &copy; <span id="currentYear"></span> SRA Safety | Absorbent
-    </p>
-  </footer>
-  <!-- footer section -->
+  @include('frontend.info')
+  @include('frontend.footer')
 
   <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
   <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>

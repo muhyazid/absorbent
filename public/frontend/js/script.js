@@ -38,31 +38,62 @@ document.onclick = function(event) {
 
 
 // pop up barang
+// Function to open popup
 function openPopup(popupId) {
-    document.getElementById(popupId).style.display = "block";
+    var popup = document.getElementById(popupId);
+    popup.style.display = "flex";
     document.body.classList.add("no-scroll");
-}
-
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = "none";
+  }
+  
+  // Function to close popup
+  function closePopup(popupId) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = "none";
     document.body.classList.remove("no-scroll");
-}
-
-window.onclick = function(event) {
+  }
+  
+  // Close popup when clicking outside
+  window.onclick = function(event) {
     var popups = document.getElementsByClassName('popup');
     for (var i = 0; i < popups.length; i++) {
-        if (event.target == popups[i]) {
-            popups[i].style.display = "none";
-            document.body.classList.remove("no-scroll");
-        }
+      if (event.target === popups[i]) {
+        popups[i].style.display = "none";
+        document.body.classList.remove("no-scroll");
+      }
     }
-}
+  }
+  
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const items = Array.from(carouselTrack.children);
+    
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      carouselTrack.appendChild(clone);
+    });
+  });
+
+  
 
 
-    $(document).ready(function() {
-        $('#brandCarousel').carousel({
-            interval: 3000,
-            pause: false
+  // scrolling agar smooth
+  document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for navigation tabs
+    const navLinks = document.querySelectorAll('.nav-tabs .nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(link.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 
+    // Load More functionality
+    document.querySelector('.load-more button').addEventListener('click', function() {
+        // Logic to load more products goes here
+    });
+});
+
+  
