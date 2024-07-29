@@ -43,11 +43,34 @@
               <li class="nav-item">
                 <a class="nav-link" href="/aboutus">About us</a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="/login">
                   <i class="fa fa-user" style="margin-right: 8px;"></i> Login
                 </a>
-              </li>
+              </li> --}}
+              @if(Auth::check())
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user" style="margin-right: 8px;"></i> {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">
+                                <i class="fa fa-user" style="margin-right: 8px;"></i> Login
+                            </a>
+                        </li>
+                        @endif
             </ul>
           </div>
         </nav>
