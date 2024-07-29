@@ -1,5 +1,5 @@
-<!-- resources/views/dashboard/index.blade.php -->
 @extends('backend.layouts.index')
+{{-- @extends('backend.layouts.index') --}}
 
 @section('content-header', 'Dashboard')
 

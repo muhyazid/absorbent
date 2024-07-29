@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductFrontendController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Backend\UserController;
 
 
 
@@ -44,7 +45,7 @@ Route::resource('products', ProductController::class);
 Route::get('product/export-pdf', [ProductController::class, 'exportPdf'])->name('products.export-pdf');
 Route::get('/backend/about', [AboutController::class, 'index'])->name('backend.about.index');
 Route::get('backend/testimonials', [TestimonialController::class, 'index'])->name('backend.testimonials.index');
-
+Route::get('/backend/users', [UserController::class, 'index'])->name('backend.users.index');
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
