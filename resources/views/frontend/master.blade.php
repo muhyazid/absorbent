@@ -25,6 +25,7 @@
   <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -519,10 +520,52 @@
   @include('frontend.info')
   @include('frontend.footer')
 
+
+  @if(session('success'))
+<script>
+    $(document).ready(function() {
+        Swal.fire({
+            title: 'Success!',
+            text: "{{ session('success') }}",
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    });
+</script>
+@endif
+
+
   <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
   <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
   <script src="{{ asset('frontend/js/custom.js') }}"></script>
   <script src="{{ asset('frontend/js/script.js') }}"></script> <!-- Link ke file JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+  @if(session('success'))
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                title: 'Success!',
+                text: "{{ session('success') }}",
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+    @endif
+
+    @if(session('login_success'))
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                title: 'Welcome!',
+                text: "{{ session('login_success') }}",
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+    @endif
 </body>
 
 </html>

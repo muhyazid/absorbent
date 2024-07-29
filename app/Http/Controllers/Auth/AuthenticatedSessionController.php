@@ -30,10 +30,13 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $user = Auth::user();
+
         if ($user->usertype == 'admin') {
+            session()->flash('login_success', 'Welcome,' . $user->name . '!');
             return redirect()->intended('backend/dashboard');
         }
         if ($user ->usertype == 'user') {
+            session()->flash('login_success', 'Welcome, ' . $user->name . '!');
             return redirect('/');
         }
         return redirect()->intended('/');
