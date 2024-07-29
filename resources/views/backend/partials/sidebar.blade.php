@@ -13,7 +13,11 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                @if(Auth::check())
+                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                @else
+                    <a href="#" class="d-block">Guest</a>
+                @endif
             </div>
         </div>
 
