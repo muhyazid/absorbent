@@ -37,6 +37,9 @@
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    {{-- tambahan sakti --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> 
+    {{-- end of tambhaan sakti --}}
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -129,6 +132,36 @@
     <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+
+    {{-- tambahan sakti --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+    @if(session('success'))
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                title: 'Success!',
+                text: "{{ session('success') }}",
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+    @endif
+
+    @if(session('login_success'))
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                title: 'Welcome!',
+                text: "{{ session('login_success') }}",
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+    @endif
+    {{-- end of tambahan sakti --}}
 </body>
 
 </html>
