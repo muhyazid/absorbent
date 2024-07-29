@@ -13,7 +13,7 @@
                 <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -29,25 +29,23 @@
                     </a>
                 </li>
                 <!-- Produk -->
-                <li class="nav-item {{ Request::routeIs('products.*') ? 'menu-open' : '' }}">
+                <li class="nav-item {{ Request::routeIs('backend.products.index') ? 'menu-open' : '' }}">
                     <a href="{{ route('products.index') }}"
-                        class="nav-link {{ Request::routeIs('products.*') ? 'active' : '' }}">
+                        class="nav-link {{ Request::routeIs('backend.products.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-box"></i>
                         <p>Products</p>
                     </a>
                 </li>
                 <!-- Testimoni -->
                 {{-- <li class="nav-item {{ Request::routeIs('backend.testimonials.index') ? 'menu-open' : '' }}">
-                        <a href="{{ route('backend.testimonials.index') }}"
-                            class="nav-link {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
+                        <a href="{{ route('backend.testimonials.index') }}" class="nav-link {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>Testimoni</p>
                         </a>
                     </li> --}}
                 <!-- About -->
                 {{-- <li class="nav-item {{ Request::routeIs('backend.about.index') ? 'menu-open' : '' }}">
-                        <a href="{{ route('backend.about.index') }}"
-                            class="nav-link {{ Request::routeIs('backend.about.index') ? 'active' : '' }}">
+                        <a href="{{ route('backend.about.index') }}" class="nav-link {{ Request::routeIs('backend.about.index') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>About</p>
                         </a>

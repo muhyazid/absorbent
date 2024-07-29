@@ -27,6 +27,9 @@
                         {{-- <td>{{ $user->password }}</td> --}}
                         {{-- <td>Password diset</td> <!-- Menampilkan pesan teks -->
                         <!-- <td>{{ str_repeat('*', 8) }}</td> Menampilkan password dalam bentuk masked --> --}}
+                        <td>
+                            <a href="{{ route('backend.users.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
