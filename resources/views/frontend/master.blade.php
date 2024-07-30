@@ -34,7 +34,7 @@
       <div class="hero_bg_box">
         <div class="img-box">
           {{-- background gambar --}}
-          <img src="{{ asset('frontend/images/oil.jpeg') }}" alt="" style="width: 50%; height: auto;">
+          <img src="{{ asset('frontend/images/kilangminyak.png') }}" alt="" style="width: 50%; height: auto; " >
         </div>
       </div>
 
