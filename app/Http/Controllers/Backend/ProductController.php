@@ -31,7 +31,7 @@ class ProductController extends Controller
             'kategori_id' => 'nullable|exists:kategori_produks,id', // diganti nullable bukan required
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'description' => 'required|string',
-            'size' => 'required|string',
+            'size' => 'required|integer',
         ]);
 
         $product = new Product;
@@ -71,7 +71,7 @@ class ProductController extends Controller
             'kategori_id' => 'nullable|exists:kategori_produks,id', // ini saya ganti nullable bukan required
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'description' => 'required|string',
-            'size' => 'required|string',
+            'size' => 'required|integer',
         ]);
 
         $product->name = $request->name;
