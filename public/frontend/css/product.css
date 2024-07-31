@@ -1,8 +1,15 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #f5f5f5;
+}
+
+.judul-popup {
+    font-size: 1rem; /* Ukuran font lebih kecil */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .header-judul {
@@ -27,7 +34,7 @@ body {
 
 .nav-tabs {
     margin-bottom: 0;
-    border-bottom: 2px ;
+    border-bottom: 2px;
     display: flex;
     justify-content: center;
     background-color: #fff;

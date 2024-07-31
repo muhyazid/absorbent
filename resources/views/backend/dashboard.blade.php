@@ -1,5 +1,4 @@
 @extends('backend.layouts.index')
-{{-- @extends('backend.layouts.index') --}}
 
 @section('content-header', 'Dashboard')
 

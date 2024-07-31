@@ -28,7 +28,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'kategori_id' => 'required|exists:kategori_produks,id',
+            'kategori_id' => 'nullable|exists:kategori_produks,id', // diganti nullable bukan required
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'description' => 'required|string',
             'size' => 'required|string',
@@ -36,7 +36,7 @@ class ProductController extends Controller
 
         $product = new Product;
         $product->name = $request->name;
-        $product->kategori_id = $request->kategori_id;
+        $product->kategori_id = $request->kategori_id; // nullable
         $product->description = $request->description;
         $product->size = $request->size;
 
@@ -68,7 +68,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'kategori_id' => 'required|exists:kategori_produks,id',
+            'kategori_id' => 'nullable|exists:kategori_produks,id', // ini saya ganti nullable bukan required
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'description' => 'required|string',
             'size' => 'required|string',

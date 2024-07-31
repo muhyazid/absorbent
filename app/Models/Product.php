@@ -9,8 +9,6 @@ class Product extends Model
 {
     use HasFactory;
 
-    // protected $table = "Product";
-    // protected $primaryKey = "id"; 
     protected $fillable = [
         'product_number',
         'name',
@@ -22,7 +20,7 @@ class Product extends Model
 
     public function kategori()
     {
-        return $this->belongsTo(KategoriProduk::class, 'kategori_id');
+        return $this->belongsTo(KategoriProduk::class, 'kategori_id')->withDefault();
     }
 
 }

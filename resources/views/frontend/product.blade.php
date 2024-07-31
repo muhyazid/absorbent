@@ -42,13 +42,14 @@
             <ul class="nav nav-tabs">
                 <!-- Tab untuk semua produk -->
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('products') ? 'active' : '' }}"
+                    <a class="nav-link {{ request()->is('frontend/products') ? 'active' : '' }}"
                         href="{{ route('frontend.products.index') }}">All Products</a>
                 </li>
                 <!-- Looping untuk membuat tab navigasi berdasarkan kategori -->
                 @foreach ($categories as $category)
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('products/category/' . $category->id) ? 'active' : '' }}"
+                        {{-- ini juga untuk memastikan produk tanpa kategori hanya muncul di tab "All Products" dengan menggunakan kondisi di dalam looping produk --}}
+                        <a class="nav-link {{ request()->is('frontend/products/category/' . $category->id) ? 'active' : '' }}"
                             href="{{ route('frontend.products.category', $category->id) }}">{{ $category->kategori }}</a>
                     </li>
                 @endforeach
@@ -68,18 +69,26 @@
                                     <!-- Menampilkan deskripsi produk -->
                                     <p>{{ $product->description }}</p>
                                     <!-- Link untuk membuka pop-up -->
-                                    <a href="javascript:void(0);" onclick="openPopup('popup-{{ $product->id }}')">Read
+                                    <a href="javascript:void(0);"
+                                        onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', '{{ $product->description }}')">Read
                                         More</a>
                                 </div>
                             </div>
                             <!-- Pop-up untuk setiap produk -->
                             <div id="popup-{{ $product->id }}" class="popup">
                                 <div class="popup-content">
-                                    <span class="close"
-                                        onclick="closePopup('popup-{{ $product->id }}')">&times;</span>
-                                    <h5>{{ $product->name }}</h5>
-                                    <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}">
-                                    <p>{{ $product->description }}</p>
+                                    <div class="popup-body">
+                                        <span class="close"
+                                            onclick="closePopup('popup-{{ $product->id }}')">&times;</span>
+                                        <div class="left-column">
+                                            <img src="" alt="" id="popup-image-{{ $product->id }}">
+                                            <h2 class="judul-popup" id="popup-title-{{ $product->id }}"></h2>
+                                        </div>
+                                        <div class="right-column text-container">
+                                            <p class="key-feature"><strong>Description:</strong></p>
+                                            <p class="tulisan-popup" id="popup-description-{{ $product->id }}"></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -99,6 +108,25 @@
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
     <script src="{{ asset('frontend/js/script.js') }}"></script> <!-- Link ke file JavaScript -->
 
+    <script>
+        function openPopup(id, name, image, description) {
+            var popup = document.getElementById('popup-' + id);
+            document.getElementById('popup-title-' + id).innerText = name;
+            document.getElementById('popup-image-' + id).src = image;
+            document.getElementById('popup-image-' + id).alt = name;
+            document.getElementById('popup-description-' + id).innerText = description;
+            popup.style.display = "flex";
+        }
+
+        window.onclick = function(event) {
+            var popups = document.getElementsByClassName('popup');
+            for (var i = 0; i < popups.length; i++) {
+                if (event.target == popups[i]) {
+                    popups[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

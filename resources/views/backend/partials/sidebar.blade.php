@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        <img src="{{ asset('dist/img/sra-logo.png') }}" alt="SRA Logo" class="brand-image brand-text font-weight-light"
-            style="opacity: .8">
-        <span class="brand-text font-weight-light">SRA</span>
+        <img src="{{ asset('dist/img/CERRO NEW COLOR - Copy.png') }}" alt="SRA Logo"
+            class="brand-image brand-text font-weight-light" style="opacity: .8">
+        <span class="brand-text font-weight-light">ABSORBENT</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -21,7 +21,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <!-- Dashboard -->
-                <li class="nav-item {{ Request::routeIs('backend.dashboard') ? 'menu-open' : '' }}">
+                <li class="nav-item">
                     <a href="{{ route('backend.dashboard') }}"
                         class="nav-link {{ Request::routeIs('backend.dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -29,29 +29,29 @@
                     </a>
                 </li>
                 <!-- Produk -->
-                <li class="nav-item {{ Request::routeIs('backend.products.index') ? 'menu-open' : '' }}">
+                <li class="nav-item">
                     <a href="{{ route('products.index') }}"
-                        class="nav-link {{ Request::routeIs('backend.products.index') ? 'active' : '' }}">
+                        class="nav-link {{ Request::routeIs('products.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-box"></i>
                         <p>Products</p>
                     </a>
                 </li>
                 <!-- Testimoni -->
-                {{-- <li class="nav-item {{ Request::routeIs('backend.testimonials.index') ? 'menu-open' : '' }}">
+                {{-- <li class="nav-item">
                         <a href="{{ route('backend.testimonials.index') }}" class="nav-link {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>Testimoni</p>
                         </a>
                     </li> --}}
                 <!-- About -->
-                {{-- <li class="nav-item {{ Request::routeIs('backend.about.index') ? 'menu-open' : '' }}">
+                {{-- <li class="nav-item">
                         <a href="{{ route('backend.about.index') }}" class="nav-link {{ Request::routeIs('backend.about.index') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>About</p>
                         </a>
                     </li> --}}
                 <!-- Data User -->
-                <li class="nav-item {{ Request::routeIs('backend.users.index') ? 'menu-open' : '' }}">
+                <li class="nav-item">
                     <a href="{{ route('backend.users.index') }}"
                         class="nav-link {{ Request::routeIs('backend.users.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-chart-pie"></i>

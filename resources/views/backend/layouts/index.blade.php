@@ -38,7 +38,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     {{-- tambahan sakti --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     {{-- end of tambhaan sakti --}}
 </head>
 
@@ -47,8 +47,8 @@
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
             <!-- Logo animasi saat preloader -->
-            <img class="animation__shake" src="{{ asset('dist/img/sra-logo.png') }}" alt="SRA-Logo" height="100"
-                width="100">
+            <img class="animation__shake" src="{{ asset('dist/img/CERRO NEW COLOR - Copy.png') }}" alt="SRA-Logo"
+                height="100" width="100">
         </div>
 
         <!-- Menyertakan file partial navbar -->
@@ -136,30 +136,30 @@
     {{-- tambahan sakti --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
-    @if(session('success'))
-    <script>
-        $(document).ready(function() {
-            Swal.fire({
-                title: 'Success!',
-                text: "{{ session('success') }}",
-                icon: 'success',
-                confirmButtonText: 'OK'
+    @if (session('success'))
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    title: 'Success!',
+                    text: "{{ session('success') }}",
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
             });
-        });
-    </script>
+        </script>
     @endif
 
-    @if(session('login_success'))
-    <script>
-        $(document).ready(function() {
-            Swal.fire({
-                title: 'Welcome!',
-                text: "{{ session('login_success') }}",
-                icon: 'success',
-                confirmButtonText: 'OK'
+    @if (session('login_success'))
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    title: 'Welcome!',
+                    text: "{{ session('login_success') }}",
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
             });
-        });
-    </script>
+        </script>
     @endif
     {{-- end of tambahan sakti --}}
 </body>
