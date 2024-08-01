@@ -65,7 +65,8 @@
                                         <div class="right-column text-container">
                                             <p class="key-feature"><strong>Description:</strong></p>
                                             <p class="tulisan-popup" id="popup-description-{{ $product->id }}"></p>
-                                            @if ($product->kategori && $product->kategori->kategori == 'Custom Spill Kit')
+                                            <!-- Tampilkan elemen khusus untuk 'Custom Spill Kit' -->
+                                            <div id="custom-elements-{{ $product->id }}" style="display: none;">
                                                 <div class="form-group">
                                                     <label
                                                         for="product-select-{{ $product->id }}"><strong>Produk:</strong></label>
@@ -86,9 +87,13 @@
                                                 </div>
                                                 <button class="btn btn-primary"
                                                     onclick="addProduct({{ $product->id }})">Tambah</button>
+                                                <button class="btn btn-danger"
+                                                    onclick="removeLastProduct({{ $product->id }})">Hapus</button>
                                                 <textarea class="form-control mt-2" id="product-added-{{ $product->id }}" readonly></textarea>
-                                            @endif
-
+                                                <!-- Button Pesan -->
+                                                <button class="btn btn-success mt-2"
+                                                    onclick="orderProduct({{ $product->id }})">Pesan</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
