@@ -20,7 +20,7 @@ class ProductController extends Controller
     {
          $kategories= KategoriProduk::all();
         //$categories = KategoriProduk::all();
-        
+
         return view('backend.Products.create', compact('kategories'));
     }
 
@@ -59,7 +59,7 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-         
+
         $kategori = KategoriProduk::all();
         return view('backend.Products.edit', compact('product', 'kategori'));
     }

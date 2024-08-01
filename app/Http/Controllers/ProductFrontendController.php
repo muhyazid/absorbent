@@ -52,6 +52,11 @@ class ProductFrontendController extends Controller
         $products = Product::all();
         return response()->json($products);
     }
+    public function show($id)
+{
+    $product = Product::with('kategori')->find($id);
+    return view('product.show', compact('product'));
+}
 
 
 }
