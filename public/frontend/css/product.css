@@ -5,6 +5,41 @@ body {
     background-color: #f5f5f5;
 }
 
+/* tambahan yazid  */
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 120px;
+}
+
+.input-group button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.input-group input {
+    text-align: center;
+    padding: 0;
+    height: 30px;
+    width: 60px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    width: 120px;
+    margin-right: 10px;
+    text-align: left;
+}
+/* end yazid  */
+
 .judul-popup {
     font-size: 1rem; /* Ukuran font lebih kecil */
     font-weight: bold;
@@ -147,6 +182,10 @@ body {
     text-align: center;
     background-color: #fff;
     margin-bottom: 20px;
+    display: flex; /* dari yazid  */
+    flex-direction: column; /*  dari yazid = Mengatur elemen dalam card agar ditumpuk */
+    justify-content: space-between; /*  dari yazid = Memberikan jarak antar elemen */
+    height: 530px; /* dari yazid*/
 }
 
 .product-item img {

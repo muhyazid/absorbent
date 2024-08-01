@@ -29,4 +29,29 @@ class ProductFrontendController extends Controller
         // Kirim data ke view frontend.product
         return view('frontend.product', compact('categories', 'products'));
     }
+
+    // Fungsi untuk mendapatkan produk berdasarkan kategori dalam format JSON
+    // public function getProductsByCategory($id)
+    // {
+    //     $products = Product::where('kategori_id', $id)->get();
+    //     // Ambil semua produk untuk combo box
+    //     // $products = Product::all();
+    //     return response()->json($products);
+    // }
+
+    // method untuk mengambil produk khusus untuk custom spill kit.
+    public function getCustomSpillKitProducts()
+    {
+        //$products = Product::getCustomSpillKitProducts();
+         $products = Product::where('kategori_id', 8)->get(); // Ambil produk dengan kategori ID 8
+        return response()->json($products);
+    }
+
+    public function getAllProducts()
+    {
+        $products = Product::all();
+        return response()->json($products);
+    }
+
+
 }

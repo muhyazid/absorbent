@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\TestimonialController;
-use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\KategoriController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -40,6 +40,14 @@ Route::get('/products', [ProductFrontendController::class, 'index'])->name('fron
 // Route untuk halaman produk berdasarkan kategori : by yazid
 Route::get('frontend/products/category/{id}', [ProductFrontendController::class, 'category'])->name('frontend.products.category');
 
+// Route untuk mendapatkan produk berdasarkan kategori dalam format JSON
+Route::get('/frontend/products/get-by-category/{id}', [ProductFrontendController::class, 'getProductsByCategory']);
+
+Route::get('/frontend/products/custom-spill-kit-products', [ProductFrontendController::class, 'getCustomSpillKitProducts']);
+
+Route::get('/frontend/products/all', [ProductFrontendController::class, 'getAllProducts']);
+
+
 // Route Backend
 Route::middleware(['auth', 'admin'])->prefix('backend')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
@@ -50,6 +58,9 @@ Route::middleware(['auth', 'admin'])->prefix('backend')->group(function () {
     Route::get('/backend/users/{user}/edit', [UserController::class, 'edit'])->name('backend.users.edit');
     // Rute untuk update user
     Route::patch('/backend/users/{user}', [UserController::class, 'update'])->name('backend.users.update');
+    Route::get('/backend/about', [KategoriController::class, 'index'])->name('backend.about.index');
+    // Rute untuk Kategori Produk
+    Route::resource('kategori_produks', KategoriController::class);
 });
 
 

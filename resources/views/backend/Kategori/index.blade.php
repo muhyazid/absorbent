@@ -1,11 +1,10 @@
 @extends('backend.layouts.index')
 
-@section('content-header', 'Produk')
+@section('content-header', 'Kategori Produk')
 
 @section('content')
     <div class="container">
-        <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add New Product</a>
-        <a href="{{ route('products.export-pdf') }}" class="btn btn-danger mb-3">Export PDF</a>
+        <a href="{{ route('kategori_produks.create') }}" class="btn btn-primary mb-3">Tambah Kategori Produk</a>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">{{ $message }}</div>
         @endif
@@ -14,30 +13,19 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Produk</th>
-                    <th>Kategori</th>
-                    <th>Gambar</th>
-                    <th>Deskripsi</th>
-                    <th>Ukuran</th>
+                    <th>Kategori Produk</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($products as $index => $product)
+                @foreach ($kategori_produks as $index => $kategori_produk)
                     <tr>
-                        <td>{{ ($products->currentPage() - 1) * $products->perPage() + $index + 1 }}</td>
-                        <td>{{ $product->name }}</td>
-                        <td>{{ $product->kategori ? $product->kategori->kategori : 'Tidak ada kategori' }}</td>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $kategori_produk->kategori }}</td>
                         <td>
-                            @if ($product->image)
-                                <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" width="50">
-                            @endif
-                        </td>
-                        <td>{{ $product->description }}</td>
-                        <td>{{ $product->size }}</td>
-                        <td>
-                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST"
+                            <a href="{{ route('kategori_produks.edit', $kategori_produk->id) }}"
+                                class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{{ route('kategori_produks.destroy', $kategori_produk->id) }}" method="POST"
                                 style="display:inline;" class="form-delete">
                                 @csrf
                                 @method('DELETE')
@@ -48,9 +36,6 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="d-flex justify-content-center">
-            {{ $products->links('pagination::bootstrap-5') }}
-        </div>
     </div>
 
     @if (session('success'))

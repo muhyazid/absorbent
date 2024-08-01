@@ -36,18 +36,19 @@
                         <p>Products</p>
                     </a>
                 </li>
+                <!-- Kategori Produk -->
+                <li class="nav-item">
+                    <a href="{{ route('backend.about.index') }}"
+                        class="nav-link {{ Request::routeIs('backend.about.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>Kategori Produk</p>
+                    </a>
+                </li>
                 <!-- Testimoni -->
                 {{-- <li class="nav-item">
                         <a href="{{ route('backend.testimonials.index') }}" class="nav-link {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>Testimoni</p>
-                        </a>
-                    </li> --}}
-                <!-- About -->
-                {{-- <li class="nav-item">
-                        <a href="{{ route('backend.about.index') }}" class="nav-link {{ Request::routeIs('backend.about.index') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-chart-pie"></i>
-                            <p>About</p>
                         </a>
                     </li> --}}
                 <!-- Data User -->
@@ -58,6 +59,7 @@
                         <p>Data User</p>
                     </a>
                 </li>
+
                 {{-- Logout --}}
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link"
