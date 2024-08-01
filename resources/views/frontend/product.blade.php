@@ -46,12 +46,11 @@
                         @foreach ($products as $product)
                             <div class="col-md-3">
                                 <div class="product-item">
-                                    <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}">
+                                    <!-- Memindahkan onClick ke elemen gambar -->
+                                    <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
+                                        onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', '{{ $product->description }}', '{{ $product->kategori->kategori }}')">
                                     <h5>{{ $product->name }}</h5>
                                     <p>{{ substr($product->description, 0, 50) }}</p>
-                                    <a href="javascript:void(0);"
-                                        onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', '{{ $product->description }}', '{{ $product->kategori_id }}')">Read
-                                        More</a>
                                 </div>
                             </div>
                             <div id="popup-{{ $product->id }}" class="popup">
@@ -66,23 +65,35 @@
                                         <div class="right-column text-container">
                                             <p class="key-feature"><strong>Description:</strong></p>
                                             <p class="tulisan-popup" id="popup-description-{{ $product->id }}"></p>
-                                            @if ($product->kategori && $product->kategori->kategori == 'Custom Spill Kit')
-    <div class="form-group">
-        <label for="product-select-{{ $product->id }}"><strong>Produk:</strong></label>
-        <select id="product-select-{{ $product->id }}"></select>
-    </div>
-    <div class="form-group">
-        <label for="product-quantity-{{ $product->id }}"><strong>Jumlah:</strong></label>
-        <div class="input-group">
-            <button class="btn btn-outline-secondary" type="button" onclick="decreaseValue({{ $product->id }})">-</button>
-            <input type="number" class="form-control" id="product-quantity-{{ $product->id }}" value="0" min="0">
-            <button class="btn btn-outline-secondary" type="button" onclick="increaseValue({{ $product->id }})">+</button>
-        </div>
-    </div>
-    <button class="btn btn-primary" onclick="addProduct({{ $product->id }})">Tambah</button>
-    <textarea class="form-control mt-2" id="product-added-{{ $product->id }}" readonly></textarea>
-@endif
-
+                                            <!-- Tampilkan elemen khusus untuk 'Custom Spill Kit' -->
+                                            <div id="custom-elements-{{ $product->id }}" style="display: none;">
+                                                <div class="form-group">
+                                                    <label
+                                                        for="product-select-{{ $product->id }}"><strong>Produk:</strong></label>
+                                                    <select id="product-select-{{ $product->id }}"></select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label
+                                                        for="product-quantity-{{ $product->id }}"><strong>Jumlah:</strong></label>
+                                                    <div class="input-group">
+                                                        <button class="btn btn-outline-secondary" type="button"
+                                                            onclick="decreaseValue({{ $product->id }})">-</button>
+                                                        <input type="number" class="form-control"
+                                                            id="product-quantity-{{ $product->id }}" value="0"
+                                                            min="0">
+                                                        <button class="btn btn-outline-secondary" type="button"
+                                                            onclick="increaseValue({{ $product->id }})">+</button>
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-primary"
+                                                    onclick="addProduct({{ $product->id }})">Tambah</button>
+                                                <button class="btn btn-danger"
+                                                    onclick="removeLastProduct({{ $product->id }})">Hapus</button>
+                                                <textarea class="form-control mt-2" id="product-added-{{ $product->id }}" readonly></textarea>
+                                                <!-- Button Pesan -->
+                                                <button class="btn btn-success mt-2"
+                                                    onclick="orderProduct({{ $product->id }})">Pesan</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -92,12 +103,12 @@
                 </div>
             </div>
         </div>
+
         <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
         <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
         <script src="{{ asset('frontend/js/custom.js') }}"></script>
         <script src="{{ asset('frontend/js/script.js') }}"></script>
         <script src="{{ asset('frontend/js/popupproduct.js') }}"></script>
-
 
         @include('frontend.info')
         @include('frontend.footer')
