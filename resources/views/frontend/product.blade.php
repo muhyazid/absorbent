@@ -19,7 +19,7 @@
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('frontend/css/product.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('frontend/css/order.css') }}">
 </head>
 
 <body>
@@ -91,17 +91,51 @@
                                                     onclick="removeLastProduct({{ $product->id }})">Hapus</button>
                                                 <textarea class="form-control mt-2" id="product-added-{{ $product->id }}" readonly></textarea>
                                                 <!-- Button Pesan -->
-                                                <button class="btn btn-success mt-2"
-                                                    onclick="orderProduct({{ $product->id }})">Pesan</button>
+                                                <button id="orderButton-{{ $product->id }}" class="btn btn-success mt-2" onclick="orderProduct({{ $product->id }})">Pesan</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         @endforeach
                     </div>
                 </div>
             </div>
+            <!-- Popup Order HTML -->
+<div id="orderPopup" class="popuporder">
+    <div class="popup-contentorder">
+        <span class="close" onclick="closeOrderPopup()">&times;</span>
+        <form id="orderForm">
+            <div class="formorder-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="formorder-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="formorder-group">
+                <label for="company">Nama Perusahaan:</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+            <div class="formorder-group">
+                <label for="phone">No Tlp:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="formorder-group">
+                <label for="address">Alamat:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="formorder-group">
+                <label for="items">Barang:</label>
+                <textarea id="items" name="items" readonly></textarea>
+            </div>
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+</div>
+
         </div>
 
         <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
@@ -109,6 +143,7 @@
         <script src="{{ asset('frontend/js/custom.js') }}"></script>
         <script src="{{ asset('frontend/js/script.js') }}"></script>
         <script src="{{ asset('frontend/js/popupproduct.js') }}"></script>
+        <script src="{{ asset('frontend/js/order.js') }}"></script>
 
         @include('frontend.info')
         @include('frontend.footer')
