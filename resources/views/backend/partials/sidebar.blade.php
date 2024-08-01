@@ -1,19 +1,20 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{ route('backend.dashboard') }}" class="brand-link">
         <img src="{{ asset('dist/img/CERRO NEW COLOR - Copy.png') }}" alt="SRA Logo"
-            class="brand-image brand-text font-weight-light" style="opacity: .8">
+            class="brand-image brand-text font-weight-light" style="opacity: .8 ">
         <span class="brand-text font-weight-light">ABSORBENT</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
+            {{-- <div class="image">
                 <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+            </div> --}}
+            <div class="info" style="text-align: center; width: 100%;">
+                <a href="{{ route('backend.dashboard') }}" class="d-block "style="font-size: 1.2rem;">Halo,
+                    {{ Auth::user()->name }}</a>
             </div>
         </div>
         <!-- Sidebar Menu -->

@@ -1142,3 +1142,24 @@ a:focus {
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
+
+/* css login */
+.relative {
+    position: relative;
+}
+
+.field-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#password,
+#password_confirmation {
+    padding-right: 2.5rem; /* Memberikan ruang untuk ikon di dalam input */
+}
+
+/* css login regist end */

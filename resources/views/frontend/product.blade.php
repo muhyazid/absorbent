@@ -9,25 +9,29 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
+    <!-- Menetapkan favicon untuk tab browser -->
     <link rel="shortcut icon" href="{{ asset('frontend/images/logoaja.png') }}" type="image/x-icon">
 
     <title>CERRO | Absorbent Product</title>
 
+    <!-- Mengimpor stylesheet CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/bootstrap.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap"
         rel="stylesheet" />
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('frontend/css/product.css') }}">
-
 </head>
 
 <body>
+    <!-- Menyertakan header frontend -->
     @include('frontend.header')
 
     <div class="content-container">
         <div class="container">
-            <ul class="nav nav-tabs">
+            <!-- Navigasi tab untuk kategori produk -->
+            {{-- berfungsi untuk menampilkan navigasi dengan kategori produk --}}
+            <ul class="nav nav-tabs ">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('frontend/products') ? 'active' : '' }}"
                         href="{{ route('frontend.products.index') }}">All Products</a>
@@ -43,19 +47,22 @@
             <div class="product-container">
                 <div class="product-grid">
                     <div class="row">
+                        <!-- Loop melalui semua produk untuk menampilkan item produk -->
                         @foreach ($products as $product)
                             <div class="col-md-3">
                                 <div class="product-item">
-                                    <!-- Memindahkan onClick ke elemen gambar -->
+                                    <!-- Memindahkan event onClick ke elemen gambar -->
                                     <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
                                         onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', '{{ $product->description }}', '{{ $product->kategori->kategori }}')">
                                     <h5>{{ $product->name }}</h5>
                                     <p>{{ substr($product->description, 0, 50) }}</p>
                                 </div>
                             </div>
+                            <!-- Popup untuk menampilkan detail produk -->
                             <div id="popup-{{ $product->id }}" class="popup">
                                 <div class="popup-content">
                                     <div class="popup-body">
+                                        <!-- Tombol untuk menutup popup -->
                                         <span class="close"
                                             onclick="closePopup('popup-{{ $product->id }}')">&times;</span>
                                         <div class="left-column">
@@ -76,19 +83,25 @@
                                                     <label
                                                         for="product-quantity-{{ $product->id }}"><strong>Jumlah:</strong></label>
                                                     <div class="input-group">
+                                                        <!-- Tombol untuk mengurangi jumlah produk -->
                                                         <button class="btn btn-outline-secondary" type="button"
                                                             onclick="decreaseValue({{ $product->id }})">-</button>
+                                                        <!-- Input untuk jumlah produk -->
                                                         <input type="number" class="form-control"
                                                             id="product-quantity-{{ $product->id }}" value="0"
                                                             min="0">
+                                                        <!-- Tombol untuk menambah jumlah produk -->
                                                         <button class="btn btn-outline-secondary" type="button"
                                                             onclick="increaseValue({{ $product->id }})">+</button>
                                                     </div>
                                                 </div>
+                                                <!-- Tombol untuk menambah produk ke text area -->
                                                 <button class="btn btn-primary"
                                                     onclick="addProduct({{ $product->id }})">Tambah</button>
+                                                <!-- Tombol untuk menghapus produk terakhir dari keranjang -->
                                                 <button class="btn btn-danger"
                                                     onclick="removeLastProduct({{ $product->id }})">Hapus</button>
+                                                <!-- Area untuk menampilkan produk yang ditambahkan -->
                                                 <textarea class="form-control mt-2" id="product-added-{{ $product->id }}" readonly></textarea>
                                                 <!-- Button Pesan -->
                                                 <button class="btn btn-success mt-2"
@@ -104,12 +117,14 @@
             </div>
         </div>
 
+        <!-- Meng-impor JavaScript yang diperlukan -->
         <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
         <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
         <script src="{{ asset('frontend/js/custom.js') }}"></script>
         <script src="{{ asset('frontend/js/script.js') }}"></script>
         <script src="{{ asset('frontend/js/popupproduct.js') }}"></script>
 
+        <!-- Menyertakan informasi dan footer frontend -->
         @include('frontend.info')
         @include('frontend.footer')
 </body>

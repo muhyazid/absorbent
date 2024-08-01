@@ -38,6 +38,14 @@ body {
     margin-right: 10px;
     text-align: left;
 }
+
+.product-item textarea {
+    height: 100px; /* Atur tinggi tetap */
+    width: auto; /* Atur lebar sesuai kebutuhan Anda */
+    overflow-y: auto; /* Tambahkan scrollbar vertikal jika konten melebihi tinggi */
+    resize: none; /* Mencegah pengguna mengubah ukuran textarea */
+}
+
 /* end yazid  */
 
 .judul-popup {
@@ -181,7 +189,7 @@ body {
     border-radius: 15px;
     text-align: center;
     background-color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* dari yazid = jarak antara card produk atas dan bawah */
     display: flex; /* dari yazid  */
     flex-direction: column; /*  dari yazid = Mengatur elemen dalam card agar ditumpuk */
     justify-content: space-between; /*  dari yazid = Memberikan jarak antar elemen */
@@ -191,12 +199,19 @@ body {
 .product-item img {
     width: 100%;
     height: auto;
+    border-radius: 15px; /* untuk membuat sisi gambar menjadi rounded */
 }
 
 .product-item h5 {
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: -30px; /* dari yazid = jarak atas bawah judul nama produk card*/
+    font-size: 21px;
     font-weight: 600;
+}
+
+.product-item p {
+    margin-top: -60px; /* Kurangi jarak atas bawah untuk deskripsi produk */
+    font-size: 14px; /* Sesuaikan ukuran font jika diperlukan */
+    color: #555; /* Sesuaikan warna teks jika diperlukan */
 }
 
 .load-more {
