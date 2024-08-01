@@ -67,21 +67,21 @@
                                             <p class="key-feature"><strong>Description:</strong></p>
                                             <p class="tulisan-popup" id="popup-description-{{ $product->id }}"></p>
                                             @if ($product->kategori && $product->kategori->kategori == 'Custom Spill Kit')
-    <div class="form-group">
-        <label for="product-select-{{ $product->id }}"><strong>Produk:</strong></label>
-        <select id="product-select-{{ $product->id }}"></select>
-    </div>
-    <div class="form-group">
-        <label for="product-quantity-{{ $product->id }}"><strong>Jumlah:</strong></label>
-        <div class="input-group">
-            <button class="btn btn-outline-secondary" type="button" onclick="decreaseValue({{ $product->id }})">-</button>
-            <input type="number" class="form-control" id="product-quantity-{{ $product->id }}" value="0" min="0">
-            <button class="btn btn-outline-secondary" type="button" onclick="increaseValue({{ $product->id }})">+</button>
-        </div>
-    </div>
-    <button class="btn btn-primary" onclick="addProduct({{ $product->id }})">Tambah</button>
-    <textarea class="form-control mt-2" id="product-added-{{ $product->id }}" readonly></textarea>
-@endif
+                                            <div class="form-group">
+                                                <label for="product-select-{{ $product->id }}"><strong>Produk:</strong></label>
+                                                <select id="product-select-{{ $product->id }}"></select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="product-quantity-{{ $product->id }}"><strong>Jumlah:</strong></label>
+                                                <div class="input-group">
+                                                    <button class="btn btn-outline-secondary" type="button" onclick="decreaseValue({{ $product->id }})">-</button>
+                                                    <input type="number" class="form-control" id="product-quantity-{{ $product->id }}" value="0" min="0">
+                                                    <button class="btn btn-outline-secondary" type="button" onclick="increaseValue({{ $product->id }})">+</button>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary" onclick="addProduct({{ $product->id }})">Tambah</button>
+                                            <textarea class="form-control mt-2" id="product-added-{{ $product->id }}" readonly></textarea>
+                                        @endif
 
                                         </div>
                                     </div>

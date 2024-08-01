@@ -40,7 +40,7 @@
 
       @include('frontend.header')
     <!-- end header section -->
-    
+
     <!-- slider section -->
     <section class=" slider_section ">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -57,7 +57,7 @@
                       </span>
                     </h1>
                     <p>
-                      Introducing our advanced line of absorbent products designed to tackle the toughest challenges in handling chemical spills, oil leaks, and multipurpose absorption needs. 
+                      Introducing our advanced line of absorbent products designed to tackle the toughest challenges in handling chemical spills, oil leaks, and multipurpose absorption needs.
                       Engineered with precision and innovation, our absorbents are your first line of defense against potential hazards, ensuring a safe and clean environment.
                     </p>
                     {{-- <div class="btn-box">
@@ -81,9 +81,9 @@
                       </span>
                     </h1>
                     <p>
-                      tep into the future of spill management with Cerro Absorbent. 
-                      Our cutting-edge line of absorbent solutions is meticulously designed to address the most demanding situations, from hazardous chemical spills to persistent oil leaks. 
-                      Each product in our range combines advanced engineering with innovative materials to deliver unparalleled absorption and protection. 
+                      tep into the future of spill management with Cerro Absorbent.
+                      Our cutting-edge line of absorbent solutions is meticulously designed to address the most demanding situations, from hazardous chemical spills to persistent oil leaks.
+                      Each product in our range combines advanced engineering with innovative materials to deliver unparalleled absorption and protection.
                       Rely on Cerro Absorbent to safeguard your environment and maintain a pristine, risk-free workspace.
                     </p>
                     {{-- <div class="btn-box">
@@ -107,9 +107,9 @@
                       </span>
                     </h1>
                     <p>
-                      Welcome to a new era in absorption technology with Cerro Absorbent. 
-                      Our premium range of absorbent products is crafted to handle even the most challenging scenarios, including chemical spills, oil leaks, and diverse absorption tasks. 
-                      With a commitment to precision and excellence, our absorbents provide exceptional efficiency and reliability, ensuring that you stay ahead of potential risks. 
+                      Welcome to a new era in absorption technology with Cerro Absorbent.
+                      Our premium range of absorbent products is crafted to handle even the most challenging scenarios, including chemical spills, oil leaks, and diverse absorption tasks.
+                      With a commitment to precision and excellence, our absorbents provide exceptional efficiency and reliability, ensuring that you stay ahead of potential risks.
                       Choose Cerro Absorbent for superior performance and a cleaner, safer environment.
                     </p>
                     {{-- <div class="btn-box">
@@ -152,8 +152,8 @@
                   <h2>BENEFIT</h2>
               </div>
               <p>
-                  One of the significant benefits of purchasing an absorbent is environmental protection and risk mitigation. 
-                  Absorbent products play an important role in containing and managing spills, whether they involve oil, chemicals or other liquids. 
+                  One of the significant benefits of purchasing an absorbent is environmental protection and risk mitigation.
+                  Absorbent products play an important role in containing and managing spills, whether they involve oil, chemicals or other liquids.
                   By investing in absorbers, individuals and businesses contribute to several sectors.
               </p>
               <h6 style="font-weight: bold;">- Environmental Conservation</h6>
@@ -161,7 +161,7 @@
               <h6 style="font-weight: bold;">- Workplace Safety</h6>
               <h6 style="font-weight: bold;">- Cost Savings in Cleanup</h6>
               <h6 style="font-weight: bold;">- Reputation Management</h6>
-              <p>In summary, investing in absorbents is not just a practical necessity for spill response. 
+              <p>In summary, investing in absorbents is not just a practical necessity for spill response.
                  It is a proactive step toward environmental responsibility, regulatory compliance, workplace safety, cost-effectiveness, and maintaining a positive reputation.
               </p>
               <div class="btn-box">
@@ -170,7 +170,7 @@
               </div>
           </div>
       </div>
-      
+
       <!-- POP UP -->
       <div id="benefitModal" class="modal">
           <div class="modal-content">
@@ -188,7 +188,7 @@
           </div>
       </div>
       <!-- END POP UP -->
-               
+
       </div>
     </div>
   </section>
@@ -202,9 +202,9 @@
     <div class="heading_container heading_center">
         <h2>Purpose</h2>
     </div>
-    
+
     <div class="row">
-        <!-- Pop-Up Content --> 
+        <!-- Pop-Up Content -->
         <!-- Pop-up Oil -->
         <div id="popupoil" class="popup">
           <div class="popup-content">
@@ -238,7 +238,7 @@
             </div>
           </div>
         </div>
-        
+
         <div id="popupchemical" class="popup">
           <div class="popup-content">
             <div class="popup-body">
@@ -269,7 +269,7 @@
             </div>
           </div>
         </div>
-        
+
         <div id="popupuniversall" class="popup">
           <div class="popup-content">
             <div class="popup-body">
@@ -300,7 +300,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Product Boxes -->
         <div class="col-md-4">
             <div class="box">
@@ -357,52 +357,37 @@
                 <div class="carousel-item active">
                     <div class="row justify-content-center">
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/wilmar.png') }}" alt="Wilmar">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Wilmar</h4>
+                                    <img src="{{ asset('frontend/images/wilmar.png') }}" alt="Wilmar" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/adhimix.png') }}" alt="Adhimix">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Adhimix</h4>
+                                    <img src="{{ asset('frontend/images/adhimix.png') }}" alt="Adhimix" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/inti_karya_jaya.png') }}" alt="Inti Karya Jaya">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Inti Karya Jaya</h4>
+                                    <img src="{{ asset('frontend/images/inti_karya_jaya.png') }}" alt="Inti Karya Jaya" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/kag.jpg') }}" alt="KAG">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>KAG</h4>
+                                    <img src="{{ asset('frontend/images/kag.jpg') }}" alt="KAG" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/nestle.png') }}" alt="Nestle">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Nestle</h4>
+                                    <img src="{{ asset('frontend/images/nestle.png') }}" alt="Nestle" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -411,52 +396,37 @@
                 <div class="carousel-item">
                     <div class="row justify-content-center">
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/pelindo.png') }}" alt="Pelindo">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Pelindo</h4>
+                                    <img src="{{ asset('frontend/images/pelindo.png') }}" alt="Pelindo" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/pertamina.png') }}" alt="Pertamina">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Pertamina</h4>
+                                    <img src="{{ asset('frontend/images/pertamina.png') }}" alt="Pertamina" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/ricon_masistan.png') }}" alt="Ricon Masistan">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Ricon Masistan</h4>
+                                    <img src="{{ asset('frontend/images/ricon_masistan.png') }}" alt="Ricon Masistan" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/sucofindo.png') }}" alt="Sucofindo">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Sucofindo</h4>
+                                    <img src="{{ asset('frontend/images/sucofindo.png') }}" alt="Sucofindo" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="box">
+                            <div class="box d-flex justify-content-center align-items-center">
                                 <div class="img-box">
-                                    <img src="{{ asset('frontend/images/surya_jaya_perkasa.png') }}" alt="Surya Jaya Perkasa">
-                                </div>
-                                <div class="detail-box">
-                                    <h4>Surya Jaya Perkasa</h4>
+                                    <img src="{{ asset('frontend/images/surya_jaya_perkasa.png') }}" alt="Surya Jaya Perkasa" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -467,6 +437,7 @@
         </div>
     </div>
 </section>
+
 
 
 

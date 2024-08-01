@@ -5,7 +5,7 @@
         <div class="col-md-3">
           <div class="info_logo">
             <img src="{{ asset('frontend/images/logo/png') }}" alt="">
-              <img src="{{ asset('frontend/images/logo.png') }}" alt="" width="120px" height="50px">
+              <img src="{{ asset('frontend/images/logo.png') }}" alt="" width="70%" height="70%">
               <h7>
                 by SRA Safety
               </h7>
@@ -66,7 +66,7 @@ Surabaya, Jawa Timur, Indonesia
               Contact Us
             </h5>
           </div>
-          <div class="info_contact">  
+          <div class="info_contact">
             <span>
                 <i class="fa fa-phone" aria-hidden="true"></i> Marketing :
                 <span>
