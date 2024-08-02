@@ -12,8 +12,7 @@
     <link rel="shortcut icon" href="{{ asset('frontend/images/logoaja.png') }}" type="image/x-icon">
     <title>CERRO | Absorbent Product</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/bootstrap.css') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('frontend/css/product.css') }}">
@@ -34,13 +33,11 @@
         <div class="container">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('frontend/products') ? 'active' : '' }}"
-                        href="{{ route('frontend.products.index') }}">All Products</a>
+                    <a class="nav-link {{ request()->is('frontend/products') ? 'active' : '' }}" href="{{ route('frontend.products.index') }}">All Products</a>
                 </li>
                 @foreach ($categories as $category)
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('frontend/products/category/' . $category->id) ? 'active' : '' }}"
-                            href="{{ route('frontend.products.category', $category->id) }}">{{ $category->kategori }}</a>
+                        <a class="nav-link {{ request()->is('frontend/products/category/' . $category->id) ? 'active' : '' }}" href="{{ route('frontend.products.category', $category->id) }}">{{ $category->kategori }}</a>
                     </li>
                 @endforeach
             </ul>
@@ -51,8 +48,7 @@
                         @foreach ($products as $product)
                             <div class="col-md-3">
                                 <div class="product-item">
-                                    <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
-                                        onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', '{{ $product->description }}', '{{ $product->kategori->kategori }}')">
+                                    <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', '{{ $product->description }}', '{{ $product->kategori->kategori }}')">
                                     <h5>{{ $product->name }}</h5>
                                     <p>{{ substr($product->description, 0, 50) }}</p>
                                 </div>
@@ -60,11 +56,9 @@
                             <div id="popup-{{ $product->id }}" class="popup">
                                 <div class="popup-content">
                                     <div class="popup-body">
-                                        <span class="close"
-                                            onclick="closePopup('popup-{{ $product->id }}')">&times;</span>
+                                        <span class="close" onclick="closePopup('popup-{{ $product->id }}')">&times;</span>
                                         <div class="left-column">
-                                            <img src="" alt="" id="popup-image-{{ $product->id }}"
-                                                class="rounded-image">
+                                            <img src="" alt="" id="popup-image-{{ $product->id }}" class="rounded-image">
                                             <h2 class="judul-popup" id="popup-title-{{ $product->id }}"></h2>
                                         </div>
                                         <div class="right-column text-container">
@@ -72,31 +66,21 @@
                                             <p class="tulisan-popup" id="popup-description-{{ $product->id }}"></p>
                                             <div id="custom-elements-{{ $product->id }}" style="display: none;">
                                                 <div class="form-group">
-                                                    <label
-                                                        for="product-select-{{ $product->id }}"><strong>Produk:</strong></label>
+                                                    <label for="product-select-{{ $product->id }}"><strong>Produk:</strong></label>
                                                     <select id="product-select-{{ $product->id }}"></select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label
-                                                        for="product-quantity-{{ $product->id }}"><strong>Jumlah:</strong></label>
+                                                    <label for="product-quantity-{{ $product->id }}"><strong>Jumlah:</strong></label>
                                                     <div class="input-group">
-                                                        <button class="btn btn-outline-secondary" type="button"
-                                                            onclick="decreaseValue({{ $product->id }})">-</button>
-                                                        <input type="number" class="form-control"
-                                                            id="product-quantity-{{ $product->id }}" value="0"
-                                                            min="0">
-                                                        <button class="btn btn-outline-secondary" type="button"
-                                                            onclick="increaseValue({{ $product->id }})">+</button>
+                                                        <button class="btn btn-outline-secondary" type="button" onclick="decreaseValue({{ $product->id }})">-</button>
+                                                        <input type="number" class="form-control" id="product-quantity-{{ $product->id }}" value="0" min="0">
+                                                        <button class="btn btn-outline-secondary" type="button" onclick="increaseValue({{ $product->id }})">+</button>
                                                     </div>
                                                 </div>
-                                                <button class="btn btn-primary"
-                                                    onclick="addProduct({{ $product->id }})">Tambah</button>
-                                                <button class="btn btn-danger"
-                                                    onclick="removeLastProduct({{ $product->id }})">Hapus</button>
+                                                <button class="btn btn-primary" onclick="addProduct({{ $product->id }})">Tambah</button>
+                                                <button class="btn btn-danger" onclick="removeLastProduct({{ $product->id }})">Hapus</button>
                                                 <textarea class="form-control mt-2 fixed-size-textarea" id="product-added-{{ $product->id }}" readonly></textarea>
-                                                <button id="orderButton-{{ $product->id }}"
-                                                    class="btn btn-success mt-2"
-                                                    onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
+                                                <button id="orderButton-{{ $product->id }}" class="btn btn-success mt-2" onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
                                             </div>
                                         </div>
                                     </div>
@@ -106,42 +90,44 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- New Order Popup HTML -->
-        <div id="orderPopup" class="popuporder">
-            <div class="popup-contentorder">
-                <span class="close" onclick="closeOrderPopup()">&times;</span>
-                <form id="orderForm">
-                    <div class="formorder-group">
-                        <label for="name">Nama:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="formorder-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="formorder-group">
-                        <label for="company">Nama Perusahaan:</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-                    <div class="formorder-group">
-                        <label for="phone">No Tlp:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="formorder-group">
-                        <label for="address">Alamat:</label>
-                        <textarea id="address" name="address" required></textarea>
-                    </div>
-                    <div class="formorder-group">
-                        <label for="items">Barang:</label>
-                        <textarea id="items" name="items" readonly></textarea>
-                    </div>
-                    <button type="button" onclick="submitOrderForm()">Kirim ke WhatsApp</button>
-                </form>
+<!-- New Order Popup HTML -->
+<div id="orderPopup" class="popuporder">
+    <div class="popup-contentorder">
+        <span class="close" onclick="closeOrderPopup()">&times;</span>
+        <h2 class="order-title">Form Order</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Nama Perusahaan:</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">No Tlp:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Alamat:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="items">Barang:</label>
+                <textarea id="items" name="items" readonly></textarea>
+            </div>
+            <button type="button" onclick="submitOrderForm()">Kirim ke WhatsApp</button>
+        </form>
+    </div>
+</div>
+
 
         <!-- Warning Popup for Not Logged In Users -->
         <div id="warningPopup" class="popupwarning">

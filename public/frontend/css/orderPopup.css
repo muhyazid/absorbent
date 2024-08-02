@@ -12,25 +12,82 @@
 }
 
 .popup-contentorder {
-    background-color: #fefefe;
-    margin: 15% auto;
+    background-color: #fff;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 60%; /* Adjusted width to make the popup wider */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 800px; /* Adjusted max-width to make the popup wider */
+    position: relative;
+}
+
+.order-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: none; /* Prevent resizing */
+    height: 100px; /* Set a fixed height */
+    overflow-y: scroll; /* Enable vertical scrolling */
 }
 
 .close {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
     font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #000;
     text-decoration: none;
+}
+
+.popup-contentorder button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add margin top to separate button from form fields */
+}
+
+.popup-contentorder button:hover {
+    background-color: #218838;
 }
 
 /* CSS untuk warning popup */
@@ -47,13 +104,14 @@
 }
 
 .popup-contentwarning {
-    background-color: #fefefe;
-    margin: 20% auto;
-    padding: 20px;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
     border: 1px solid #888;
-    width: 60%;
+    width: 50%;
     text-align: center;
     border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .popup-contentwarning p {
@@ -65,12 +123,7 @@
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 15px;
-}
-
-.popup-contentwarning button:hover {
-    background-color: #218838;
 }

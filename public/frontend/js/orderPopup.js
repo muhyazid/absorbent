@@ -34,7 +34,7 @@ function submitOrderForm() {
     const company = document.getElementById("company").value;
     const items = document.getElementById("items").value;
 
-    const whatsappNumber = "6281330205567"; // Ganti dengan nomor WhatsApp sales Anda
+    const whatsappNumber = "62895331266187"; // Ganti dengan nomor WhatsApp sales Anda
     const message = `Nama: ${name}\nEmail: ${email}\nNo Tlp: ${phone}\nAlamat: ${address}\nNama Perusahaan: ${company}\nBarang:\n${items}`;
 
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
