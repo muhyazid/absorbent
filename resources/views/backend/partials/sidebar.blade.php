@@ -13,7 +13,7 @@
                 <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
             </div> --}}
             <div class="info" style="text-align: center; width: 100%;">
-                <a href="{{ route('backend.dashboard') }}" class="d-block "style="font-size: 1.2rem;">Halo,
+                <a class="d-block "style="font-size: 1.2rem;">Halo,
                     {{ Auth::user()->name }}</a>
             </div>
         </div>
