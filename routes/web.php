@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\ProductFrontendController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,11 +47,20 @@ Route::get('/frontend/products/custom-spill-kit-products', [ProductFrontendContr
 Route::get('/frontend/products/all', [ProductFrontendController::class, 'getAllProducts']);
 
 
+
+
+
+
+
+
+
 // Route Backend
 Route::middleware(['auth', 'admin'])->prefix('backend')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
     Route::resource('products', ProductController::class);
-    Route::get('products/export-pdf', [ProductController::class, 'exportPdf'])->name('products.export-pdf');
+
+    Route::get('/backend/products/export/pdf', [ProductController::class, 'exportPDF'])->name('products.export.pdf');
+
     Route::get('/users', [UserController::class, 'index'])->name('backend.users.index');
     // Rute untuk edit user
     Route::get('/backend/users/{user}/edit', [UserController::class, 'edit'])->name('backend.users.edit');

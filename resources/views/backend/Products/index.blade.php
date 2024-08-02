@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add New Product</a>
-        <a href="{{ route('products.export-pdf') }}" class="btn btn-danger mb-3">Export PDF</a>
+        <a href="{{ route('products.export.pdf') }}" class="btn btn-danger mb-3">Export PDF</a>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">{{ $message }}</div>
         @endif

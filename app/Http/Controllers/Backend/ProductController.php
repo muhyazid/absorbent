@@ -101,7 +101,7 @@ class ProductController extends Controller
                          ->with('success', 'Product deleted successfully.');
     }
 
-    public function exportPdf()
+    public function exportPDF()
     {
         $products = Product::all();
         $pdf = PDF::loadView('backend.products.pdf', compact('products'));

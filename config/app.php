@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Cerro Absorbent'),
 
     /*
     |--------------------------------------------------------------------------
@@ -159,15 +159,16 @@ return [
         /*
          * Package Service Providers...
          */
-         
+
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+    App\Providers\AppServiceProvider::class,
+    App\Providers\AuthServiceProvider::class,
+    App\Providers\BroadcastServiceProvider::class,
+    App\Providers\EventServiceProvider::class,
+    App\Providers\RouteServiceProvider::class,
+    Barryvdh\DomPDF\ServiceProvider::class,
 
         //Maatwebsite\Excel\ExcelServiceProvider::class,
     ])->toArray(),
@@ -175,7 +176,7 @@ return [
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
-    |-------------------------------------------------------------------------- 
+    |--------------------------------------------------------------------------
     |
     | This array of class aliases will be registered when this application
     | is started. However, feel free to register as many as you wish as
@@ -184,8 +185,11 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+
         // 'Example' => App\Facades\Example::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
         // 'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
+
 
 ];

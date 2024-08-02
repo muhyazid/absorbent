@@ -50,7 +50,7 @@
         <div class="preloader flex-column justify-content-center align-items-center">
             <!-- Logo animasi saat preloader -->
             <img class="animation__shake" src="{{ asset('dist/img/CERRO NEW COLOR - Copy.png') }}" alt="SRA-Logo"
-                height="100" width="100">
+                height="5%" width="5%">
         </div>
 
         <!-- Menyertakan file partial navbar -->
