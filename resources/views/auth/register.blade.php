@@ -67,6 +67,6 @@
     </form>
 
     <!-- Link to External CSS and JS -->
-    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
-    <script src="{{ asset('frontend/js/script.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('frontend/css/loginregister.css') }}">
+    <script src="{{ asset('frontend/js/loginregister.js') }}" defer></script>
 </x-guest-layout>
