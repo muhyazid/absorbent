@@ -93,7 +93,8 @@
                                                     onclick="addProduct({{ $product->id }})">Tambah</button>
                                                 <button class="btn btn-danger"
                                                     onclick="removeLastProduct({{ $product->id }})">Hapus</button>
-                                                <textarea class="form-control mt-2 fixed-size-textarea" id="product-added-{{ $product->id }}" readonly></textarea>
+                                                <textarea class="form-control mt-2 fixed-size-textarea" style="height: 5cm" id="product-added-{{ $product->id }}"
+                                                    readonly></textarea>
                                                 <button id="orderButton-{{ $product->id }}"
                                                     class="btn btn-success mt-2"
                                                     onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
