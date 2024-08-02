@@ -9,12 +9,8 @@
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            {{-- <div class="image">
-                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
-            </div> --}}
             <div class="info" style="text-align: center; width: 100%;">
-                <a class="d-block "style="font-size: 1.2rem;">Halo,
-                    {{ Auth::user()->name }}</a>
+                <a class="d-block" style="font-size: 1.2rem;">Halo, {{ Auth::user()->name }}</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -45,13 +41,6 @@
                         <p>Kategori Produk</p>
                     </a>
                 </li>
-                <!-- Testimoni -->
-                {{-- <li class="nav-item">
-                        <a href="{{ route('backend.testimonials.index') }}" class="nav-link {{ Request::routeIs('backend.testimonials.index') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-copy"></i>
-                            <p>Testimoni</p>
-                        </a>
-                    </li> --}}
                 <!-- Data User -->
                 <li class="nav-item">
                     <a href="{{ route('backend.users.index') }}"
@@ -60,8 +49,7 @@
                         <p>Data User</p>
                     </a>
                 </li>
-
-                {{-- Logout --}}
+                <!-- Logout -->
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
