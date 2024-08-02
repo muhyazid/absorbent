@@ -100,7 +100,7 @@
                                                     onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
                                             </div>
                                             <!-- Tombol "Pesan" untuk semua produk -->
-                                            <button id="orderButton-{{ $product->id }}-all"
+                                            <button id="orderButtonNonCustom-{{ $product->id }}"
                                                 class="btn btn-success mt-2"
                                                 onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
                                         </div>
@@ -147,6 +147,14 @@
                         <label for="items">Isi Barang:</label>
                         <textarea id="items" name="items" readonly></textarea>
                     </div>
+                    <div class="form-group" id="quantity-group">
+                        <label for="quantity">Jumlah:</label>
+                        <div class="input-group2">
+                            {{-- <button class="btn2" type="button" onclick="decreaseValue2()">-</button> --}}
+                            <input type="number" class="form-control text-center" id="quantity" name="quantity" value="1" min="1">
+                            {{-- <button class="btn2" type="button" onclick="increaseValue2()">+</button> --}}
+                        </div>
+                    </div>
                     <button type="button" onclick="submitOrderForm()">Kirim ke WhatsApp</button>
                 </form>
             </div>
@@ -161,7 +169,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
