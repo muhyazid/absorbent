@@ -6,6 +6,12 @@ body {
     background-color: #ffffff;
 }
 
+/* tambahan yazid */
+body.modal-open {
+    overflow: hidden;
+}
+/* end tambahan yazid */
+
 /* icon */
 .icon {
     width: 24px;

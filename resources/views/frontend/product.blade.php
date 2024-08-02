@@ -16,8 +16,7 @@
         rel="stylesheet" />
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('frontend/css/product.css') }}">
-
+    <link href="{{ asset('frontend/css/product.css') }}" rel="stylesheet" />
 </head>
 
 <body>
@@ -62,7 +61,8 @@
                                         <span class="close"
                                             onclick="closePopup('popup-{{ $product->id }}')">&times;</span>
                                         <div class="left-column">
-                                            <img src="" alt="" id="popup-image-{{ $product->id }}">
+                                            <img src="" alt="" id="popup-image-{{ $product->id }}"
+                                                class="rounded-image">
                                             <h2 class="judul-popup" id="popup-title-{{ $product->id }}"></h2>
                                         </div>
                                         <div class="right-column text-container">
@@ -91,7 +91,7 @@
                                                     onclick="addProduct({{ $product->id }})">Tambah</button>
                                                 <button class="btn btn-danger"
                                                     onclick="removeLastProduct({{ $product->id }})">Hapus</button>
-                                                <textarea class="form-control mt-2" id="product-added-{{ $product->id }}" readonly></textarea>
+                                                <textarea class="form-control mt-2 fixed-size-textarea" id="product-added-{{ $product->id }}" readonly></textarea>
                                                 <button id="orderButton-{{ $product->id }}"
                                                     class="btn btn-success mt-2"
                                                     onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
@@ -104,6 +104,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
         <!-- New Order Popup HTML -->
@@ -156,7 +157,7 @@
     <script src="{{ asset('frontend/js/script.js') }}"></script>
     <script src="{{ asset('frontend/js/popupproduct.js') }}"></script>
     <script src="{{ asset('frontend/js/orderPopup.js') }}"></script>
-    <script src="{{ asset('frontend/js/warningPopup.js') }}"></script> <!-- New JavaScript file for warning popup -->
+    <script src="{{ asset('frontend/js/warningPopup.js') }}"></script>
     @include('frontend.info')
     @include('frontend.footer')
 </body>
