@@ -12,6 +12,7 @@
                     <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" width="100">
                 @endif
                 <p class="card-text">{{ $product->description }}</p>
+                <p class="card-text">{{ $product->stok }}</p>
                 <p class="card-text">Size: {{ $product->size }}</p>
                 <p class="card-text">Category: {{ $product->kategoriProduk->kategori }}</p> <!-- Menampilkan kategori -->
                 <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>

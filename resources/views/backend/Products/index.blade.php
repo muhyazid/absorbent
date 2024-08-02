@@ -18,6 +18,7 @@
                     <th>Kategori</th>
                     <th>Gambar</th>
                     <th>Deskripsi</th>
+                    <th>Stok</th>
                     <th>Ukuran</th>
                     <th>Aksi</th>
                 </tr>
@@ -34,6 +35,7 @@
                             @endif
                         </td>
                         <td>{{ $product->description }}</td>
+                        <td>{{ $product->stok }}</td>
                         <td>{{ $product->size }}</td>
                         <td>
                             <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>

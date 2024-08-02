@@ -34,6 +34,11 @@
                 <textarea class="form-control" id="description" name="description" required>{{ $product->description }}</textarea>
             </div>
             <div class="form-group">
+                <label for="stok">Stok</label>
+                <input type="text" class="form-control" id="stok" name="stok" value="{{ $product->stok }}"
+                    required>
+            </div>
+            <div class="form-group">
                 <label for="size">Size</label>
                 <input type="text" class="form-control" id="size" name="size" value="{{ $product->size }}"
                     required>
