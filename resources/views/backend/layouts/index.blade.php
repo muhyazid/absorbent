@@ -13,6 +13,9 @@
     <!-- Judul halaman -->
     <title>SRA | Dashboard</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('dist/img/CERRO NEW COLOR - Copy.png') }}" type="image/png">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Google Font: Source Sans Pro -->
@@ -50,7 +53,7 @@
         <div class="preloader flex-column justify-content-center align-items-center">
             <!-- Logo animasi saat preloader -->
             <img class="animation__shake" src="{{ asset('dist/img/CERRO NEW COLOR - Copy.png') }}" alt="SRA-Logo"
-                height="5%" width="5%">
+                height=auto width="100px">
         </div>
 
         <!-- Menyertakan file partial navbar -->
