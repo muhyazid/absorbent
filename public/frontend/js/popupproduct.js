@@ -14,6 +14,9 @@ function openPopup(id, name, image, description, category) {
     if (category === "Custom Spill Kit") {
         document.getElementById(`custom-elements-${id}`).style.display =
             "block";
+        document.getElementById(`orderButton-${id}`).style.display =
+            "inline-block";
+        document.getElementById(`orderButton-${id}-all`).style.display = "none";
         $.ajax({
             url: "/frontend/products/custom-spill-kit-products",
             method: "GET",
@@ -30,6 +33,9 @@ function openPopup(id, name, image, description, category) {
         });
     } else {
         document.getElementById(`custom-elements-${id}`).style.display = "none";
+        document.getElementById(`orderButton-${id}`).style.display = "none";
+        document.getElementById(`orderButton-${id}-all`).style.display =
+            "inline-block";
     }
     popup.style.display = "flex";
     document.body.classList.add("modal-open"); // Tambahkan kelas modal-open ke body
