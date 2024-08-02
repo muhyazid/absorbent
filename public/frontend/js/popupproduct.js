@@ -88,14 +88,24 @@ function addProduct(productId) {
     const addedInput = document.getElementById(`product-added-${productId}`);
     const productName = select.options[select.selectedIndex].text;
 
+    // Cek apakah produk sudah ada di textarea
+    const existingText = addedInput.value.split("\n");
+    const productExists = existingText.some((item) =>
+        item.includes(productName)
+    );
+
+    if (productExists) {
+        alert("Produk ini sudah ada dalam daftar.");
+        return; // Hentikan proses jika produk sudah ada
+    }
+
     // Tambahkan produk ke textarea jika jumlahnya lebih dari 0
     if (quantity > 0) {
-        const existingText = addedInput.value;
         const newText = `${quantity} x ${productName}`;
-        if (existingText.trim() === "") {
+        if (addedInput.value.trim() === "") {
             addedInput.value = newText;
         } else {
-            addedInput.value = `${existingText}\n${newText}`;
+            addedInput.value = `${addedInput.value}\n${newText}`;
         }
         document.getElementById(`product-quantity-${productId}`).value = 0; // Reset jumlah produk ke 0
     } else {
