@@ -31,6 +31,7 @@ class ProductController extends Controller
             'kategori_id' => 'nullable|exists:kategori_produks,id', // diganti nullable bukan required
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'description' => 'required|string',
+            'stok'=> 'required|integer',
             'size' => 'required|integer',
         ]);
 
@@ -38,6 +39,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->kategori_id = $request->kategori_id; // nullable
         $product->description = $request->description;
+        $product->stok = $request->stok;
         $product->size = $request->size;
 
         if ($request->hasFile('image')) {
@@ -71,12 +73,14 @@ class ProductController extends Controller
             'kategori_id' => 'nullable|exists:kategori_produks,id', // ini saya ganti nullable bukan required
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'description' => 'required|string',
+            'stok'=> 'required|integer',
             'size' => 'required|integer',
         ]);
 
         $product->name = $request->name;
         $product->kategori_id = $request->kategori_id;
         $product->description = $request->description;
+        $product->stok = $request->stok;
         $product->size = $request->size;
 
         if ($request->hasFile('image')) {

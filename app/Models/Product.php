@@ -12,9 +12,10 @@ class Product extends Model
     protected $fillable = [
         'product_number',
         'name',
-        'kategori_id', 
-        'image', 
-        'description', 
+        'kategori_id',
+        'image',
+        'description',
+        'stok',
         'size',
     ];
 
@@ -24,9 +25,12 @@ class Product extends Model
     }
 
 
-    //  public static function getCustomSpillKitProducts()
-    // {
-    //     // Misalkan kategori ID 1 dan 2 adalah untuk 'Absorbent Chemical' dan 'Absorbent Oil Pad'
-    //     return self::whereIn('kategori_id', [4, 5])->get();
-    // }
+     public static function getCustomSpillKitProducts()
+    {
+        // Misalkan kategori ID 1 dan 2 adalah untuk 'Absorbent Chemical' dan 'Absorbent Oil Pad'
+        return self::whereIn('kategori_id', [4, 5])->get();
+    }
+
+
+
 }

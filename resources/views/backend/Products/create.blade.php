@@ -46,6 +46,14 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label for="stok">Stok</label>
+                <input type="text" class="form-control" id="stok" name="stok" value="{{ old('stok') }}"
+                    required>
+                @error('stok')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label for="size">Size</label>
                 <input type="text" class="form-control" id="size" name="size" value="{{ old('size') }}"
                     required>

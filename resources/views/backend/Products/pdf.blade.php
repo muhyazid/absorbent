@@ -37,6 +37,7 @@
                 <th>Name</th>
                 <th>Image</th>
                 <th>Description</th>
+                <th>Stok</th>
                 <th>Size</th>
             </tr>
         </thead>
@@ -51,6 +52,7 @@
                         @endif
                     </td>
                     <td>{{ $product->description }}</td>
+                    <td>{{ $product->stok }}</td>
                     <td>{{ $product->size }}</td>
                 </tr>
             @endforeach

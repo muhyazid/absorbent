@@ -112,6 +112,7 @@
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative; /* Add this to position the close button relative to this container */
 }
 
 .popup-contentwarning p {
@@ -126,4 +127,29 @@
     padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.popup-contentwarning button:hover {
+    background-color: #218838;
+}
+
+/* Close button for warning popup */
+.popup-contentwarning .close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.popup-contentwarning .close:hover,
+.popup-contentwarning .close:focus {
+    color: #000;
+    text-decoration: none;
 }
