@@ -1,3 +1,4 @@
+// Fungsi untuk membuka popup dan mengatur konten sesuai produk yang dipilih
 function openPopup(id, name, image, description, category) {
     const popup = document.getElementById(`popup-${id}`);
     document.getElementById(`popup-title-${id}`).innerText = name;
@@ -5,6 +6,11 @@ function openPopup(id, name, image, description, category) {
     document.getElementById(`popup-image-${id}`).alt = name;
     document.getElementById(`popup-description-${id}`).innerText = description;
 
+    // Reset konten textarea dan jumlah produk saat membuka popup
+    document.getElementById(`product-added-${id}`).value = "";
+    document.getElementById(`product-quantity-${id}`).value = 0;
+
+    // Tampilkan elemen khusus jika kategori adalah "Custom Spill Kit"
     if (category === "Custom Spill Kit") {
         document.getElementById(`custom-elements-${id}`).style.display =
             "block";
@@ -13,7 +19,7 @@ function openPopup(id, name, image, description, category) {
             method: "GET",
             success: (data) => {
                 const select = document.getElementById(`product-select-${id}`);
-                select.innerHTML = "";
+                select.innerHTML = ""; // Kosongkan combo box
                 data.forEach((product) => {
                     const option = document.createElement("option");
                     option.value = product.id;
@@ -26,9 +32,10 @@ function openPopup(id, name, image, description, category) {
         document.getElementById(`custom-elements-${id}`).style.display = "none";
     }
     popup.style.display = "flex";
-    document.body.classList.add("modal-open"); // Tambahkan kelas modal-open
+    document.body.classList.add("modal-open"); // Tambahkan kelas modal-open ke body
 }
 
+// Fungsi untuk memeriksa status login pengguna sebelum membuka popup pesanan
 function checkLoginStatus(productId, productName) {
     if (isLoggedIn) {
         openOrderPopup(productId, productName);
@@ -37,12 +44,24 @@ function checkLoginStatus(productId, productName) {
     }
 }
 
+// Fungsi untuk menutup popup dan mereset konten textarea serta jumlah produk
 function closePopup(id) {
     const popup = document.getElementById(id);
     popup.style.display = "none";
-    document.body.classList.remove("modal-open"); // Hapus kelas modal-open
+    document.body.classList.remove("modal-open"); // Hapus kelas modal-open dari body
+
+    // Reset konten textarea dan jumlah produk ke 0
+    document.getElementById(`product-added-${id}`).value = "";
+    document.getElementById(`product-quantity-${id}`).value = 0;
+
+    // Reset juga combo box produk ke pilihan pertama
+    const select = document.getElementById(`product-select-${id}`);
+    if (select) {
+        select.selectedIndex = 0;
+    }
 }
 
+// Fungsi untuk menambah nilai quantity
 function increaseValue(productId) {
     const quantityInput = document.getElementById(
         `product-quantity-${productId}`
@@ -50,6 +69,7 @@ function increaseValue(productId) {
     quantityInput.value = Number.parseInt(quantityInput.value) + 1;
 }
 
+// Fungsi untuk mengurangi nilai quantity
 function decreaseValue(productId) {
     const quantityInput = document.getElementById(
         `product-quantity-${productId}`
@@ -59,6 +79,7 @@ function decreaseValue(productId) {
     }
 }
 
+// Fungsi untuk menambahkan produk ke dalam textarea
 function addProduct(productId) {
     const select = document.getElementById(`product-select-${productId}`);
     const quantity = document.getElementById(
@@ -67,6 +88,7 @@ function addProduct(productId) {
     const addedInput = document.getElementById(`product-added-${productId}`);
     const productName = select.options[select.selectedIndex].text;
 
+    // Tambahkan produk ke textarea jika jumlahnya lebih dari 0
     if (quantity > 0) {
         const existingText = addedInput.value;
         const newText = `${quantity} x ${productName}`;
@@ -75,12 +97,13 @@ function addProduct(productId) {
         } else {
             addedInput.value = `${existingText}\n${newText}`;
         }
-        document.getElementById(`product-quantity-${productId}`).value = 0;
+        document.getElementById(`product-quantity-${productId}`).value = 0; // Reset jumlah produk ke 0
     } else {
         alert("Jumlah produk harus lebih dari 0");
     }
 }
 
+// Fungsi untuk menghapus input terakhir dari textarea
 function removeLastProduct(productId) {
     const addedInput = document.getElementById(`product-added-${productId}`);
     const existingText = addedInput.value.trim().split("\n");
