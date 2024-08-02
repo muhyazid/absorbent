@@ -21,6 +21,7 @@
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('frontend/css/product.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/order.css') }}">
 
 </head>
 

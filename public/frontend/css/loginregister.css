@@ -1,0 +1,21 @@
+.relative {
+    position: relative;
+}
+
+.field-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-0%);
+    right: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#password,
+#password_confirmation {
+    padding-right: 2.5rem;
+}
+
+.hidden {
+    display: none;
+}
