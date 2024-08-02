@@ -103,6 +103,7 @@
                                                     class="btn btn-success mt-2"
                                                     onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
                                             </div>
+
                                             <!-- Tombol "Pesan" untuk semua produk -->
                                             <button id="orderButton-{{ $product->id }}-all"
                                                 class="btn btn-success mt-2"
@@ -144,10 +145,27 @@
                         <textarea id="address" name="address" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="items">Barang:</label>
+                        <label for="product">Nama Produk yang dipilih:</label>
+                        <p id="product-name"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="items">Isi Barang:</label>
                         <textarea id="items" name="items" readonly></textarea>
                     </div>
-                    <button type="button" onclick="submitOrderForm()">Kirim ke WhatsApp</button>
+                    <div class="form-group">
+                        <label for="quantity">Jumlah:</label>
+                        <div class="input-group2">
+                            {{-- <button class="btn2" type="button" onclick="decreaseValue2({{ $product->id }})">-</button> --}}
+                            <input type="number" class="form-control text-center" id="quantity" name="quantity" value="1" min="1">
+                            {{-- <button class="btn " type="" onclick="increaseValue2()">+</button> --}}
+                        </div>
+                    </div>
+
+
+
+
+
+                    <button type="button" onclick="submitOrderForm()">Chat Sales</button>
                 </form>
             </div>
         </div>

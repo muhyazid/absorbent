@@ -23,6 +23,7 @@ function openPopup(id, name, image, description, category) {
             success: (data) => {
                 const select = document.getElementById(`product-select-${id}`);
                 select.innerHTML = ""; // Kosongkan combo box
+                // biome-ignore lint/complexity/noForEach: <explanation>
                 data.forEach((product) => {
                     const option = document.createElement("option");
                     option.value = product.id;
