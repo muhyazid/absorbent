@@ -18,7 +18,7 @@
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('frontend/css/product.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/orderPopup.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('frontend/css/notifikasi.css') }}">
 </head>
 
 <body>
@@ -33,7 +33,6 @@
     <div class="content-container">
         <div class="container">
             <ul class="nav nav-tabs">
-                <!-- Tab untuk semua produk dan kategori -->
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('frontend/products') ? 'active' : '' }}"
                         href="{{ route('frontend.products.index') }}">All Products</a>
@@ -52,14 +51,12 @@
                         @foreach ($products as $product)
                             <div class="col-md-3">
                                 <div class="product-item">
-                                    <!-- Gambar produk dan klik untuk membuka popup -->
                                     <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
                                         onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', '{{ $product->description }}', '{{ $product->kategori->kategori }}')">
                                     <h5>{{ $product->name }}</h5>
                                     <p>{{ substr($product->description, 0, 50) }}</p>
                                 </div>
                             </div>
-                            <!-- Popup produk -->
                             <div id="popup-{{ $product->id }}" class="popup">
                                 <div class="popup-content">
                                     <div class="popup-body">
@@ -73,7 +70,6 @@
                                         <div class="right-column text-container">
                                             <p class="key-feature"><strong>Description:</strong></p>
                                             <p class="tulisan-popup" id="popup-description-{{ $product->id }}"></p>
-                                            <!-- Elemen khusus untuk kategori "Custom Spill Kit" -->
                                             <div id="custom-elements-{{ $product->id }}" style="display: none;">
                                                 <div class="form-group">
                                                     <label
@@ -103,7 +99,6 @@
                                                     class="btn btn-success mt-2"
                                                     onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
                                             </div>
-
                                             <!-- Tombol "Pesan" untuk semua produk -->
                                             <button id="orderButton-{{ $product->id }}-all"
                                                 class="btn btn-success mt-2"
@@ -152,20 +147,7 @@
                         <label for="items">Isi Barang:</label>
                         <textarea id="items" name="items" readonly></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="quantity">Jumlah:</label>
-                        <div class="input-group2">
-                            {{-- <button class="btn2" type="button" onclick="decreaseValue2({{ $product->id }})">-</button> --}}
-                            <input type="number" class="form-control text-center" id="quantity" name="quantity" value="1" min="1">
-                            {{-- <button class="btn " type="" onclick="increaseValue2()">+</button> --}}
-                        </div>
-                    </div>
-
-
-
-
-
-                    <button type="button" onclick="submitOrderForm()">Chat Sales</button>
+                    <button type="button" onclick="submitOrderForm()">Kirim ke WhatsApp</button>
                 </form>
             </div>
         </div>
@@ -179,6 +161,7 @@
             </div>
         </div>
     </div>
+
 
     <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>

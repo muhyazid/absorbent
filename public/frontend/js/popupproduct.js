@@ -14,9 +14,9 @@ function openPopup(id, name, image, description, category) {
     if (category === "Custom Spill Kit") {
         document.getElementById(`custom-elements-${id}`).style.display =
             "block";
-        document.getElementById(`orderButton-${id}`).style.display =
-            "inline-block";
-        document.getElementById(`orderButton-${id}-all`).style.display = "none";
+        document.getElementById(`orderButton-${id}`).style.display = "block";
+        document.getElementById(`orderButtonNonCustom-${id}`).style.display =
+            "none";
         $.ajax({
             url: "/frontend/products/custom-spill-kit-products",
             method: "GET",
@@ -35,8 +35,8 @@ function openPopup(id, name, image, description, category) {
     } else {
         document.getElementById(`custom-elements-${id}`).style.display = "none";
         document.getElementById(`orderButton-${id}`).style.display = "none";
-        document.getElementById(`orderButton-${id}-all`).style.display =
-            "inline-block";
+        document.getElementById(`orderButtonNonCustom-${id}`).style.display =
+            "block";
     }
     popup.style.display = "flex";
     document.body.classList.add("modal-open"); // Tambahkan kelas modal-open ke body
@@ -49,6 +49,24 @@ function checkLoginStatus(productId, productName) {
     } else {
         showWarningPopup();
     }
+}
+
+// Fungsi untuk membuka popup pesanan dan mengatur konten form sesuai produk yang dipilih
+function openOrderPopup(productId, productName) {
+    const orderPopup = document.getElementById("orderPopup");
+    const itemsInput = document.getElementById("items");
+    itemsInput.value = `Nama Produk yang dipilih: ${productName}`;
+
+    // Tampilkan input jumlah jika produk bukan kategori "Custom Spill Kit"
+    const quantityGroup = document.getElementById("quantity-group");
+    if (productName !== "Custom Spill Kit") {
+        quantityGroup.style.display = "block";
+    } else {
+        quantityGroup.style.display = "none";
+    }
+
+    orderPopup.style.display = "flex";
+    document.body.classList.add("modal-open"); // Tambahkan kelas modal-open ke body
 }
 
 // Fungsi untuk menutup popup dan mereset konten textarea serta jumlah produk
@@ -96,27 +114,25 @@ function addProduct(productId) {
     const productName = select.options[select.selectedIndex].text;
 
     // Cek apakah produk sudah ada di textarea
-    const existingText = addedInput.value.split("\n");
-    const productExists = existingText.some((item) =>
+    const existingProducts = addedInput.value.split("\n");
+    const productExists = existingProducts.some((item) =>
         item.includes(productName)
     );
 
-    if (productExists) {
-        alert("Produk ini sudah ada dalam daftar.");
-        return; // Hentikan proses jika produk sudah ada
-    }
-
-    // Tambahkan produk ke textarea jika jumlahnya lebih dari 0
-    if (quantity > 0) {
+    // Tambahkan produk ke textarea jika jumlahnya lebih dari 0 dan produk belum ada
+    if (quantity > 0 && !productExists) {
+        const existingText = addedInput.value;
         const newText = `${quantity} x ${productName}`;
-        if (addedInput.value.trim() === "") {
+        if (existingText.trim() === "") {
             addedInput.value = newText;
         } else {
-            addedInput.value = `${addedInput.value}\n${newText}`;
+            addedInput.value = `${existingText}\n${newText}`;
         }
         document.getElementById(`product-quantity-${productId}`).value = 0; // Reset jumlah produk ke 0
     } else {
-        alert("Jumlah produk harus lebih dari 0");
+        alert(
+            "Jumlah produk harus lebih dari 0 dan produk tidak boleh duplikat"
+        );
     }
 }
 
@@ -129,4 +145,18 @@ function removeLastProduct(productId) {
         existingText.pop();
         addedInput.value = existingText.join("\n");
     }
+}
+
+function showNotification(message) {
+    const notificationMessage = document.getElementById("notificationMessage");
+    notificationMessage.innerText = message;
+    const notificationPopup = document.getElementById("notificationPopup");
+    notificationPopup.style.display = "block"; // Use "block" to show the modal
+    document.body.classList.add("modal-open"); // Optionally prevent scrolling
+}
+
+function closeNotificationPopup() {
+    const notificationPopup = document.getElementById("notificationPopup");
+    notificationPopup.style.display = "none"; // Hide the modal
+    document.body.classList.remove("modal-open"); // Re-enable scrolling
 }
