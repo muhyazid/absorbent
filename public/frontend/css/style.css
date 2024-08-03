@@ -10,6 +10,13 @@ body {
 body.modal-open {
     overflow: hidden;
 }
+
+/* yang ini baru */
+.modal-open {
+    overflow: hidden; /* Mencegah scroll pada body */
+    height: 100%; /* Pastikan tinggi body tetap 100% */
+}
+
 /* end tambahan yazid */
 
 /* icon */
