@@ -14,30 +14,35 @@ function openOrderPopup(productId, productName) {
     const initialText = `Nama Produk yang dipilih: ${productName}\n\n`;
     itemsTextarea.value = initialText + addedInput.value;
 
-    // Ensure it is on top of the previous popup
-
     // Set product name
     document.getElementById("product-name").innerText = productName;
 
     // Tambahkan nama produk yang dipilih di bagian awal field "Barang"
-    itemsTextarea.value = addedInput.value;
+    itemsTextarea.value = initialText + addedInput.value;
 
     orderPopup.style.display = "block";
     orderPopup.style.zIndex = 2000; // Ensure it is on top of the previous popup
 
-    document.body.classList.add("modal-open");
+    document.body.classList.add("modal-open"); // Tambahkan kelas modal-open ke body
 }
 
 function closeOrderPopup() {
     const orderPopup = document.getElementById("orderPopup");
     orderPopup.style.display = "none";
 
-    // ini eror git yazid
-    // document.body.classList.add("modal-open"); // Tambahkan kelas modal-open ke body
-
     // Reset quantity input to 1 when popup is closed
     document.getElementById("quantity").value = 1;
+
+    // Hapus kelas modal-open dari body
     document.body.classList.remove("modal-open");
+
+    // Cek apakah ada popup produk yang terbuka, jika ya, tambahkan kelas modal-open ke body
+    const popups = document.querySelectorAll(".popup");
+    popups.forEach((popup) => {
+        if (popup.style.display === "flex") {
+            document.body.classList.add("modal-open");
+        }
+    });
 }
 
 // Fungsi untuk submit form order

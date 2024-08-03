@@ -1,3 +1,26 @@
+// Fungsi untuk menampilkan notifikasi
+function showNotification(message, productId) {
+    const notificationMessage = document.getElementById("notificationMessage");
+    notificationMessage.innerText = message;
+    const notificationPopup = document.getElementById("notificationPopup");
+    const productPopup = document.getElementById(`popup-${productId}`);
+
+    // Pastikan hanya ada satu instance notifikasi di dalam popup produk
+    if (!productPopup.contains(notificationPopup)) {
+        productPopup.appendChild(notificationPopup);
+    }
+    notificationPopup.style.display = "block"; // Gunakan "block" untuk menampilkan modal
+}
+
+// Fungsi untuk menutup notifikasi
+function closeNotificationPopup() {
+    const notificationPopup = document.getElementById("notificationPopup");
+    notificationPopup.style.display = "none"; // Sembunyikan modal
+
+    // Kembalikan notifikasi ke tempat asalnya untuk digunakan kembali
+    document.body.appendChild(notificationPopup);
+}
+
 // Fungsi untuk membuka popup dan mengatur konten sesuai produk yang dipilih
 function openPopup(id, name, image, description, category) {
     const popup = document.getElementById(`popup-${id}`);
@@ -22,8 +45,8 @@ function openPopup(id, name, image, description, category) {
             method: "GET",
             success: (data) => {
                 const select = document.getElementById(`product-select-${id}`);
-                select.innerHTML = ""; // Kosongkan combo box
-                // biome-ignore lint/complexity/noForEach: <explanation>
+                // Kosongkan combo box
+                select.innerHTML = "";
                 data.forEach((product) => {
                     const option = document.createElement("option");
                     option.value = product.id;
@@ -73,7 +96,9 @@ function openOrderPopup(productId, productName) {
 function closePopup(id) {
     const popup = document.getElementById(id);
     popup.style.display = "none";
-    document.body.classList.remove("modal-open"); // Hapus kelas modal-open dari body
+
+    // Hapus kelas modal-open dari body
+    document.body.classList.remove("modal-open");
 
     // Reset konten textarea dan jumlah produk ke 0
     document.getElementById(`product-added-${id}`).value = "";
@@ -130,8 +155,9 @@ function addProduct(productId) {
         }
         document.getElementById(`product-quantity-${productId}`).value = 0; // Reset jumlah produk ke 0
     } else {
-        alert(
-            "Jumlah produk harus lebih dari 0 dan produk tidak boleh duplikat"
+        showNotification(
+            "Jumlah produk harus lebih dari 0 dan produk tidak boleh duplikat",
+            productId
         );
     }
 }
@@ -145,18 +171,4 @@ function removeLastProduct(productId) {
         existingText.pop();
         addedInput.value = existingText.join("\n");
     }
-}
-
-function showNotification(message) {
-    const notificationMessage = document.getElementById("notificationMessage");
-    notificationMessage.innerText = message;
-    const notificationPopup = document.getElementById("notificationPopup");
-    notificationPopup.style.display = "block"; // Use "block" to show the modal
-    document.body.classList.add("modal-open"); // Optionally prevent scrolling
-}
-
-function closeNotificationPopup() {
-    const notificationPopup = document.getElementById("notificationPopup");
-    notificationPopup.style.display = "none"; // Hide the modal
-    document.body.classList.remove("modal-open"); // Re-enable scrolling
 }
