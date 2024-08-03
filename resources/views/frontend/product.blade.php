@@ -99,8 +99,9 @@
                                                     class="btn btn-success mt-2"
                                                     onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
                                             </div>
+                                            <!-- Tombol "Pesan" untuk semua produk -->
                                             <button id="orderButtonNonCustom-{{ $product->id }}"
-                                                class="btn btn-success mt-2" style="display: none;"
+                                                class="btn btn-success mt-2"
                                                 onclick="checkLoginStatus({{ $product->id }}, '{{ $product->name }}')">Pesan</button>
                                         </div>
                                     </div>
@@ -139,12 +140,21 @@
                         <textarea id="address" name="address" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="items">Barang:</label>
+                        <label for="product">Nama Produk yang dipilih:</label>
+                        <p id="product-name"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="items">Isi Barang:</label>
                         <textarea id="items" name="items" readonly></textarea>
                     </div>
-                    <div id="quantity-group" class="form-group" style="display: none;">
+                    <div class="form-group" id="quantity-group">
                         <label for="quantity">Jumlah:</label>
-                        <input type="number" id="quantity" name="quantity" min="1" required>
+                        <div class="input-group2">
+                            {{-- <button class="btn2" type="button" onclick="decreaseValue2()">-</button> --}}
+                            <input type="number" class="form-control text-center" id="quantity" name="quantity"
+                                value="1" min="1">
+                            {{-- <button class="btn2" type="button" onclick="increaseValue2()">+</button> --}}
+                        </div>
                     </div>
                     <button type="button" onclick="submitOrderForm()">Kirim ke WhatsApp</button>
                 </form>
@@ -161,7 +171,6 @@
             </div>
         </div>
     </div>
-
 
 
     <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>

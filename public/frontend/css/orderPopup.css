@@ -1,4 +1,7 @@
-/* CSS untuk popup order */
+body.modal-open {
+    overflow: hidden;
+}
+
 .popuporder {
     display: none;
     position: fixed;
@@ -71,6 +74,7 @@
     color: #000;
     text-decoration: none;
 }
+
 
 .popup-contentorder button {
     display: block;
@@ -152,4 +156,36 @@
 .popup-contentwarning .close:focus {
     color: #000;
     text-decoration: none;
+}
+
+.input-group2 {
+    display: flex;
+    align-items: center;
+}
+
+.input-group2 button {
+    flex: 0 0 auto;
+    margin: 0 2px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.input-group2 input {
+    text-align: center;
+    flex: 1;
+    max-width: 80px; /* Adjust this as needed */
+    margin: 0 5px;
+    font-size: 20px; /* Increased font size */
+    padding: 10px;
+}
+
+.btn2{
+    padding: 5px 10px;
+    font-size: 1px;
+    border-radius: 3px;
+    border: 1px solid #28a745;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
