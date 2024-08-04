@@ -69,6 +69,8 @@ body {
     border-radius: 15px; /* Menyesuaikan nilai border-radius sesuai kebutuhan  */
     width: 100%; /* Sesuaikan lebar gambar sesuai kebutuhan  */
     height: auto; /* Membuat tinggi gambar otomatis sesuai dengan lebar */
+    margin-top: 20px;
+    margin-bottom: 5px; /* untuk jarak bawah pada gambar untuk mendekatkan ke judul */
 }
 
 .tulisan-popup {
@@ -78,7 +80,7 @@ body {
 /* end yazid  */
 
 .judul-popup {
-    font-size: 2.6rem; /* Ukuran font lebih kecil */
+    font-size: 1.6rem; /* Ukuran font lebih kecil */
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
