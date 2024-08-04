@@ -1,4 +1,3 @@
-<!-- resources/views/backend/users/index.blade.php -->
 @extends('backend.layouts.index')
 {{-- @extends('layouts.app') --}}
 
@@ -14,6 +13,7 @@
                     <th>Email</th>
                     <th>User Type</th>
                     <th>Password</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,11 +24,10 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->usertype }}</td>
                         <td>{{ $user->password ? 'Password diset' : '' }}</td>
-                        {{-- <td>{{ $user->password }}</td> --}}
-                        {{-- <td>Password diset</td> <!-- Menampilkan pesan teks -->
-                        <!-- <td>{{ str_repeat('*', 8) }}</td> Menampilkan password dalam bentuk masked --> --}}
                         <td>
-                            <a href="{{ route('backend.users.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{{ route('backend.users.edit', $user->id) }}" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

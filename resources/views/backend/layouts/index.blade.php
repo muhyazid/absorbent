@@ -45,6 +45,9 @@
     {{-- tambahan sakti --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     {{-- end of tambhaan sakti --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

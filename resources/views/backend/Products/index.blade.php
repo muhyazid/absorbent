@@ -4,8 +4,9 @@
 
 @section('content')
     <div class="container">
-        <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add New Product</a>
-        <a href="{{ route('products.export.pdf') }}" class="btn btn-danger mb-3">Export PDF</a>
+        <a href="{{ route('products.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i></a>
+        <a href="{{ route('products.export.pdf') }}" class="btn btn-danger mb-3"><i class="fas fa-file-pdf"></i></a>
+
         @if ($message = Session::get('success'))
             <div class="alert alert-success">{{ $message }}</div>
         @endif
@@ -31,19 +32,27 @@
                         <td>{{ $product->kategori ? $product->kategori->kategori : 'Tidak ada kategori' }}</td>
                         <td>
                             @if ($product->image)
-                                <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" width="50">
+                                <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
+                                    width="50">
                             @endif
                         </td>
-                        <td>{{ $product->description }}</td>
+                        <td>{{ Str::words($product->description, 5, '...') }}</td>
                         <td>{{ $product->stok }}</td>
                         <td>{{ $product->size }}</td>
                         <td>
-                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <!-- Ubah tombol "Edit" menjadi ikon -->
+                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
+
+                            <!-- Ubah tombol "Delete" menjadi ikon -->
                             <form action="{{ route('products.destroy', $product->id) }}" method="POST"
                                 style="display:inline;" class="form-delete">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" class="btn btn-danger btn-sm btn-delete">Delete</button>
+                                <button type="button" class="btn btn-danger btn-sm btn-delete">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>
