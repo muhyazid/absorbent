@@ -53,7 +53,7 @@ body {
 
 .fixed-size-textarea {
     height: 550cm; /* Sesuaikan tinggi */
-    width: 80%; /* Pastikan lebar penuh */
+    width: 100%; /* Pastikan lebar penuh */
     overflow-y: auto; /* Tambahkan scrollbar vertikal jika konten melebihi tinggi */
     resize: none; /* Mencegah pengguna mengubah ukuran textarea */
 }
