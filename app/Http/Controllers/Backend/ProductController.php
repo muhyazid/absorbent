@@ -72,7 +72,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'kategori_id' => 'nullable|exists:kategori_produks,id', // ini saya ganti nullable bukan required
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:10048',
-            'description' => 'required|varchar',
+            'description' => 'required|string',
             'stok'=> 'required|integer',
             'size' => 'required|integer',
         ]);
