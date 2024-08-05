@@ -103,7 +103,8 @@
                 </div>
             </div>
             <!-- Tombol submit form order -->
-            <button type="button" onclick="submitOrderForm()">Kirim ke WhatsApp</button>
+            <button type="button" onclick="submitOrderForm('6287853460577')">WhatsApp Admin 1</button>
+            <button type="button" onclick="submitOrderForm('6287814507778')">WhatsApp Admin 2</button>
         </form>
     </div>
 </div>

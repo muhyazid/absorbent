@@ -27,7 +27,11 @@ function openPopup(id, name, image, description, category) {
     document.getElementById(`popup-title-${id}`).innerText = name;
     document.getElementById(`popup-image-${id}`).src = image;
     document.getElementById(`popup-image-${id}`).alt = name;
-    document.getElementById(`popup-description-${id}`).innerText = description;
+
+    // Mengganti karakter newline dengan <br> agar tampil sebagai daftar
+    const formattedDescription = description.replace(/\r?\n/g, "<br>");
+    document.getElementById(`popup-description-${id}`).innerHTML =
+        formattedDescription;
 
     // Reset konten textarea dan jumlah produk saat membuka popup
     document.getElementById(`product-added-${id}`).value = "";

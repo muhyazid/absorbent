@@ -56,7 +56,7 @@
                             <div class="col-md-3">
                                 <div class="product-item">
                                     <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}"
-                                        onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', '{{ $product->description }}', '{{ $product->kategori->kategori }}')">
+                                        onclick="openPopup('{{ $product->id }}', '{{ $product->name }}', '{{ asset('images/' . $product->image) }}', `{{ $product->description }}`, '{{ $product->kategori->kategori }}')">
                                     <h5>{{ $product->name }}</h5>
                                     <p>{{ substr($product->description, 0, 50) }}</p>
                                 </div>

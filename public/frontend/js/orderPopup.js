@@ -46,7 +46,7 @@ function closeOrderPopup() {
 }
 
 // Fungsi untuk submit form order
-function submitOrderForm() {
+function submitOrderForm(whatsappNumber) {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
@@ -56,7 +56,6 @@ function submitOrderForm() {
     const productName = document.getElementById("product-name").innerText;
     const quantity = document.getElementById("quantity").value;
 
-    const whatsappNumber = "62895331266187"; // Ganti dengan nomor WhatsApp sales Anda
     const message = `Nama: ${name}\nEmail: ${email}\nNo Tlp: ${phone}\nAlamat: ${address}\nNama Perusahaan: ${company}\nNama Produk yang dipilih: ${productName}\nBarang:\n${items}\nJumlah: ${quantity}`;
 
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(

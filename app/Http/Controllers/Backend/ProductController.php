@@ -29,7 +29,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'kategori_id' => 'nullable|exists:kategori_produks,id', // diganti nullable bukan required
-            'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg|max:10048',
             'description' => 'required|string',
             'stok'=> 'required|integer',
             'size' => 'required|integer',
@@ -71,8 +71,8 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'kategori_id' => 'nullable|exists:kategori_produks,id', // ini saya ganti nullable bukan required
-            'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
-            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg|max:10048',
+            'description' => 'required|varchar',
             'stok'=> 'required|integer',
             'size' => 'required|integer',
         ]);

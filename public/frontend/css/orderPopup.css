@@ -227,7 +227,15 @@ body.modal-open {
 }
 
 .popup-content {
-    overflow-y: hidden;
+    overflow-y: auto;
+    width: 80%; /* Sesuaikan persentase sesuai kebutuhan, misalnya 80% dari lebar layar */
+    max-width: 1200px; /* Tentukan lebar maksimal, misalnya 1200px */
+    max-height: 90vh; /* Batas tinggi maksimal popup agar tidak keluar dari viewport */
+    margin: auto; /* Tengah-tengahkan popup */
+    background-color: #fff; /* Warna latar belakang */
+    border-radius: 15px; /* Border radius untuk sudut membulat */
+    padding: 40px; /* Padding di dalam popup */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Bayangan untuk tampilan yang lebih bagus */
 }
 
 /* end yazid  */
