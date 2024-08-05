@@ -14,7 +14,8 @@
                 <p class="key-feature"><strong>Description:</strong></p>
                 <!-- Deskripsi produk -->
                 <p class="tulisan-popup" id="popup-description-{{ $product->id }}"></p>
-                <!-- Elemen khusus untuk kategori "Custom Spill Kit" -->
+
+                <!-- pop up khusus untuk kategori "Custom Spill Kit" -->
                 <div id="custom-elements-{{ $product->id }}" style="display: none;">
                     <div class="form-group">
                         <label for="product-select-{{ $product->id }}"><strong>Produk:</strong></label>
