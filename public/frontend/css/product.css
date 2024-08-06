@@ -6,6 +6,18 @@ body {
 }
 
 /* tambahan yazid  */
+
+.modal-open {
+    overflow: hidden;
+}
+
+.popup,
+.popuporder,
+.popupwarning {
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
 .input-group {
     display: flex;
     align-items: center;
@@ -41,7 +53,7 @@ body {
 
 .fixed-size-textarea {
     height: 550cm; /* Sesuaikan tinggi */
-    width: 80%; /* Pastikan lebar penuh */
+    width: 100%; /* Pastikan lebar penuh */
     overflow-y: auto; /* Tambahkan scrollbar vertikal jika konten melebihi tinggi */
     resize: none; /* Mencegah pengguna mengubah ukuran textarea */
 }
@@ -57,12 +69,18 @@ body {
     border-radius: 15px; /* Menyesuaikan nilai border-radius sesuai kebutuhan  */
     width: 100%; /* Sesuaikan lebar gambar sesuai kebutuhan  */
     height: auto; /* Membuat tinggi gambar otomatis sesuai dengan lebar */
+    margin-top: 20px;
+    margin-bottom: 5px; /* untuk jarak bawah pada gambar untuk mendekatkan ke judul */
+}
+
+.tulisan-popup {
+    text-align: justify; /* Membuat teks deskripsi pop up menjadi justify */
 }
 
 /* end yazid  */
 
 .judul-popup {
-    font-size: 2.6rem; /* Ukuran font lebih kecil */
+    font-size: 1.6rem; /* Ukuran font lebih kecil */
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
@@ -194,11 +212,14 @@ body {
     padding: 20px;
     background-color: #fff;
     border-radius: 100px;
+    display: flex;
+    flex-wrap: wrap; /* Pastikan semua card berada dalam satu baris dan membungkus saat perlu */
 }
 
 .product-item {
+    flex: 1 1 23%; /* Pastikan setiap item memiliki lebar 23% dan skala sesuai kebutuhan */
     padding: 10px;
-    border: 1px solid #e8e8e8;
+    border: 1px solid hsl(0, 0%, 91%);
     border-radius: 15px;
     text-align: center;
     background-color: #fff;
@@ -206,23 +227,26 @@ body {
     display: flex; /* dari yazid  */
     flex-direction: column; /*  dari yazid = Mengatur elemen dalam card agar ditumpuk */
     justify-content: space-between; /*  dari yazid = Memberikan jarak antar elemen */
-    height: 530px; /* dari yazid*/
+    height: auto; /* dari yazid*/
+    min-height: 400px; /* Tentukan tinggi minimum untuk setiap card agar sama */
 }
 
 .product-item img {
     width: 100%;
     height: auto;
     border-radius: 15px; /* untuk membuat sisi gambar menjadi rounded */
+    margin-bottom: 10px; /* Mengatur jarak antara gambar dan nama produk */
 }
 
 .product-item h5 {
-    margin-top: -30px; /* dari yazid = jarak atas bawah judul nama produk card*/
+    margin-top: 10px; /* Jarak atas untuk nama produk */
+    margin-bottom: 5px; /* Jarak bawah nama produk */
     font-size: 21px;
     font-weight: 600;
 }
 
 .product-item p {
-    margin-top: -60px; /* Kurangi jarak atas bawah untuk deskripsi produk */
+    margin-top: 5px; /* Kurangi jarak atas bawah untuk deskripsi produk */
     font-size: 14px; /* Sesuaikan ukuran font jika diperlukan */
     color: #555; /* Sesuaikan warna teks jika diperlukan */
 }
@@ -354,4 +378,30 @@ body {
 
 .footer_section a {
     color: rgba(254, 254, 255, 0.7);
+}
+
+/* TAMBAHAN YAZID */
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .left-column img {
+        width: 100%;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .popup-content {
+        width: 95%;
+        max-width: 95%;
+    }
+
+    .left-column img {
+        width: 100%;
+        max-width: 100px;
+    }
 }

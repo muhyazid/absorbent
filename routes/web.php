@@ -48,12 +48,6 @@ Route::get('/frontend/products/all', [ProductFrontendController::class, 'getAllP
 
 
 
-
-
-
-
-
-
 // Route Backend
 Route::middleware(['auth', 'admin'])->prefix('backend')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');

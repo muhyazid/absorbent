@@ -4,7 +4,9 @@
 
 @section('content')
     <div class="container">
-        <a href="{{ route('kategori_produks.create') }}" class="btn btn-primary mb-3">Tambah Kategori Produk</a>
+        <a href="{{ route('kategori_produks.create') }}" class="btn btn-primary mb-3">
+            <i class="fas fa-plus"></i></a>
+
         @if ($message = Session::get('success'))
             <div class="alert alert-success">{{ $message }}</div>
         @endif
@@ -24,12 +26,16 @@
                         <td>{{ $kategori_produk->kategori }}</td>
                         <td>
                             <a href="{{ route('kategori_produks.edit', $kategori_produk->id) }}"
-                                class="btn btn-warning btn-sm">Edit</a>
+                                class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
                             <form action="{{ route('kategori_produks.destroy', $kategori_produk->id) }}" method="POST"
                                 style="display:inline;" class="form-delete">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" class="btn btn-danger btn-sm btn-delete">Delete</button>
+                                <button type="button" class="btn btn-danger btn-sm btn-delete">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>

@@ -37,7 +37,7 @@
                 <li class="nav-item">
                     <a href="{{ route('backend.about.index') }}"
                         class="nav-link {{ Request::routeIs('backend.about.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fas fa-tags"></i>
                         <p>Kategori Produk</p>
                     </a>
                 </li>
@@ -45,7 +45,7 @@
                 <li class="nav-item">
                     <a href="{{ route('backend.users.index') }}"
                         class="nav-link {{ Request::routeIs('backend.users.index') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>Data User</p>
                     </a>
                 </li>
