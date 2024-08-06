@@ -8,9 +8,9 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="absorbent products, oil absorbents, chemical absorbents, spill kit, environmental safety, industrial cleaning, oil spill solutions, chemical spill solutions, multipurpose absorbents, Cerro, Cerro Absorbent, Absorbent Kit " />
+  <meta name="description" content="Discover Cerro Absorbent's advanced line of absorbent products. Perfect for managing oil spills, chemical spills, and multipurpose absorption needs, ensuring a safe and clean environment." />
+  <meta name="author" content="SRA SAfety | Cerro Absorbent " />
   <link rel="shortcut icon" href="{{ asset('frontend/images/logoaja.png') }}" type="image/x-icon">
 
   <title>CERRO | Absorbent</title>
