@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Popup Produk -->
 <div id="popup-{{ $product->id }}" class="popup">
     <div class="popup-content">

@@ -9,6 +9,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('frontend/images/logoaja.png') }}" type="image/x-icon">
     <title>CERRO | Absorbent Product</title>

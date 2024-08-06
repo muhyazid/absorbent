@@ -379,3 +379,29 @@ body {
 .footer_section a {
     color: rgba(254, 254, 255, 0.7);
 }
+
+/* TAMBAHAN YAZID */
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .left-column img {
+        width: 100%;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .popup-content {
+        width: 95%;
+        max-width: 95%;
+    }
+
+    .left-column img {
+        width: 100%;
+        max-width: 100px;
+    }
+}
