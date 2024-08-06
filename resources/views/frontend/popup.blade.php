@@ -1,16 +1,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Popup Produk -->
+<!-- Popup Produk -->
 <div id="popup-{{ $product->id }}" class="popup">
     <div class="popup-content">
         <div class="popup-body">
             <!-- Tombol untuk menutup popup -->
             <span class="close" onclick="closePopup('popup-{{ $product->id }}')">&times;</span>
-            <!-- Bagian kiri dari popup untuk gambar produk -->
+            <!-- Bagian atas dari popup untuk gambar produk dan judul -->
             <div class="left-column">
                 <img src="" alt="" id="popup-image-{{ $product->id }}" class="rounded-image">
                 <h2 class="judul-popup" id="popup-title-{{ $product->id }}"></h2>
             </div>
-            <!-- Bagian kanan dari popup untuk deskripsi dan tombol -->
+            <!-- Bagian bawah dari popup untuk deskripsi dan tombol -->
             <div class="right-column text-container">
                 <p class="key-feature"><strong>Description:</strong></p>
                 <!-- Deskripsi produk -->
@@ -52,6 +53,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Popup Form Order -->
 <div id="orderPopup" class="popuporder">
