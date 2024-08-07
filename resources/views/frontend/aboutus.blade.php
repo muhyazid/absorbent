@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Basic -->
     <meta charset="utf-8" />
@@ -11,15 +12,16 @@
     <meta name="description" content="Learn more about our company, our mission, and our values." />
     <meta name="author" content="Cerro" />
     <link rel="shortcut icon" href="{{ asset('frontend/images/logoaja.png') }}" type="image/x-icon">
-  
+
     <title>CERRO | About Us</title>
-  
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/bootstrap.css') }}" />
-  
+
     <!-- Fonts style -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
-  
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap"
+        rel="stylesheet" />
+
     <!-- Custom styles for this template -->
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
     <!-- Responsive style -->
@@ -27,10 +29,12 @@
     <link href="{{ asset('frontend/css/aboutus.css') }}" rel="stylesheet" />
     <style>
         .about_us_section .detail-box {
-            margin-top: 50px; /* Adjust this value as needed */
+            margin-top: 50px;
+            /* Adjust this value as needed */
         }
     </style>
 </head>
+
 <body>
     @include('frontend.header')
 
@@ -43,17 +47,25 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="detail-box">
-                        <img src="{{ asset('frontend/images/logo.png') }}" alt="About Us Image" height="50%" width="50%">
+                        <img src="{{ asset('frontend/images/logo.png') }}" alt="About Us Image" height="50%"
+                            width="50%">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="detail-box">
                         <h3>PT. Sumber Rejeki Agung | Absorbent</h3>
                         <h4>Safetoe Top Quality Sejak 1984</h4>
-                        <p>PT. Sumber Rejeki Agung yang bergerak di bidang penyediaan peralatan keselamatan dan keamanan. Kantor pusat berlokasi di Kompleks Ruko Rungkut Megah Raya Blok A No. 15 Jalan Raya Kali Rungkut Surabaya dan cabangnya di Jakarta, beralamat di Lindeteves Trade Center (LTC), Lt. Gf 1 Blok C2 No. 5 Jalan Hayam Wuruk 127 Jakarta Barat.</p>
-                        <p>Produk yang kami sediakan antara lain Sepatu Safety, Safety Equipment, Safety Signs, Cutting Stiker dan General Trading. Kami juga merupakan importir produk sepatu safety merk Safetoe, serta perlengkapan safety merk Cerro.</p>
-                        <p><i>(Karena banyaknya orang yang bertindak atas nama perusahaan kami untuk mengambil keuntungan, kami tegaskan di sini bahwa alamat kantor kami hanya yang tertulis di atas)</i></p>
-                       
+                        <p>PT. Sumber Rejeki Agung yang bergerak di bidang penyediaan peralatan keselamatan dan
+                            keamanan. Kantor pusat berlokasi di Kompleks Ruko Rungkut Megah Raya Blok A No. 15 Jalan
+                            Raya Kali Rungkut Surabaya dan cabangnya di Jakarta, beralamat di Lindeteves Trade Center
+                            (LTC), Lt. Gf 1 Blok C2 No. 5 Jalan Hayam Wuruk 127 Jakarta Barat.</p>
+                        <p>Produk yang kami sediakan antara lain Sepatu Safety, Safety Equipment, Safety Signs, Cutting
+                            Stiker dan General Trading. Kami juga merupakan importir produk sepatu safety merk Safetoe,
+                            serta perlengkapan safety merk Cerro.</p>
+                        <p><i>(Karena banyaknya orang yang bertindak atas nama perusahaan kami untuk mengambil
+                                keuntungan, kami tegaskan di sini bahwa alamat kantor kami hanya yang tertulis di
+                                atas)</i></p>
+
                     </div>
                 </div>
             </div>
@@ -118,17 +130,20 @@
             <p></p>
             <div class="row">
                 <div class="col-md-3">
-                    <a href="https://glints.com/id/en/opportunities/jobs/staff-marketing/ccf49bc7-e8e4-496a-af45-d6e8f2bc6b37" class="career-box">
+                    <a href="https://glints.com/id/en/opportunities/jobs/staff-marketing/ccf49bc7-e8e4-496a-af45-d6e8f2bc6b37"
+                        class="career-box">
                         <h4>Marketing</h4>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="https://glints.com/id/en/opportunities/jobs/staff-gudang-walk-in-interview/22a784f1-aa4b-468a-ad8d-76635fa7577d" class="career-box">
+                    <a href="https://glints.com/id/en/opportunities/jobs/staff-gudang-walk-in-interview/22a784f1-aa4b-468a-ad8d-76635fa7577d"
+                        class="career-box">
                         <h4>Warehouse</h4>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="https://glints.com/id/en/opportunities/jobs/administration-staff/94c07cd1-3021-4b89-b3e6-dfd3b7f76f45" class="career-box">
+                    <a href="https://glints.com/id/en/opportunities/jobs/administration-staff/94c07cd1-3021-4b89-b3e6-dfd3b7f76f45"
+                        class="career-box">
                         <h4>Admin</h4>
                     </a>
                 </div>
@@ -147,4 +162,5 @@
     <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
 </body>
+
 </html>
