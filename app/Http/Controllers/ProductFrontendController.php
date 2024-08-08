@@ -36,7 +36,8 @@ class ProductFrontendController extends Controller
         $products = Product::whereHas('kategori', function ($query) {
             $query->where('kategori', '!=', 'Spill Kit')
                   ->where('kategori', '!=', 'Custom Spill Kit');
-        })->get(); 
+        })->get();
+
         return response()->json($products);
     }
 
