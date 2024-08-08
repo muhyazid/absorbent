@@ -5,19 +5,16 @@ function showNotification(message, productId) {
     const notificationPopup = document.getElementById("notificationPopup");
     const productPopup = document.getElementById(`popup-${productId}`);
 
-    // Pastikan hanya ada satu instance notifikasi di dalam popup produk
     if (!productPopup.contains(notificationPopup)) {
         productPopup.appendChild(notificationPopup);
     }
-    notificationPopup.style.display = "block"; // Gunakan "block" untuk menampilkan modal
+    notificationPopup.style.display = "block";
 }
 
 // Fungsi untuk menutup notifikasi
 function closeNotificationPopup() {
     const notificationPopup = document.getElementById("notificationPopup");
-    notificationPopup.style.display = "none"; // Sembunyikan modal
-
-    // Kembalikan notifikasi ke tempat asalnya untuk digunakan kembali
+    notificationPopup.style.display = "none";
     document.body.appendChild(notificationPopup);
 }
 
@@ -28,16 +25,13 @@ function openPopup(id, name, image, description, category) {
     document.getElementById(`popup-image-${id}`).src = image;
     document.getElementById(`popup-image-${id}`).alt = name;
 
-    // Mengganti karakter newline dengan <br> agar tampil sebagai daftar
     const formattedDescription = description.replace(/\r?\n/g, "<br>");
     document.getElementById(`popup-description-${id}`).innerHTML =
         formattedDescription;
 
-    // Reset konten textarea dan jumlah produk saat membuka popup
     document.getElementById(`product-added-${id}`).value = "";
     document.getElementById(`product-quantity-${id}`).value = 0;
 
-    // Tampilkan elemen khusus jika kategori adalah "Custom Spill Kit"
     if (category === "Custom Spill Kit") {
         document.getElementById(`custom-elements-${id}`).style.display =
             "block";
@@ -49,12 +43,12 @@ function openPopup(id, name, image, description, category) {
             method: "GET",
             success: (data) => {
                 const select = document.getElementById(`product-select-${id}`);
-                // Kosongkan combo box
                 select.innerHTML = "";
                 data.forEach((product) => {
                     const option = document.createElement("option");
                     option.value = product.id;
                     option.text = product.name;
+                    option.setAttribute("data-volume", product.size); // Gunakan 'size' untuk volume
                     select.appendChild(option);
                 });
             },
@@ -66,7 +60,7 @@ function openPopup(id, name, image, description, category) {
             "block";
     }
     popup.style.display = "flex";
-    document.body.classList.add("modal-open"); // Tambahkan kelas modal-open ke body
+    document.body.classList.add("modal-open");
 }
 
 // Fungsi untuk memeriksa status login pengguna sebelum membuka popup pesanan
@@ -84,7 +78,6 @@ function openOrderPopup(productId, productName) {
     const itemsInput = document.getElementById("items");
     itemsInput.value = `Nama Produk yang dipilih: ${productName}`;
 
-    // Tampilkan input jumlah jika produk bukan kategori "Custom Spill Kit"
     const quantityGroup = document.getElementById("quantity-group");
     if (productName !== "Custom Spill Kit") {
         quantityGroup.style.display = "block";
@@ -93,7 +86,7 @@ function openOrderPopup(productId, productName) {
     }
 
     orderPopup.style.display = "flex";
-    document.body.classList.add("modal-open"); // Tambahkan kelas modal-open ke body
+    document.body.classList.add("modal-open");
 }
 
 // Fungsi untuk menutup popup dan mereset konten textarea serta jumlah produk
@@ -101,14 +94,11 @@ function closePopup(id) {
     const popup = document.getElementById(id);
     popup.style.display = "none";
 
-    // Hapus kelas modal-open dari body
     document.body.classList.remove("modal-open");
 
-    // Reset konten textarea dan jumlah produk ke 0
     document.getElementById(`product-added-${id}`).value = "";
     document.getElementById(`product-quantity-${id}`).value = 0;
 
-    // Reset juga combo box produk ke pilihan pertama
     const select = document.getElementById(`product-select-${id}`);
     if (select) {
         select.selectedIndex = 0;
@@ -136,33 +126,51 @@ function decreaseValue(productId) {
 // Fungsi untuk menambahkan produk ke dalam textarea
 function addProduct(productId) {
     const select = document.getElementById(`product-select-${productId}`);
-    const quantity = document.getElementById(
-        `product-quantity-${productId}`
-    ).value;
+    const quantity = Number.parseInt(
+        document.getElementById(`product-quantity-${productId}`).value
+    );
     const addedInput = document.getElementById(`product-added-${productId}`);
     const productName = select.options[select.selectedIndex].text;
+    const productVolume = Number.parseInt(
+        select.options[select.selectedIndex].getAttribute("data-volume")
+    );
 
-    // Cek apakah produk sudah ada di textarea
     const existingProducts = addedInput.value.split("\n");
     const productExists = existingProducts.some((item) =>
         item.includes(productName)
     );
 
-    // Tambahkan produk ke textarea jika jumlahnya lebih dari 0 dan produk belum ada
-    if (quantity > 0 && !productExists) {
-        const existingText = addedInput.value;
-        const newText = `${quantity} x ${productName}`;
-        if (existingText.trim() === "") {
-            addedInput.value = newText;
-        } else {
-            addedInput.value = `${existingText}\n${newText}`;
+    // Hitung total volume produk yang sudah ditambahkan
+    let totalVolume = productVolume * quantity;
+    existingProducts.forEach((item) => {
+        const volumeMatch = item.match(/(\d+) x .+ \((\d+) volume\)/);
+        if (volumeMatch) {
+            totalVolume +=
+                Number.parseInt(volumeMatch[1]) *
+                Number.parseInt(volumeMatch[2]);
         }
-        document.getElementById(`product-quantity-${productId}`).value = 0; // Reset jumlah produk ke 0
-    } else {
+    });
+
+    // Tentukan batas volume berdasarkan jenis produk
+    const maxVolume = getMaxVolumeForProduct(productId);
+    if (totalVolume > maxVolume) {
         showNotification(
-            "Jumlah produk harus lebih dari 0 dan produk tidak boleh duplikat",
+            `Total volume produk tidak boleh lebih dari ${maxVolume} liter`,
             productId
         );
+        return;
+    }
+
+    // Tambahkan produk ke textarea jika jumlahnya lebih dari 0
+    if (quantity > 0) {
+        const newText = `${quantity} x ${productName} (${productVolume} volume)`;
+        addedInput.value =
+            existingProducts.length > 0
+                ? `${addedInput.value}\n${newText}`
+                : newText;
+        document.getElementById(`product-quantity-${productId}`).value = 0;
+    } else {
+        showNotification("Jumlah produk harus lebih dari 0", productId);
     }
 }
 
@@ -175,4 +183,19 @@ function removeLastProduct(productId) {
         existingText.pop();
         addedInput.value = existingText.join("\n");
     }
+}
+
+// Fungsi untuk mendapatkan batas volume berdasarkan jenis produk
+function getMaxVolumeForProduct(productId) {
+    const productTitle = document.getElementById(
+        `popup-title-${productId}`
+    ).innerText;
+    if (productTitle.includes("10 Liter")) {
+        return 10;
+    } else if (productTitle.includes("20 Liter")) {
+        return 20;
+    } else if (productTitle.includes("30 Liter")) {
+        return 30;
+    }
+    return 0;
 }

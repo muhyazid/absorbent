@@ -33,7 +33,6 @@ class ProductFrontendController extends Controller
     // method untuk mengambil produk khusus untuk custom spill kit.
     public function getCustomSpillKitProducts()
     {
-        // ini untuk dropdown yang tampil itu produk dengan kategori selain spill kit dan custom spill kit
         $products = Product::whereHas('kategori', function ($query) {
             $query->where('kategori', '!=', 'Spill Kit')
                   ->where('kategori', '!=', 'Custom Spill Kit');
