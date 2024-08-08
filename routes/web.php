@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\KategoriController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -82,6 +82,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+// Login Google
+Route::controller(GoogleController::class)->group(function(){
+    Route::get('auth/google','redirectToGoogle')->name('auth.google');
+    Route::get('auth/google/callback','handleGoogleCallback');
 });
 
 require __DIR__.'/auth.php';

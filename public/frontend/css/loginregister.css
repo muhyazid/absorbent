@@ -19,3 +19,91 @@
 .hidden {
     display: none;
 }
+
+body {
+    background-color: #f8fafc;
+}
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: white;
+}
+
+form a {
+    text-decoration: none;
+}
+
+/* pengaturan letak icon mata password */
+form .field-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(10%);
+    cursor: pointer;
+}
+
+form .flex {
+    display: flex;
+    align-items: center;
+}
+
+form .text-center {
+    text-align: center;
+}
+
+form .mt-4 {
+    margin-top: 1rem;
+}
+
+form .w-full {
+    width: 100%;
+}
+
+form .rounded-md {
+    border-radius: 0.375rem;
+}
+
+form .bg-blue-600 {
+    background-color: #1d4ed8;
+}
+
+form .text-white {
+    color: white;
+}
+
+form .hover\:bg-blue-700:hover {
+    background-color: #1e40af;
+}
+
+form .shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form .mr-2 {
+    margin-right: 0.5rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.field-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#password,
+#password_confirmation {
+    padding-right: 2.5rem;
+}
+
+.hidden {
+    display: none;
+}

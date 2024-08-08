@@ -9,27 +9,40 @@ var btn = document.getElementById("readMoreBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+// Variable to store scroll position
+var scrollPosition = 0;
+
 // When the user clicks the button, open the modal
 btn.onclick = function (event) {
-    event.preventDefault(); // Prevent the default action of the link
+    event.preventDefault(); // Mencegah aksi default dari link
+    scrollPosition = window.scrollY || window.pageYOffset; // Save scroll position
     modal.style.display = "flex";
-    document.body.classList.add("modal-open"); // Disable scrolling of the main content
-    document.documentElement.classList.add("modal-open"); // Disable scrolling of the main content
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = "100%";
+    document.body.classList.add("modal-open"); // Nonaktifkan scrolling pada konten utama
+    document.documentElement.classList.add("modal-open"); // Nonaktifkan scrolling pada konten utama
 };
 
-// When the user clicks on <span> (x), close the modal
+// Ketika span (x) diklik, tutup modal
 span.onclick = function () {
     modal.style.display = "none";
-    document.body.classList.remove("modal-open"); // Restore scrolling of the main content
-    document.documentElement.classList.remove("modal-open"); // Restore scrolling of the main content
+    document.body.classList.remove("modal-open"); // Kembalikan scrolling pada konten utama
+    document.documentElement.classList.remove("modal-open"); // Kembalikan scrolling pada konten utama
+    document.body.style.position = "";
+    document.body.style.top = "";
+    window.scrollTo(0, scrollPosition); // Restore scroll position
 };
 
-// When the user clicks anywhere outside of the modal, close it
+// Ketika pengguna mengklik di luar modal, tutup modal
 document.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
-        document.body.classList.remove("modal-open"); // Restore scrolling of the main content
-        document.documentElement.classList.remove("modal-open"); // Restore scrolling of the main content
+        document.body.classList.remove("modal-open"); // Kembalikan scrolling pada konten utama
+        document.documentElement.classList.remove("modal-open"); // Kembalikan scrolling pada konten utama
+        document.body.style.position = "";
+        document.body.style.top = "";
+        window.scrollTo(0, scrollPosition); // Restore scroll position
     }
 };
 
@@ -59,13 +72,15 @@ window.onclick = function (event) {
     }
 };
 
+// Menggandakan item carousel untuk tampilan loop
 document.addEventListener("DOMContentLoaded", function () {
-    const carouselTrack = document.querySelector(".carousel-track");
-    const items = Array.from(carouselTrack.children);
-
-    items.forEach((item) => {
-        const clone = item.cloneNode(true);
-        carouselTrack.appendChild(clone);
+    var closeButtons = document.querySelectorAll(".popup .close");
+    closeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            var popup = this.closest(".popup");
+            popup.style.display = "none";
+            document.body.classList.remove("no-scroll");
+        });
     });
 });
 
