@@ -38,7 +38,7 @@ class ProductFrontendController extends Controller
             $query->where('kategori', '!=', 'Spill Kit')
                   ->where('kategori', '!=', 'Custom Spill Kit');
         })->get();
-        
+
         return response()->json($products);
     }
 
