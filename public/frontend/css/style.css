@@ -7,6 +7,32 @@ body {
 }
 
 /* tambahan yazid */
+
+/* CSS untuk tombol close di pojok kanan atas (halaman home) */
+.popup .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+.popup .close:hover,
+.popup .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* CSS untuk membuat gambar responsif */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
 body.modal-open {
     overflow: hidden;
 }
@@ -81,7 +107,7 @@ body.no-scroll {
 .popup {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1050;
     left: 0;
     top: 0;
     width: 100%;
@@ -103,6 +129,7 @@ body.no-scroll {
     position: relative;
     overflow: hidden; /* Hide overflow to ensure proper content layout */
     border-radius: 20px;
+    /* padding-top: 10px; Kurangi padding atas agar konten lebih tinggi */
 }
 
 /* Style for the popup body */
@@ -123,13 +150,13 @@ body.no-scroll {
 }
 
 .left-column img {
-    width: 150px; /* Adjust image width */
-    height: 300px; /* Maintain aspect ratio */
-    margin-bottom: 50px; /* Space between image and title */
+    width: 100px; /* Adjust image width */
+    height: 200px; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between image and title */
 }
 
 .left-column .judul-popup {
-    margin-top: 15px;
+    margin-top: 5px;
     margin-bottom: 10px; /* Space around the title */
 }
 
@@ -141,9 +168,10 @@ body.no-scroll {
 /* Style for the right column */
 .right-column {
     flex: 2;
-    max-height: 62vh; /* Max height of text container for scrolling */
+    max-height: 70vh; /* Max height of text container for scrolling */
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     padding-right: 20px; /* Add padding to avoid text sticking to the scrollbar */
+    margin-top: 10px; /* Tambahkan margin atas untuk memindahkan konten ke atas */
 }
 
 /* ------ */
@@ -156,7 +184,7 @@ body.no-scroll {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1100; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -164,7 +192,7 @@ body.no-scroll {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0, 0, 0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    margin-top: 80px;
+    margin-top: 60px;
     margin-bottom: 25px;
 }
 
@@ -176,13 +204,34 @@ body.no-scroll {
     width: 80%; /* Could be more or less, depending on screen size */
     max-height: 70vh; /* Make sure it doesn't overflow vertically */
     overflow-y: auto; /* Enable vertical scroll */
+    position: relative; /* To position the close button correctly */
 }
 
 .close {
+    position: absolute;
     color: #aaa;
-    float: right;
+
+    right: 20px;
+    top: 20px;
     font-size: 28px;
     font-weight: bold;
+}
+
+/* Tambahkan gaya untuk tombol close di modal benefit */
+.modal-content .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .close:hover,
@@ -190,6 +239,23 @@ body.no-scroll {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Untuk mengangkat posisi judul produk dan key features ke atas */
+.popup-content .left-column .judul-popup,
+.popup-content .left-column .motto-popup,
+.popup-content .right-column .key-feature {
+    margin-top: 10px; /* Atur jarak sesuai keinginan */
+}
+
+/* Optional: to improve the alignment */
+.popup-content .right-column {
+    padding-top: 10px;
+}
+
+/* Untuk menyesuaikan posisi konten popup */
+.popup-content .popup-body {
+    align-items: flex-start;
 }
 
 /* Style to disable scrolling */
@@ -383,8 +449,13 @@ html.modal-open {
 }
 
 .header_section {
-    position: relative; /* Membuat header_section sebagai referensi untuk posisi elemen tetap */
-    z-index: 1000; /* Menjaga elemen di atas elemen lain */
+    position: fixed; /* Membuat header_section sebagai referensi untuk posisi elemen tetap */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Pastikan z-index lebih tinggi dari slider */
+    background-color: #1c1c1c; /* Background color sesuai kebutuhan */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opsional: tambahkan bayangan pada header */
 }
 
 .header_section .container-fluid {
@@ -621,6 +692,9 @@ a:focus {
     -ms-flex-pack: center;
     justify-content: center;
     color: #ffffff;
+    padding-top: 100px; /* Sesuaikan nilai ini sesuai dengan tinggi header */
+    position: relative;
+    z-index: 999; /* Pastikan z-index lebih rendah dari header */
 }
 
 .slider_section .row {

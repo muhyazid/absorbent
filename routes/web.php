@@ -90,4 +90,8 @@ Route::controller(GoogleController::class)->group(function(){
     Route::get('auth/google/callback','handleGoogleCallback');
 });
 
+
+// verifikasi email
+Auth::routes(['verify' => true]);
+
 require __DIR__.'/auth.php';

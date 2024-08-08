@@ -37,7 +37,7 @@
         <div class="hero_bg_box">
             <div class="bg-box">
                 {{-- background gambar --}}
-                <img src="{{ asset('frontend/images/kilangminyak1.jpg') }}" alt=""
+                <img src="{{ asset('frontend/images/kilangminyak-baru.jpg') }}" alt="" class="responsive-img"
                     style="width: 50%; height: auto; ">
             </div>
         </div>
@@ -46,7 +46,7 @@
         <!-- end header section -->
 
         <!-- slider section -->
-        <section class=" slider_section ">
+        <section class="slider_section">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -193,7 +193,7 @@
                 <!-- POP UP -->
                 <div id="benefitModal" class="modal">
                     <div class="modal-content">
-                        {{-- <span class="close">&times;</span> --}}
+                        <span class="close" onclick="closePopup('benefitModal')">&times;</span>
                         <h2 class="judul-popup">Benefits of Using Absorbents</h2>
                         <ul>
                             <li>
@@ -307,7 +307,7 @@
                 <div id="popupchemical" class="popup">
                     <div class="popup-content">
                         <div class="popup-body">
-                            <span class="close" onclick="closePopup('popupoil')">&times;</span>
+                            <span class="close" onclick="closePopup('popupchemical')">&times;</span>
                             <div class="left-column">
                                 <img src="{{ asset('frontend/images/chemicalabsorbentpad.png') }}"
                                     alt="Chemical Absorbent Solutions">
@@ -350,7 +350,7 @@
                 <div id="popupuniversall" class="popup">
                     <div class="popup-content">
                         <div class="popup-body">
-                            <span class="close" onclick="closePopup('popupoil')">&times;</span>
+                            <span class="close" onclick="closePopup('popupuniversall')">&times;</span>
                             <div class="left-column">
                                 <img src="{{ asset('frontend/images/universallabsorbentpad.png') }}"
                                     alt="Universal Absorbent Solutions">
@@ -551,9 +551,6 @@
             </div>
         </div>
     </section>
-
-
-
 
 
     <!-- end client section -->
