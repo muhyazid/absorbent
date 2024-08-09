@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\ProductFrontendController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Providers\RouteServiceProvider;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +29,7 @@ use App\Http\Controllers\ProductFrontendController;
 Route::get('/', function () {
     return view('frontend.master');
 });
+
 // Route::get('/product', function () {
 //     return view('frontend.product');
 // });
@@ -46,8 +51,6 @@ Route::get('/frontend/products/custom-spill-kit-products', [ProductFrontendContr
 
 Route::get('/frontend/products/all', [ProductFrontendController::class, 'getAllProducts']);
 
-
-
 // Route Backend
 Route::middleware(['auth', 'admin'])->prefix('backend')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
@@ -65,8 +68,26 @@ Route::middleware(['auth', 'admin'])->prefix('backend')->group(function () {
     Route::resource('kategori_produks', KategoriController::class);
 });
 
-
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+
+
+// verifikasi email
+Auth::routes(['verify' => true]);
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect(RouteServiceProvider::HOME)->with('verified', true);
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+// Route::get('/email/verification-notification', function () {
+//     Auth::user()->sendEmailVerificationNotification();
+//     return back()->with('message', 'Verification link sent!');
+// })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 
 // Redirect setelah login
 Route::get('/dashboard', function () {
@@ -89,9 +110,5 @@ Route::controller(GoogleController::class)->group(function(){
     Route::get('auth/google','redirectToGoogle')->name('auth.google');
     Route::get('auth/google/callback','handleGoogleCallback');
 });
-
-
-// verifikasi email
-Auth::routes(['verify' => true]);
 
 require __DIR__.'/auth.php';

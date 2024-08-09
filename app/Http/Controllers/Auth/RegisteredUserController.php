@@ -49,6 +49,12 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/')->with('success', 'Akun Anda berhasil dibuat');
+        // Kirim email verifikasi
+        $user->sendEmailVerificationNotification();
+
+        // Redirect ke halaman verifikasi
+        return redirect()->route('verification.notice');
+
+        // return redirect('/')->with('success', 'Akun Anda berhasil dibuat');
     }
 }
