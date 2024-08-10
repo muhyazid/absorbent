@@ -37,8 +37,7 @@
         <div class="hero_bg_box">
             <div class="bg-box">
                 {{-- background gambar --}}
-                <img src="{{ asset('frontend/images/kilangminyak-baru.jpg') }}" alt="" class="responsive-img"
-                    style="width: 50%; height: auto; ">
+                <img src="{{ asset('frontend/images/kilangminyak-baru.jpg') }}" alt="" class="responsive-img">
             </div>
         </div>
 

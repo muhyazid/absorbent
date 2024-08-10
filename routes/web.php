@@ -84,10 +84,6 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     return redirect(RouteServiceProvider::HOME)->with('verified', true);
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
-// Route::get('/email/verification-notification', function () {
-//     Auth::user()->sendEmailVerificationNotification();
-//     return back()->with('message', 'Verification link sent!');
-// })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 
 // Redirect setelah login
 Route::get('/dashboard', function () {
