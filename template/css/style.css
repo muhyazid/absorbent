@@ -39,7 +39,7 @@ body {
   position: relative;
   font-weight: bold;
   text-transform: uppercase;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 .heading_container h2::before {
   content: "";
