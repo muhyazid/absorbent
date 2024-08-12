@@ -25,7 +25,6 @@
                             <input type="number" class="form-control" id="product-quantity-{{ $product->id }}"
                                 value="0" min="0">
 
-
                             <button class="btn btn-outline-secondary" type="button"
                                 onclick="increaseValue({{ $product->id }})">+</button>
                         </div>
