@@ -1,11 +1,4 @@
 @media (max-width: 1120px) {
-    .header_top a .short {
-        display: none;
-    }
-
-    .header_top a .full {
-        display: inline;
-    }
 }
 
 @media (max-width: 992px) {
@@ -39,7 +32,11 @@
         padding: 45px 0 150px 0;
     }
 
-    .sub_page .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+    .sub_page
+        .custom_nav-container.navbar-expand-lg
+        .navbar-nav
+        .nav-item
+        .nav-link {
         padding-bottom: 15px;
     }
 }
@@ -109,23 +106,10 @@
     .info_section .info_form .social_box a {
         margin: 0 5px;
     }
-
-    .img_container .img-box img {
-        display: none;
-    }
-
-    .header_top a .short {
-        display: inline;
-        margin: 0 10px;
-    }
-
-    .header_top a .full {
-        display: none;
-    }
 }
 
 @media (max-width: 576px) {
-    .header_top a .full {
+    .header_top a span {
         display: none;
     }
 
@@ -135,29 +119,23 @@
     }
 }
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+}
 
-@media (max-width: 420px) {}
+@media (max-width: 420px) {
+}
 
-@media (max-width: 376px) {}
+@media (max-width: 376px) {
+}
 
 @media (min-width: 1200px) {
     .container {
         max-width: 1170px;
     }
-
-    .header_top a .short {
-        display: none;
-    }
-
-    .header_top a .full {
-        display: inline;
-    }
 }
 
 /* TAMBAHAN YAZID */
 @media (max-width: 992px) {
-
     /* Style for smaller screens */
     .popup-content {
         width: 90%;
@@ -190,7 +168,6 @@
 }
 
 @media (max-width: 576px) {
-
     /* Style for even smaller screens */
     .popup-content {
         width: 95%;
