@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\ProductFrontendController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Providers\RouteServiceProvider;
 
 
@@ -78,6 +79,9 @@ Auth::routes(['verify' => true]);
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
+
+Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
+
 
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();

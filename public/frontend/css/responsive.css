@@ -194,6 +194,12 @@
     }
 
     .hero_bg_box .bg-box {
-        height: 100%; /* Memastikan gambar memenuhi container */
+        height: 100%;
+    }
+
+    .hero_bg_box .responsive-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Menambahkan untuk memastikan gambar selalu penuh */
     }
 }
