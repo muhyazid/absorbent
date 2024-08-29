@@ -1,0 +1,198 @@
+/* aboutus.css */
+.vision_mission_section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.vision_mission_section .heading_container {
+    margin-bottom: 40px;
+}
+
+.vision_box,
+.mission_box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    min-height: 250px; /* Menyesuaikan tinggi minimum kotak */
+}
+
+.vision_box h4,
+.mission_box h4 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.vision_box p,
+.mission_box ul {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.vision_box p {
+    margin-bottom: 0;
+}
+
+.mission_box ul {
+    padding-left: 20px;
+}
+
+.mission_box ul li {
+    margin-bottom: 10px;
+    list-style: disc;
+}
+
+.statistics_section {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+.statistics_section .stat-box {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.statistics_section .stat-box h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #e8af30;
+    margin-bottom: 10px;
+}
+
+.statistics_section .stat-box p {
+    font-size: 16px;
+    color: #555555;
+}
+
+.careers_section {
+    padding: 60px 0;
+}
+
+.careers_section .career-box {
+    display: block;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #e8af30;
+    color: #ffffff;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.careers_section .career-box h4 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.careers_section .career-box:hover {
+    background-color: #e8af30;
+}
+
+.clients_section {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+.clients_section .client-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.clients_section .client-logos img {
+    max-width: 150px;
+    margin: 10px;
+}
+
+/* CSS for Vision and Mission Section */
+.vision-mission-section {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+}
+
+.vision-mission-section .heading_container {
+    margin-bottom: 30px;
+}
+
+.vision-mission-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.vision-mission-box {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 0 0 45%;
+    max-width: 45%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-mission-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.vision-mission-box h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.vision-mission-box p,
+.vision-mission-box ul {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.vision-mission-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vision-mission-box ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.vision-mission-box ul li:before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #e8af30;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .vision-mission-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vision-mission-box {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .vision-mission-box p,
+    .vision-mission-box ul {
+        font-size: 14px;
+    }
+}

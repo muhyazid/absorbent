@@ -1,0 +1,319 @@
+body.modal-open {
+    overflow: hidden;
+}
+
+.popuporder {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.order-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Label dan input disusun berdampingan di desktop */
+.form-group label {
+    flex: 0 0 30%; /* Label mengambil 30% dari lebar container */
+    margin-right: 10px; /* Jarak antara label dan input */
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    flex: 1; /* Input mengambil sisa lebar yang tersedia */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: none; /* Prevent resizing */
+    height: 100px; /* Set a fixed height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.popup-contentorder button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add margin top to separate button from form fields */
+}
+
+.popup-contentorder button:hover {
+    background-color: #218838;
+}
+
+/* CSS untuk warning popup */
+.popupwarning {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-contentwarning {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative; /* Add this to position the close button relative to this container */
+}
+
+.popup-contentwarning p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.popup-contentwarning button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.popup-contentwarning button:hover {
+    background-color: #218838;
+}
+
+/* Close button for warning popup */
+.popup-contentwarning .close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.popup-contentwarning .close:hover,
+.popup-contentwarning .close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.input-group2 {
+    display: flex;
+    align-items: center;
+}
+
+.input-group2 button {
+    flex: 0 0 auto;
+    margin: 0 2px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.input-group2 input {
+    text-align: center;
+    flex: 1;
+    max-width: 80px; /* Adjust this as needed */
+    margin: 0 5px;
+    font-size: 20px; /* Increased font size */
+    padding: 10px;
+}
+
+.btn2 {
+    padding: 5px 10px;
+    font-size: 1px;
+    border-radius: 3px;
+    border: 1px solid #28a745;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* tambahan yazid  */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.popuporder,
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-contentorder,
+.popup-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    position: relative;
+}
+.popup-contentorder {
+    overflow-y: hidden;
+}
+
+.popup-content {
+    overflow-y: auto;
+    width: 80%; /* Sesuaikan persentase sesuai kebutuhan, misalnya 80% dari lebar layar */
+    max-width: 1200px; /* Tentukan lebar maksimal, misalnya 1200px */
+    max-height: 90vh; /* Batas tinggi maksimal popup agar tidak keluar dari viewport */
+    margin: auto; /* Tengah-tengahkan popup */
+    background-color: #fff; /* Warna latar belakang */
+    border-radius: 15px; /* Border radius untuk sudut membulat */
+    padding: 40px; /* Padding di dalam popup */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Bayangan untuk tampilan yang lebih bagus */
+}
+
+/* end yazid  */
+
+/* yazid baru  */
+.popup {
+    position: fixed;
+    z-index: 1000; /* z-index lebih rendah dari notifikasi */
+}
+.modal-open {
+    overflow: hidden;
+}
+
+.popup,
+.popuporder,
+.popupwarning {
+    overflow-y: auto;
+    max-height: 100vh;
+}
+.notification-popup {
+    position: fixed;
+    z-index: 1500; /* z-index lebih tinggi untuk berada di atas */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 300px;
+    display: none;
+    /* Mulai dengan tersembunyi */
+}
+.notification-popup .close-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+}
+
+.notification-popup .close-btn:hover {
+    background-color: #555;
+}
+
+/* end baru */
+
+/* responsif untuk popup form order */
+
+/* Tampilan Mobile (flex direction kolom) */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column; /* Label dan input ditumpuk secara vertikal */
+        align-items: stretch; /* Label dan input memenuhi lebar container */
+    }
+
+    .form-group label {
+        flex: unset; /* Hilangkan pengaturan flex pada label */
+        margin-bottom: 5px; /* Tambahkan jarak di bawah label */
+        margin-right: 0; /* Hilangkan margin kanan */
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        flex: unset; /* Hilangkan pengaturan flex pada input */
+        width: 100%; /* Pastikan input mengambil lebar penuh */
+    }
+}
+
+/* Setel tampilan popup agar tidak terlalu besar di layar kecil */
+.popup-contentorder {
+    max-width: 600px; /* Batas lebar maksimal */
+    margin: 5% auto; /* Tengah-tengah popup */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto; /* Jika konten terlalu tinggi, tambahkan scroll */
+}
+
+@media (max-width: 768px) {
+    .popup-contentorder {
+        width: 90%; /* Lebar 90% pada perangkat mobile */
+    }
+}
+
+/* end form order */
